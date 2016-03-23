@@ -30,7 +30,7 @@ public class Collisions : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision other){
-		int screamToPlay = Random.Range (0, 4);
-		screams [screamToPlay].Play ();
+		//int screamToPlay = Random.Range (0, 4);
+		//screams [screamToPlay].Play ();
 	}
 }
