@@ -8,6 +8,7 @@ public class Collisions : MonoBehaviour {
 	public AudioSource[] screams;
 
 	private Crying crys;
+	private bool didPlay;
 	// Use this for initialization
 	void Start () {
 	
@@ -26,5 +27,10 @@ public class Collisions : MonoBehaviour {
 			screams [screamToPlay].Play ();
 		}
 			
+	}
+
+	void OnCollisionEnter(Collision other){
+		int screamToPlay = Random.Range (0, 4);
+		screams [screamToPlay].Play ();
 	}
 }

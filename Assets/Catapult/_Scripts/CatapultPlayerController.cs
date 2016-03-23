@@ -49,8 +49,12 @@ public class CatapultPlayerController : MonoBehaviour {
 			}
 
 			if (Input.GetButtonUp ("Fire1")) {
-				projectile = (GameObject)Instantiate (shot, launcherSpawn.position, Quaternion.identity);
-				projectile.GetComponent<Rigidbody2D> ().velocity = mouseDirection.normalized * ((launchSpeed));
+				projectile = (GameObject)Instantiate (shot, launcherSpawn.position, Quaternion.Euler(0, 90, 0));
+				Rigidbody[] x = projectile.GetComponentsInChildren<Rigidbody> ();
+				for (int i = 0; i < x.Length; i++) {
+					x [i].AddForce (new Vector3(mouseDirection.normalized.x * launchSpeed, mouseDirection.normalized.y * launchSpeed, 0));
+				}
+				//projectile.GetComponent<Rigidbody> ().AddForce(new Vector3(100, 10, 10));//velocity = new Vector3 (10f, 10f, 10f);//mouseDirection.normalized * ((launchSpeed));
 				holdTime = 0.0f;
 			}
 			if(Input.GetKeyUp (KeyCode.R)) {
