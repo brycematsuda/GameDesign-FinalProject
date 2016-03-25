@@ -21,7 +21,7 @@ public class SpawnDebris : MonoBehaviour {
 	void spawnDebris(){
 		float randomTime = Random.Range (minInterval, maxInterval);
 		int randomObject = Random.Range (0, debris.Length);
-		Instantiate (debris [randomObject], transform.position, transform.rotation);
+		Instantiate (debris [randomObject], transform.position, Quaternion.Euler(Random.Range(0,90), Random.Range(0,90), Random.Range(0,90)));
 
 		Invoke ("spawnDebris", randomTime);
 	}

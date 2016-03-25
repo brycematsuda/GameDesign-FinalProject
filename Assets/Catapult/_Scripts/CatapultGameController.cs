@@ -20,7 +20,16 @@ public class CatapultGameController : MonoBehaviour {
 		if (!chosen.isPlaying && !outOfTime) {
 			outOfTime = true;
 			gameOver = true;
-			Debug.Log ("GAME OVER");
+			Invoke ("checkForWin", 5f);
+		}
+	}
+
+	void checkForWin(){
+		GameObject winner = GameObject.FindWithTag ("Player");
+		if (winner != null) {
+			Debug.Log ("WIN");
+		} else {
+			Debug.Log ("LOSE");
 		}
 	}
 }

@@ -8,6 +8,7 @@ public class RagdollController : MonoBehaviour {
 	private bool playedSound1 = false;
 	private bool playedSound2 = false;
 	private bool splashed = false;
+	private bool isDestroying = false;
 	// Use this for initialization
 	void Start () {
 	
@@ -15,7 +16,10 @@ public class RagdollController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (transform.position.y < -30 && !isDestroying) {
+			isDestroying = true;
+			Invoke ("startDestroy", 3f);
+		}
 	}
 
 	void OnCollisionEnter (Collision other){
@@ -48,5 +52,9 @@ public class RagdollController : MonoBehaviour {
 			screams [screamToPlay].Play ();
 			playedSound2 = true;
 		}
+	}
+
+	void startDestroy(){
+		Destroy (gameObject);
 	}
 }

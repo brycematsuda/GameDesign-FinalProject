@@ -23,7 +23,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 118056}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.62, y: 7.5, z: 0}
+  m_LocalPosition: {x: 4.22, y: 7.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -40,7 +40,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debris:
-  - {fileID: 146726, guid: bdfe6289282751648a0008b82fc04fc9, type: 2}
+  - {fileID: 144690, guid: d1d4aecfdf934504faebdfc91d3f3bc6, type: 2}
+  - {fileID: 185822, guid: 98f62135cf27d1743a5c0e693014f445, type: 2}
+  - {fileID: 140094, guid: 1247ed19b3e120b44be1635df4be949c, type: 2}
   minInterval: 1
   maxInterval: 3
 --- !u!1001 &100100000
