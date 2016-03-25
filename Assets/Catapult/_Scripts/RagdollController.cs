@@ -28,7 +28,8 @@ public class RagdollController : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other){
 		if (other.tag == "Waters") {
-			Instantiate (splash, transform.position, transform.rotation);
+			Debug.Log ("SPLASH");
+			Instantiate (splash, transform.position, Quaternion.identity);
 		}
 	}
 

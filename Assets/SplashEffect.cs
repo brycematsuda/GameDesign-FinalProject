@@ -24,7 +24,7 @@ public class SplashEffect : MonoBehaviour {
 
 			yes.setSplash ();
 			yes.playScream ();
-			Instantiate (splash, new Vector3(transform.position.x + 0.25f, transform.position.y, transform.position.z), other.transform.rotation);
+			//Instantiate (splash, new Vector3(transform.position.x + 0.25f, transform.position.y, transform.position.z), Quaternion.Euler(90, 90, 0));
 		}
 	}
 }
