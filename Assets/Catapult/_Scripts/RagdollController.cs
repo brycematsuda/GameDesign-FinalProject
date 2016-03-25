@@ -20,6 +20,11 @@ public class RagdollController : MonoBehaviour {
 			isDestroying = true;
 			Invoke ("startDestroy", 3f);
 		}
+
+		if (transform.position.y > 100 && !isDestroying) {
+			isDestroying = true;
+			Invoke ("startDestroy", 3f);
+		}
 	}
 
 	void OnCollisionEnter (Collision other){
@@ -32,7 +37,6 @@ public class RagdollController : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other){
 		if (other.tag == "Waters") {
-			Debug.Log ("SPLASH");
 			Instantiate (splash, transform.position, Quaternion.identity);
 		}
 	}

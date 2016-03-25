@@ -118,9 +118,11 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400002}
+  - 65: {fileID: 6543900}
+  - 114: {fileID: 11486228}
   m_Layer: 0
   m_Name: Waterfall
-  m_TagString: Untagged
+  m_TagString: Waters
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -163,7 +165,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100012}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.4823895, y: 44.934513, z: -1.1232247}
+  m_LocalPosition: {x: 2.71, y: -1.8, z: -1.1232247}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400014}
@@ -725,11 +727,23 @@ MeshCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &6543900
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100012}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6, y: 1, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!111 &11100000
 Animation:
   m_ObjectHideFlags: 1
@@ -797,6 +811,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scrollSpeed_X: 0
   scrollSpeed_Y: 0.35
+--- !u!114 &11486228
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dddf658614982b6438ea004b166c1ceb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  splash: {fileID: 108034, guid: 511662a08c3d40248891de68c3eb41cf, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
