@@ -6,10 +6,12 @@ public class DomPlayerController : MonoBehaviour {
 	public float speed = 1.0f;
 	public Vector2 jumpHeight;
 	public bool canMove;
+	public bool touchGoal = false;
 
 	// Use this for initialization
 	void Start () {
 		canMove = true;
+		touchGoal = false;
 	}
 	
 	// Update is called once per frame
@@ -23,4 +25,12 @@ public class DomPlayerController : MonoBehaviour {
 		    }
 		}
 	}
+
+	void OnCollisionEnter2D(Collision2D coll) {
+        if (coll.gameObject.tag == "Goal") {
+        	touchGoal = true;
+        } else {
+        	touchGoal = false;
+        }
+    }
 }

@@ -9,19 +9,28 @@ public class DomGameController : MonoBehaviour {
 	private int score;
 	public Text liveGui;
 	public Text scoreGui;
+	public Text winLoseGui;
 
 	// Use this for initialization
 	void Start () {
 		score = 99999;
 		liveGui.text = "Lives: " + lives.ToString();
 		scoreGui.text = "Score: " + score.ToString();
+		winLoseGui.text = "";
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (player.transform.position.y < -3.2) {
 			player.GetComponent<DomPlayerController>().canMove = false;
+			winLoseGui.text = "Eliminated!";
 			StartCoroutine(Wait(3));
+		}
+
+		if (player.GetComponent<DomPlayerController>().touchGoal == true) {
+			player.GetComponent<DomPlayerController>().canMove = false;
+			winLoseGui.text = "Winner!";
+			StartCoroutine(Wait(3));			
 		}
 	}
 
