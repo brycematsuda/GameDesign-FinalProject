@@ -1658,7 +1658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3.43
-  jumpHeight: {x: 0, y: 2}
+  jumpHeight: {x: 0, y: 2.6}
   canMove: 0
   touchGoal: 0
 --- !u!23 &2147452019
