@@ -14,6 +14,7 @@ public class FaceUpdate : MonoBehaviour
 		anim = GetComponent<Animator> ();
 	}
 
+	/**
 	void OnGUI ()
 	{
 		foreach (var animation in animations) {
@@ -22,6 +23,7 @@ public class FaceUpdate : MonoBehaviour
 			}
 		}
 	}
+	*/
 
 	float current = 0;
 

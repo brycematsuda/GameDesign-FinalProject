@@ -69,7 +69,8 @@ public class UnityChanControlScriptWithRgidBody : MonoBehaviour
 	void FixedUpdate ()
 	{
 		float h = Input.GetAxis("Horizontal");				// 入力デバイスの水平軸をhで定義
-		float v = Input.GetAxis("Vertical");				// 入力デバイスの垂直軸をvで定義
+		float v = Input.GetAxis("Vertical");	
+		// 入力デバイスの垂直軸をvで定義
 		anim.SetFloat("Speed", v);							// Animator側で設定している"Speed"パラメタにvを渡す
 		anim.SetFloat("Direction", h); 						// Animator側で設定している"Direction"パラメタにhを渡す
 		anim.speed = animSpeed;								// Animatorのモーション再生速度に animSpeedを設定する
@@ -88,9 +89,9 @@ public class UnityChanControlScriptWithRgidBody : MonoBehaviour
 		} else if (v < -0.1) {
 			velocity *= backwardSpeed;	// 移動速度を掛ける
 		}
+		//Debug.Log (velocity);
 		
 		if (Input.GetButtonDown("Jump")) {	// スペースキーを入力したら
-
 			//アニメーションのステートがLocomotionの最中のみジャンプできる
 			if (currentBaseState.nameHash == locoState){
 				//ステート遷移中でなかったらジャンプできる
@@ -108,6 +109,8 @@ public class UnityChanControlScriptWithRgidBody : MonoBehaviour
 
 		// 左右のキー入力でキャラクタをY軸で旋回させる
 		transform.Rotate(0, h * rotateSpeed, 0);	
+
+
 	
 
 		// 以下、Animatorの各ステート中での処理
@@ -123,7 +126,7 @@ public class UnityChanControlScriptWithRgidBody : MonoBehaviour
 		// 現在のベースレイヤーがjumpStateの時
 		else if(currentBaseState.nameHash == jumpState)
 		{
-			cameraObject.SendMessage("setCameraPositionJumpView");	// ジャンプ中のカメラに変更
+			//cameraObject.SendMessage("setCameraPositionJumpView");	// ジャンプ中のカメラに変更
 			// ステートがトランジション中でない場合
 			if(!anim.IsInTransition(0))
 			{
@@ -186,6 +189,7 @@ public class UnityChanControlScriptWithRgidBody : MonoBehaviour
 		}
 	}
 
+	/**
 	void OnGUI()
 	{
 		GUI.Box(new Rect(Screen.width -260, 10 ,250 ,150), "Interaction");
@@ -196,6 +200,7 @@ public class UnityChanControlScriptWithRgidBody : MonoBehaviour
 		GUI.Label(new Rect(Screen.width -245,110,250,30),"Left Control : Front Camera");
 		GUI.Label(new Rect(Screen.width -245,130,250,30),"Alt : LookAt Camera");
 	}
+	*/
 
 
 	// キャラクターのコライダーサイズのリセット関数
