@@ -16,14 +16,20 @@ public class RagdollController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		
 		if (transform.position.y < -30 && !isDestroying) {
 			isDestroying = true;
-			Invoke ("startDestroy", 3f);
+			Invoke ("startDestroy", 2f);
 		}
 
 		if (transform.position.y > 100 && !isDestroying) {
 			isDestroying = true;
-			Invoke ("startDestroy", 3f);
+			Invoke ("startDestroy", 2f);
+		}
+
+		if (transform.position.x > 30 && !isDestroying) {
+			isDestroying = true;
+			Invoke ("startDestroy", 2f);
 		}
 	}
 

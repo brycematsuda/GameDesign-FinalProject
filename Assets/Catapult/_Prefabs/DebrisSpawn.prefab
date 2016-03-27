@@ -42,7 +42,6 @@ MonoBehaviour:
   debris:
   - {fileID: 144690, guid: d1d4aecfdf934504faebdfc91d3f3bc6, type: 2}
   - {fileID: 185822, guid: 98f62135cf27d1743a5c0e693014f445, type: 2}
-  - {fileID: 140094, guid: 1247ed19b3e120b44be1635df4be949c, type: 2}
   minInterval: 1
   maxInterval: 3
 --- !u!1001 &100100000
