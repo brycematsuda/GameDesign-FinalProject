@@ -20,7 +20,7 @@ public class CatapultGameController : MonoBehaviour {
 		if (!chosen.isPlaying && !outOfTime) {
 			outOfTime = true;
 			gameOver = true;
-			Invoke ("checkForWin", 5f);
+			Invoke ("checkForWin", 6f);
 		}
 	}
 
