@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Fire
   - Waters
+  - Domino
+  - Log
   layers:
   - Default
   - TransparentFX
