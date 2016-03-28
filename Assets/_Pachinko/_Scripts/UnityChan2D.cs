@@ -98,13 +98,11 @@ public class UnityChan2D : MonoBehaviour
 		} else if (v < -0.1) {
 			velocity *= backwardSpeed;	// 移動速度を掛ける
 		}
-		//Debug.Log (velocity);
 
 		if (Input.GetButtonDown("Jump")) {	// スペースキーを入力したら
 			//アニメーションのステートがLocomotionの最中のみジャンプできる
 			if (currentBaseState.nameHash == locoState){
 				//ステート遷移中でなかったらジャンプできる
-				Debug.Log("JUMPED" + Random.Range(0, 100));
 				if(!anim.IsInTransition(0))
 				{
 					rb.AddForce(Vector3.up * jumpPower, ForceMode.VelocityChange);
@@ -113,12 +111,10 @@ public class UnityChan2D : MonoBehaviour
 			}
 		}
 		if(Input.GetKeyDown(KeyCode.E)){
-			Debug.Log (true);
 			anim.SetBool ("ActivateSwitch", true);
 		}
 		if (anim.IsInTransition (0) && anim.GetNextAnimatorStateInfo (0).
 			nameHash == Animator.StringToHash("Base Layer.ActivateSwitch")) {
-			Debug.Log (false);
 			anim.SetBool ("ActivateSwitch", false);
 		}
 
@@ -220,7 +216,6 @@ public class UnityChan2D : MonoBehaviour
 					}
 				}
 				// Jump bool値をリセットする（ループしないようにする）
-				Debug.Log("FALSE" + Random.Range(0, 1000));
 				anim.SetBool("Jump", false);
 			}
 		}

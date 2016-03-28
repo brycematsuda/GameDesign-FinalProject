@@ -194,7 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9ee4b004c53ae64eaed65c5f1d89223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 2
+  lifeTime: 4
 --- !u!114 &11436186
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -216,7 +216,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: lifeTime
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: panLevelCustomCurve.m_RotationOrder
