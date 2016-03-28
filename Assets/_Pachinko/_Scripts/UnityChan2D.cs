@@ -49,6 +49,8 @@ public class UnityChan2D : MonoBehaviour
 	static int jumpState = Animator.StringToHash("Base Layer.Jump");
 	static int restState = Animator.StringToHash("Base Layer.Rest");
 
+	private float origSpeed;
+
 	// 初期化
 	void Start ()
 	{
@@ -62,11 +64,16 @@ public class UnityChan2D : MonoBehaviour
 		// CapsuleColliderコンポーネントのHeight、Centerの初期値を保存する
 		orgColHight = col.height;
 		orgVectColCenter = col.center;
+		origSpeed = forwardSpeed;
 	}
+
+	//void Update(){
+		
+	//}
 
 
 	// 以下、メイン処理.リジッドボディと絡めるので、FixedUpdate内で処理を行う.
-	void FixedUpdate ()
+	void Update ()
 	{
 		float h = Input.GetAxis("Horizontal");				// 入力デバイスの水平軸をhで定義
 		float v = Input.GetAxis("Vertical");	
@@ -81,7 +88,6 @@ public class UnityChan2D : MonoBehaviour
 		rb.useGravity = true;//ジャンプ中に重力を切るので、それ以外は重力の影響を受けるようにする
 
 
-
 		// 以下、キャラクターの移動処理
 		velocity = new Vector3(0, 0, 0);		// 上下のキー入力からZ軸方向の移動量を取得
 		// キャラクターのローカル空間での方向に変換
@@ -94,10 +100,11 @@ public class UnityChan2D : MonoBehaviour
 		}
 		//Debug.Log (velocity);
 
-		if (Input.GetButtonUp("Jump")) {	// スペースキーを入力したら
+		if (Input.GetButtonDown("Jump")) {	// スペースキーを入力したら
 			//アニメーションのステートがLocomotionの最中のみジャンプできる
 			if (currentBaseState.nameHash == locoState){
 				//ステート遷移中でなかったらジャンプできる
+				Debug.Log("JUMPED" + Random.Range(0, 100));
 				if(!anim.IsInTransition(0))
 				{
 					rb.AddForce(Vector3.up * jumpPower, ForceMode.VelocityChange);
@@ -105,15 +112,25 @@ public class UnityChan2D : MonoBehaviour
 				}
 			}
 		}
+		if(Input.GetKeyDown(KeyCode.E)){
+			Debug.Log (true);
+			anim.SetBool ("ActivateSwitch", true);
+		}
+		if (anim.IsInTransition (0) && anim.GetNextAnimatorStateInfo (0).
+			nameHash == Animator.StringToHash("Base Layer.ActivateSwitch")) {
+			Debug.Log (false);
+			anim.SetBool ("ActivateSwitch", false);
+		}
 
 
 		// 上下のキー入力でキャラクターを移動させる
 		//transform.localPosition += velocity * Time.fixedDeltaTime;
 
 		// 左右のキー入力でキャラクタをY軸で旋回させる
-		//transform.Rotate(0, h * rotateSpeed, 0);	
+		//transform.Rotate(0, h * rotateSpeed, 0);
+		//8 directional movement edit
 		if (Input.GetKey (KeyCode.A)) {
-			velocity += new Vector3 (0, 0, forwardSpeed/10);
+			velocity += new Vector3 (0, 0, forwardSpeed);
 			//animController.ChangeAnimation (QuerySDMecanimController.QueryChanSDAnimationType.NORMAL_RUN, true);
 			if (Input.GetKey (KeyCode.W)) {
 				transform.rotation = Quaternion.Euler (0, 225, 0);
@@ -123,7 +140,7 @@ public class UnityChan2D : MonoBehaviour
 				transform.rotation = Quaternion.Euler (0, 180, 0);
 			}
 		} else if (Input.GetKey (KeyCode.D)) {
-			velocity += new Vector3 (0, 0, forwardSpeed/10);
+			velocity += new Vector3 (0, 0, forwardSpeed);
 			//animController.ChangeAnimation (QuerySDMecanimController.QueryChanSDAnimationType.NORMAL_RUN, true);
 			if (Input.GetKey (KeyCode.W)) {
 				transform.rotation = Quaternion.Euler (0, 315, 0);
@@ -141,14 +158,14 @@ public class UnityChan2D : MonoBehaviour
 			velocity += new Vector3 (0, 0, forwardSpeed);
 			transform.rotation = Quaternion.Euler (0, 90, 0);
 		} 
-
+		//allow movement using side keys, rather than having to wait for slow rotation
 		if (Input.GetKey (KeyCode.D)) {
 			velocity *= forwardSpeed;
-			Vector3 velocity2 = new Vector3 (0, 0, 3f);
+			Vector3 velocity2 = new Vector3 (0, 0, forwardSpeed/3);
 			transform.localPosition += velocity2 * Time.fixedDeltaTime;
 		} else if (Input.GetKey (KeyCode.A)) {
 			velocity *= forwardSpeed;
-			Vector3 velocity2 = new Vector3 (0, 0, -3f);
+			Vector3 velocity2 = new Vector3 (0, 0, -forwardSpeed/3);
 			transform.localPosition += velocity2 * Time.fixedDeltaTime;
 		}
 		velocity = transform.TransformDirection (velocity);
@@ -202,7 +219,8 @@ public class UnityChan2D : MonoBehaviour
 						}
 					}
 				}
-				// Jump bool値をリセットする（ループしないようにする）				
+				// Jump bool値をリセットする（ループしないようにする）
+				Debug.Log("FALSE" + Random.Range(0, 1000));
 				anim.SetBool("Jump", false);
 			}
 		}

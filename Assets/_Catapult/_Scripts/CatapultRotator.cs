@@ -19,10 +19,9 @@ public class CatapultRotator : MonoBehaviour {
 		// Get the direction of the mouse pointer relative to the player
 		Vector2 mouseDirection = mouseWorldPosition - (Vector2)transform.position;
 		foreach(GameObject part in cannonParts){
-			Debug.Log (mousePos.x);
 			Vector3 launcherAngle = part.transform.eulerAngles;
 			launcherAngle.x = -Mathf.Atan2((mouseWorldPosition.y - transform.position.y), (mouseWorldPosition.x - transform.position.x)) * Mathf.Rad2Deg;
-			Debug.Log (launcherAngle.x);
+			//limit angle to -90 and 30
 			if (launcherAngle.x < -90) {
 				launcherAngle.x = -90;
 			}
