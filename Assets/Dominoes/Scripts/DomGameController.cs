@@ -10,6 +10,7 @@ public class DomGameController : MonoBehaviour {
 	public Text liveGui;
 	public Text scoreGui;
 	public Text winLoseGui;
+	private bool isDisabled;
 
 	// Use this for initialization
 	void Start () {
@@ -17,12 +18,17 @@ public class DomGameController : MonoBehaviour {
 		liveGui.text = "Lives: " + lives.ToString();
 		scoreGui.text = "Score: " + score.ToString();
 		winLoseGui.text = "";
+		isDisabled = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (player.transform.position.y < -3.2) {
-			player.GetComponent<DomPlayerController>().canMove = false;
+		if (player.transform.position.y < -1.8) {
+			if (!isDisabled) {
+				player.GetComponent<UnityChan2DController>().enabled = !player.GetComponent<UnityChan2DController>().enabled;
+				isDisabled = true;
+			}
+			
 			winLoseGui.text = "Eliminated!";
 			StartCoroutine(Wait(3));
 		}

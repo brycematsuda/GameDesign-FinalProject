@@ -196,6 +196,27 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 402984, guid: 5fa2887481b12459c92e7fc78968ffce, type: 2}
   m_PrefabInternal: {fileID: 221828939}
+--- !u!1 &258410838 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: 1355a58c3bd9c40679bea54b926e0179, type: 2}
+  m_PrefabInternal: {fileID: 824628766}
+--- !u!114 &258410839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 258410838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f1c3cc7198fc4796b1d0505bc8757cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canMove: 0
+  touchGoal: 0
+--- !u!4 &258410844 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400000, guid: 1355a58c3bd9c40679bea54b926e0179, type: 2}
+  m_PrefabInternal: {fileID: 824628766}
 --- !u!1001 &269380638
 Prefab:
   m_ObjectHideFlags: 0
@@ -496,7 +517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c130d987514d4240b7d3f9955a3d1a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 2147452016}
+  player: {fileID: 258410838}
   lives: 12
   liveGui: {fileID: 410318653}
   scoreGui: {fileID: 379852775}
@@ -662,8 +683,82 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 181188186e73144de9ad246e71c45cb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 2147452021}
+  player: {fileID: 258410844}
   offset: {x: 0, y: 0, z: -10}
+--- !u!1001 &824628766
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 1355a58c3bd9c40679bea54b926e0179, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 10.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1355a58c3bd9c40679bea54b926e0179, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1355a58c3bd9c40679bea54b926e0179, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1355a58c3bd9c40679bea54b926e0179, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1355a58c3bd9c40679bea54b926e0179, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1355a58c3bd9c40679bea54b926e0179, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1355a58c3bd9c40679bea54b926e0179, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1355a58c3bd9c40679bea54b926e0179, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 1355a58c3bd9c40679bea54b926e0179, type: 2}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 1355a58c3bd9c40679bea54b926e0179, type: 2}
+      propertyPath: whatIsGround.m_Bits
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 1355a58c3bd9c40679bea54b926e0179, type: 2}
+      propertyPath: jumpPower
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 1355a58c3bd9c40679bea54b926e0179, type: 2}
+      propertyPath: maxSpeed
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 1355a58c3bd9c40679bea54b926e0179, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 1355a58c3bd9c40679bea54b926e0179, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000000, guid: 1355a58c3bd9c40679bea54b926e0179, type: 2}
+      propertyPath: m_Mass
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6100000, guid: 1355a58c3bd9c40679bea54b926e0179, type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: b16a8177aae984aed8618944cfd3e34a, type: 2}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 1355a58c3bd9c40679bea54b926e0179, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &825442806
 Prefab:
   m_ObjectHideFlags: 0
@@ -1631,7 +1726,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &2147452017
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1657,8 +1752,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f1c3cc7198fc4796b1d0505bc8757cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3.43
-  jumpHeight: {x: 0, y: 2.6}
   canMove: 0
   touchGoal: 0
 --- !u!23 &2147452019

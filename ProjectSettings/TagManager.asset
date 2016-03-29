@@ -4,11 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Fire
-  - Waters
-  - Domino
-  - Log
+  - DamageObject
   - Goal
+  - Domino
   layers:
   - Default
   - TransparentFX
@@ -18,8 +16,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Ground
+  - Player
   - 
   - 
   - 
@@ -46,15 +44,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Background
-    uniqueID: 1093696345
+  - name: Coin
+    uniqueID: 3534837493
     locked: 0
-  - name: Foreground
-    uniqueID: 1859086223
-    locked: 0
-  - name: Characters
-    uniqueID: 3940858523
+  - name: Block
+    uniqueID: 2494971979
     locked: 0
   - name: UI
-    uniqueID: 771169021
+    uniqueID: 4086813705
     locked: 0
