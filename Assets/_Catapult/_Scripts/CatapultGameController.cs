@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class CatapultGameController : MonoBehaviour {
 
 	public AudioSource[] soundTrack;
+	public AudioSource loser;
 	private AudioSource chosen;
 	private bool outOfTime = false;
 	public bool gameOver = false;
@@ -13,7 +14,7 @@ public class CatapultGameController : MonoBehaviour {
 	private Text resultText;
 	// Use this for initialization
 	void Start () {
-		int songToPlay = Random.Range (0, 3);
+		int songToPlay = Random.Range (0, soundTrack.Length);
 		chosen = soundTrack [songToPlay];
 		chosen.Play ();
 		resultText = winOrLose.GetComponent<Text> ();
@@ -35,11 +36,10 @@ public class CatapultGameController : MonoBehaviour {
 		if (winner != null) {
 			resultText.text = "YOU'RE WINNER!";
 			resultText.color = Color.green;
-			Debug.Log ("WIN");
 		} else {
 			resultText.text = "LOSER! YOU'RE A LOSER! DO YOU FEEL SORRY FOR YOURSELF YOU BIG BABY?";
 			resultText.color = Color.red;
-			Debug.Log ("LOSE");
+			loser.Play ();
 		}
 		resultText.gameObject.SetActive (true);
 	}
