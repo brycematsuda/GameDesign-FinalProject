@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [RequireComponent(typeof(UnityChan2DController), typeof(AudioSource))]
-public class Demo : MonoBehaviour
+public class Demo2 : MonoBehaviour
 {
     [SerializeField]
     private AudioClip damageVoice;

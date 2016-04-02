@@ -6,6 +6,8 @@ public class CatapultGameController : MonoBehaviour {
 
 	public AudioSource[] soundTrack;
 	public AudioSource loser;
+	public AudioSource[] audiencePain;
+	public GameObject[] audience;
 	private AudioSource chosen;
 	private bool outOfTime = false;
 	public bool gameOver = false;
@@ -37,10 +39,31 @@ public class CatapultGameController : MonoBehaviour {
 			resultText.text = "YOU'RE WINNER!";
 			resultText.color = Color.green;
 		} else {
-			resultText.text = "LOSER! YOU'RE A LOSER! DO YOU FEEL SORRY FOR YOURSELF YOU BIG BABY?";
+			resultText.text = "LOSER! YOU'RE A LOSER! ARE YOU FEELIN' SORRY FOR YOURSELF? WELL YOU SHOULD BE!";
 			resultText.color = Color.red;
 			loser.Play ();
 		}
 		resultText.gameObject.SetActive (true);
+	}
+
+	public void getExcited(){
+		foreach (GameObject x in audience){
+			QuerySDMecanimController q = x.GetComponent<QuerySDMecanimController> ();
+			q.ChangeAnimation (QuerySDMecanimController.QueryChanSDAnimationType.NORMAL_WIN);
+		}
+	}
+
+	public void playCheer(int cheer){
+		foreach (AudioSource a in audiencePain) {
+			if (a.isPlaying) {
+				return;
+			}
+		}
+		audiencePain [cheer].Play ();
+		getExcited ();
+	}
+
+	public int getAudienceCheerLength(){
+		return audiencePain.Length;
 	}
 }

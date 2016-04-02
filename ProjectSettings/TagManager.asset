@@ -8,6 +8,9 @@ TagManager:
   - Goal
   - Domino
   - Ground
+  - Fire
+  - Waters
+  - Debris
   layers:
   - Default
   - TransparentFX

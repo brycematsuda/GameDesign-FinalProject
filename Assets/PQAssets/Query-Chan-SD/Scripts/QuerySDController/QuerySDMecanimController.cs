@@ -6,7 +6,7 @@ public class QuerySDMecanimController : MonoBehaviour {
 
 	[SerializeField]
 	GameObject queryBodyParts;
-	
+	float minDelay, maxDelay;
 	public enum QueryChanSDAnimationType
 	{
 		// Normal Motion
@@ -89,11 +89,16 @@ public class QuerySDMecanimController : MonoBehaviour {
 		PAPER = 2
 
 	}
+	void Start(){
+		Invoke ("toggleIdle", 0.5f);
+		minDelay = 3;
+		maxDelay = 7;
+	}
 
 	void Update()
 	{
-		//queryBodyParts.transform.localPosition = Vector3.zero;
-		//queryBodyParts.transform.localRotation = Quaternion.identity;
+		queryBodyParts.transform.localPosition = Vector3.zero;
+		queryBodyParts.transform.localRotation = Quaternion.identity;
 
 	}
 
@@ -113,6 +118,8 @@ public class QuerySDMecanimController : MonoBehaviour {
 		}
 		//ChangeAnimation (QueryChanSDAnimationType.NORMAL_RUN);
 		*/
+
+
 	}
 
 
@@ -176,6 +183,17 @@ public class QuerySDMecanimController : MonoBehaviour {
 			queryBodyParts.GetComponent<Animator>().SetInteger("AnimIndex", (int)animNumber);
 		}
 
+	}
+
+	void toggleIdle(){
+		ChangeAnimation (QueryChanSDAnimationType.NORMAL_ITEMGET);
+		Invoke ("backToIdle", 2.5f);
+	}
+
+	void backToIdle(){
+		float randomDelay = Random.Range (minDelay, maxDelay);
+		ChangeAnimation (QueryChanSDAnimationType.NORMAL_IDLE);
+		Invoke ("toggleIdle",randomDelay);
 	}
 
 }

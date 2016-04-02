@@ -26,6 +26,7 @@ public class QuerySDEmotionalController : MonoBehaviour {
 	public void ChangeEmotion (QueryChanSDEmotionalType faceNumber)
 	{
 		queryFace.GetComponent<Renderer>().material = emotionalMaterial[(int)faceNumber];
+		//for now, just always be happy
 	}
 	
 }
