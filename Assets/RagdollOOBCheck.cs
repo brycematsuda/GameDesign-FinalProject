@@ -11,9 +11,9 @@ public class RagdollOOBCheck : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//Debug.Log (transform.position);
-		if (transform.position.y < -30 && !isDestroying) {
+		if (transform.position.y < -10 && !isDestroying) {
 			isDestroying = true;
-			Invoke ("startDestroy", 2f);
+			Invoke ("startDestroy", 1f);
 		}
 
 		if (transform.position.y > 100 && !isDestroying) {

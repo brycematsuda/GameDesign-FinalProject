@@ -90,9 +90,9 @@ public class QuerySDMecanimController : MonoBehaviour {
 
 	}
 	void Start(){
-		Invoke ("toggleIdle", 0.5f);
-		minDelay = 3;
-		maxDelay = 7;
+		Invoke ("toggleIdle", 0.1f);
+		minDelay = 5;
+		maxDelay = 10;
 	}
 
 	void Update()

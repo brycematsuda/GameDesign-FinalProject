@@ -11,6 +11,7 @@ TagManager:
   - Fire
   - Waters
   - Debris
+  - PointsText
   layers:
   - Default
   - TransparentFX

@@ -45,13 +45,14 @@ public class CatapultPlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (!gameController.gameOver) {
+			
+			float launchSpeed = holdTime * speed;
 			if (countdown == 0) {
 				statusText.text = "CATAPULT READY";
 				statusText.color = Color.green;
 			} else {
 				statusText.color = Color.red;
 			}
-			float launchSpeed = holdTime * speed;
 			// Get the mouse position
 			Vector2 mousePos = Input.mousePosition;
 			// Get the position of the mouse pointer relative to the world
@@ -59,11 +60,24 @@ public class CatapultPlayerController : MonoBehaviour {
 			Vector2 mouseDirection = mouseWorldPosition - (Vector2)transform.position;
 			if (Input.GetButton ("Fire1") && !onCooldown) {
 				holdTime += Time.deltaTime;
+
 				launchSpeed = holdTime * speed;
+				if (launchSpeed > 100f) {
+					launchSpeed = 100f;
+				}
+				int readSpeed = (int)launchSpeed;
+				statusText.text = "Charging..." + readSpeed + "%";
+				if (readSpeed >= 100) {
+					launchSpeed = 100f;
+					statusText.text = "Charging...MAX";
+				}
 			}
 
 			if (Input.GetButtonUp ("Fire1")) {
 				if (!onCooldown) {
+					if (launchSpeed > 100) {
+						launchSpeed = 100;
+					}
 					onCooldown = true;
 					countdown = cooldown * 10;
 					StartCoroutine (CoolDown ());

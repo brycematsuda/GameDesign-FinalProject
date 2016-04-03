@@ -76,7 +76,7 @@ GameObject:
   - 144: {fileID: 14471246}
   - 136: {fileID: 13662078}
   m_Layer: 0
-  m_Name: Bip01 L Thigh
+  m_Name: Leg
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,7 +124,7 @@ GameObject:
   - 144: {fileID: 14444488}
   - 136: {fileID: 13620160}
   m_Layer: 0
-  m_Name: Bip01 L UpperArm
+  m_Name: Arm
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -157,7 +157,7 @@ GameObject:
   - 144: {fileID: 14427456}
   - 136: {fileID: 13697620}
   m_Layer: 0
-  m_Name: Bip01 R Forearm
+  m_Name: Arm
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -172,7 +172,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 487330}
   m_Layer: 0
-  m_Name: Bip01 R Clavicle
+  m_Name: Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -208,7 +208,7 @@ GameObject:
   - 144: {fileID: 14455580}
   - 65: {fileID: 6513600}
   m_Layer: 0
-  m_Name: Bip01 Spine1
+  m_Name: Spine
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -226,7 +226,7 @@ GameObject:
   - 144: {fileID: 14443938}
   - 136: {fileID: 13622640}
   m_Layer: 0
-  m_Name: Bip01 R Calf
+  m_Name: Leg
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -480,7 +480,7 @@ GameObject:
   - 144: {fileID: 14489412}
   - 136: {fileID: 13609696}
   m_Layer: 0
-  m_Name: Bip01 L Forearm
+  m_Name: Arm
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -510,7 +510,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 429952}
   m_Layer: 0
-  m_Name: Bip01 L Clavicle
+  m_Name: Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -620,7 +620,7 @@ GameObject:
   - 144: {fileID: 14474714}
   - 136: {fileID: 13653622}
   m_Layer: 0
-  m_Name: Bip01 R UpperArm
+  m_Name: Arm
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -653,7 +653,7 @@ GameObject:
   - 144: {fileID: 14403108}
   - 135: {fileID: 13508410}
   m_Layer: 0
-  m_Name: Bip01 Head
+  m_Name: Head
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -783,7 +783,7 @@ GameObject:
   - 144: {fileID: 14459264}
   - 136: {fileID: 13605380}
   m_Layer: 0
-  m_Name: Bip01 L Calf
+  m_Name: Leg
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -816,7 +816,7 @@ GameObject:
   - 144: {fileID: 14440260}
   - 136: {fileID: 13601384}
   m_Layer: 0
-  m_Name: Bip01 R Thigh
+  m_Name: Leg
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -833,7 +833,7 @@ GameObject:
   - 54: {fileID: 5466218}
   - 65: {fileID: 6501210}
   m_Layer: 0
-  m_Name: Bip01 Pelvis
+  m_Name: Pelvis
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4418,7 +4418,7 @@ ParticleSystem:
     serializedVersion: 2
     enabled: 1
     startLifetime:
-      scalar: 3
+      scalar: 0.9
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -4434,7 +4434,7 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: 0.33333334
+          value: 0.11111113
           inSlope: 0
           outSlope: 0
           tangentMode: 0

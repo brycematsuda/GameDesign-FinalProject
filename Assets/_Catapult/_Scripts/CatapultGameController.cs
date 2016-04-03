@@ -8,6 +8,8 @@ public class CatapultGameController : MonoBehaviour {
 	public AudioSource loser;
 	public AudioSource[] audiencePain;
 	public GameObject[] audience;
+	public Text scoreText;
+	private int score = 0;
 	private AudioSource chosen;
 	private bool outOfTime = false;
 	public bool gameOver = false;
@@ -65,5 +67,10 @@ public class CatapultGameController : MonoBehaviour {
 
 	public int getAudienceCheerLength(){
 		return audiencePain.Length;
+	}
+
+	public void addScore(int scoreToAdd){
+		score += scoreToAdd;
+		scoreText.text = "SCORE: " + score;
 	}
 }
