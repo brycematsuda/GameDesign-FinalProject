@@ -12,6 +12,7 @@ TagManager:
   - Waters
   - Debris
   - PointsText
+  - Barrel
   layers:
   - Default
   - TransparentFX

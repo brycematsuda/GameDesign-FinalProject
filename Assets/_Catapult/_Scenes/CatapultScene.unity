@@ -314,6 +314,7 @@ MonoBehaviour:
   speed: 100
   shot: {fileID: 192976, guid: e44076bf5bae17d45b5aa1b17738b2f9, type: 2}
   launcher: {fileID: 0}
+  barrelReference: {fileID: 362544638}
   launcherSpawn: {fileID: 309675540}
   statusText: {fileID: 1626653859}
   cooldown: 1
@@ -4780,6 +4781,10 @@ Prefab:
     - target: {fileID: 6444218, guid: 67fcafc99b9222943afc7925c8311b1d, type: 2}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 162040, guid: 67fcafc99b9222943afc7925c8311b1d, type: 2}
+      propertyPath: m_TagString
+      value: Barrel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 67fcafc99b9222943afc7925c8311b1d, type: 2}

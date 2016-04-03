@@ -13,6 +13,7 @@ public class CatapultPlayerController : MonoBehaviour {
 	public GameObject shot;
 	// A reference to the teleport ball launcher
 	public Transform launcher;
+	public GameObject barrelReference;
 	private GameObject projectile;
 	// Reference to the transform where the teleporter projectile
 	// will be spawned
@@ -82,7 +83,9 @@ public class CatapultPlayerController : MonoBehaviour {
 					countdown = cooldown * 10;
 					StartCoroutine (CoolDown ());
 					StartCoroutine (Countdown ());
-					projectile = (GameObject)Instantiate (shot, launcherSpawn.position, Quaternion.Euler (0, 90, 0));
+					Transform barrel = GameObject.FindGameObjectWithTag ("Barrel").transform;
+					//Debug.Log (barrel.rotation.x);
+					projectile = (GameObject)Instantiate (shot, launcherSpawn.position, Quaternion.Euler (barrel.eulerAngles.x + 90, 90, 0));
 					Rigidbody[] x = projectile.GetComponentsInChildren<Rigidbody> ();
 					for (int i = 0; i < x.Length; i++) {
 						x [i].AddForce (new Vector3 (mouseDirection.normalized.x * launchSpeed, mouseDirection.normalized.y * launchSpeed, 0));
