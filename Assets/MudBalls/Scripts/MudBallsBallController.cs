@@ -15,7 +15,14 @@ public class MudBallsBallController : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D coll) {
         if (coll.gameObject.tag == "Ground") {
-        	Destroy(this.gameObject);
+        	StartCoroutine(Wait(3));
         }        
+    }
+
+    IEnumerator Wait(float duration)
+    {
+        //This is a coroutine
+        yield return new WaitForSeconds(duration);   //Wait
+        Destroy(this.gameObject);
     }
 }
