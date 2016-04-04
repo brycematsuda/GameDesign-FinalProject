@@ -19,3 +19,11 @@ EditorBuildSettings:
     path: Assets/_Catapult/_Scenes/CatapultScene.unity
   - enabled: 1
     path: Assets/Dominoes/Scenes/Dominoes.unity
+  - enabled: 1
+    path: Assets/_Doors/_Scenes/DoorDiveGame.unity
+  - enabled: 1
+    path: Assets/Logs/Scenes/Log_Level.unity
+  - enabled: 1
+    path: Assets/_Pachinko/_Scenes/Pachinko.unity
+  - enabled: 1
+    path: Assets/MudBalls/Scenes/MudBalls.unity
