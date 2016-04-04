@@ -84,8 +84,14 @@ public class CatapultPlayerController : MonoBehaviour {
 					StartCoroutine (CoolDown ());
 					StartCoroutine (Countdown ());
 					Transform barrel = GameObject.FindGameObjectWithTag ("Barrel").transform;
-					//Debug.Log (barrel.rotation.x);
-					projectile = (GameObject)Instantiate (shot, launcherSpawn.position, Quaternion.Euler (barrel.eulerAngles.x + 90, 90, 0));
+					float yRotations =1f;
+					float yRotations2 = 90;
+					int yRotation = Random.Range(0, 2);
+					if (yRotation == 0) {
+						yRotations = -1f;
+						yRotations2 = 270;
+					}
+					projectile = (GameObject)Instantiate (shot, launcherSpawn.position, Quaternion.Euler ((yRotations * barrel.eulerAngles.x) + (yRotations * 90), yRotations2, 0));
 					Rigidbody[] x = projectile.GetComponentsInChildren<Rigidbody> ();
 					for (int i = 0; i < x.Length; i++) {
 						x [i].AddForce (new Vector3 (mouseDirection.normalized.x * launchSpeed, mouseDirection.normalized.y * launchSpeed, 0));

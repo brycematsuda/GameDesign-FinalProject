@@ -3,7 +3,7 @@ using System.Collections;
 
 public class DebrisHit : MonoBehaviour {
 
-	public AudioSource hitSound;
+	public AudioSource hitSound; //the sound to play if this piece of debris is hit
 	private RagdollController collided;
 	private CatapultGameController cgc;
 	private AudienceReactionPoints arp;
@@ -23,9 +23,6 @@ public class DebrisHit : MonoBehaviour {
 	void OnCollisionEnter(Collision other){
 		if(other.gameObject.tag == "Player"){
 			hitSound.Play ();
-			//collided = other.gameObject.GetComponentInParent<RagdollController> ();
-			//AudioSource pain = collided.audiencePain;
-			//cgc.getExcited ();
 			int maxIndex = cgc.getAudienceCheerLength ();
 			int cheerToPlay = Random.Range (0, maxIndex);
 			cgc.playCheer (cheerToPlay);

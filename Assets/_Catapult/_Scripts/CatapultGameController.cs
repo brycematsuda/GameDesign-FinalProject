@@ -4,16 +4,17 @@ using UnityEngine.UI;
 
 public class CatapultGameController : MonoBehaviour {
 
-	public AudioSource[] soundTrack;
-	public AudioSource loser;
-	public AudioSource[] audiencePain;
-	public GameObject[] audience;
+	public AudioSource[] soundTrack;//list of background music that can play
+	public AudioSource loser;//sound that plays if you're a loser
+	public AudioSource[] audiencePain;//list of sounds that can play when player gets hurt
+	public GameObject[] audience;//every member in the audience
 	public Text scoreText;
 	private int score = 0;
-	private AudioSource chosen;
+	private AudioSource chosen;//the background music that was selected to play
 	private bool outOfTime = false;
+	private AudienceReactionPoints arp;
 	public bool gameOver = false;
-	public GameObject winOrLose;
+	public GameObject winOrLose;//gameobject containing the text that will display whether you're a whiner or a loser
 
 	private Text resultText;
 	// Use this for initialization
@@ -22,11 +23,11 @@ public class CatapultGameController : MonoBehaviour {
 		chosen = soundTrack [songToPlay];
 		chosen.Play ();
 		resultText = winOrLose.GetComponent<Text> ();
+		arp = GameObject.FindGameObjectWithTag ("PointsText").GetComponent<AudienceReactionPoints> ();
 	
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+	void FixedUpdate () {
 		if (!chosen.isPlaying && !outOfTime) {
 			outOfTime = true;
 			gameOver = true;
@@ -40,6 +41,7 @@ public class CatapultGameController : MonoBehaviour {
 		if (winner != null) {
 			resultText.text = "YOU'RE WINNER!";
 			resultText.color = Color.green;
+			arp.spawnText ("AT LEAST ONE SURVIVED-ER, I MEAN...F*** IT, THE REST ARE ALL DEAD, +100", 100);
 		} else {
 			resultText.text = "LOSER! YOU'RE A LOSER! ARE YOU FEELIN' SORRY FOR YOURSELF? WELL YOU SHOULD BE!";
 			resultText.color = Color.red;
@@ -48,6 +50,8 @@ public class CatapultGameController : MonoBehaviour {
 		resultText.gameObject.SetActive (true);
 	}
 
+	//make every member of the audience play their excited animation
+	//called when the player gets injured
 	public void getExcited(){
 		foreach (GameObject x in audience){
 			QuerySDMecanimController q = x.GetComponent<QuerySDMecanimController> ();
@@ -55,6 +59,7 @@ public class CatapultGameController : MonoBehaviour {
 		}
 	}
 
+	//called when the player gets injured
 	public void playCheer(int cheer){
 		foreach (AudioSource a in audiencePain) {
 			if (a.isPlaying) {
