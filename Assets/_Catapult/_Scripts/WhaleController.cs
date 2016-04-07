@@ -10,11 +10,11 @@ public class WhaleController : MonoBehaviour {
 
 	private int count = 0;
 	void Start () {
-	
+		
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		if (count % frameSwitch == 0) {
 			yChange = -yChange;
 		}

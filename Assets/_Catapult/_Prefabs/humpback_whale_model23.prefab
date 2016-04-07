@@ -855,7 +855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   yChange: 0.01
-  speed: 0.03
+  speed: 0.1
   frameSwitch: 120
 --- !u!114 &11481694
 MonoBehaviour:
