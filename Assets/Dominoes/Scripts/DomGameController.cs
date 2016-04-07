@@ -23,6 +23,17 @@ public class DomGameController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		if (player.transform.position.y > 0) {
+			if (!isDisabled) {
+				player.GetComponent<UnityChan2DController>().enabled = false;
+				isDisabled = true;
+			}			
+		} else {
+			player.GetComponent<UnityChan2DController>().enabled = true;
+			isDisabled = false;
+		}
+
 		if (player.transform.position.y < -1.35) {
 			if (!isDisabled) {
 				player.GetComponent<UnityChan2DController>().enabled = !player.GetComponent<UnityChan2DController>().enabled;

@@ -3,23 +3,29 @@ using System.Collections;
 
 public class MudBallsCannonController : MonoBehaviour {
 
-	public Rigidbody2D bulletPrefab;
+	public GameObject bulletPrefab;
 	public GameObject fireSpot;
 	public float initSpeed;
 	public float angle;
+	private	 AudioSource audio;
+
+	void Start() {
+		audio = GetComponent<AudioSource>();
+	}
 
 	void Update () {
-		Debug.Log(GameObject.FindGameObjectsWithTag("Respawn").Length);
-		if(Input.GetKeyDown (KeyCode.L) && GameObject.FindGameObjectsWithTag("Respawn").Length == 2) {
+		if(Input.GetKeyDown (KeyCode.L)) {
 			Fire();
 		}
 	}
 
     // Fire a bullet
 	void Fire() {
-		Vector3 a = Quaternion.Euler(0, 0, angle) * Vector3.right;
-		Rigidbody2D shot = Instantiate(bulletPrefab, fireSpot.transform.position, Quaternion.identity) as Rigidbody2D;
+		float newAng = angle + Random.Range(-10.0f, 10.0f);
+		Vector3 a = Quaternion.Euler(0, 0, newAng) * Vector3.right;
+		GameObject shot = (GameObject) Instantiate(bulletPrefab, fireSpot.transform.position, Quaternion.identity);
 		shot.GetComponent<Rigidbody2D>().velocity = a * initSpeed;
-		shot.gravityScale = 3.0f;
+		shot.GetComponent<Rigidbody2D>().gravityScale = 3.0f;
+		audio.Play();
 	}
 }
