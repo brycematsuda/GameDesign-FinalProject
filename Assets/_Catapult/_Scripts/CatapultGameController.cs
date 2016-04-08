@@ -31,7 +31,7 @@ public class CatapultGameController : MonoBehaviour {
 		if (!chosen.isPlaying && !outOfTime) {
 			outOfTime = true;
 			gameOver = true;
-			Invoke ("checkForWin", 6f);
+			Invoke ("checkForWin", 4f);
 		}
 	}
 
@@ -41,7 +41,7 @@ public class CatapultGameController : MonoBehaviour {
 		if (winner != null) {
 			resultText.text = "YOU'RE WINNER!";
 			resultText.color = Color.green;
-			arp.spawnText ("AT LEAST ONE SURVIVED-ER, I MEAN...F*** IT, THE REST ARE ALL DEAD, +100", 100);
+			arp.spawnText ("AT LEAST ONE SURVIVED-ER, I MEAN...F*** IT, THE REST ARE ALL DEAD, +100", 100, null);
 		} else {
 			resultText.text = "LOSER! YOU'RE A LOSER! ARE YOU FEELIN' SORRY FOR YOURSELF? WELL YOU SHOULD BE!";
 			resultText.color = Color.red;

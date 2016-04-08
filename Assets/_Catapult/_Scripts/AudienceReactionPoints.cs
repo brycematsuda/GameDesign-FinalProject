@@ -16,7 +16,7 @@ public class AudienceReactionPoints : MonoBehaviour {
 	
 	}
 
-	public void spawnText(string texts, int score){
+	public void spawnText(string texts, int score, Transform location){
 		textss.text = texts;// (texts);
 		Text herp = (Text) Instantiate (textss, new Vector3(300, 395, 0), transform.rotation);
 		herp.transform.SetParent (renderCanvas.transform, false);
