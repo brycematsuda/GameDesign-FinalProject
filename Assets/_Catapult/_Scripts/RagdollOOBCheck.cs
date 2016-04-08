@@ -13,17 +13,17 @@ public class RagdollOOBCheck : MonoBehaviour {
 		//Debug.Log (transform.position);
 		if (transform.position.y < -10 && !isDestroying) {
 			isDestroying = true;
-			Invoke ("startDestroy", 1f);
+			Invoke ("startDestroy", 0.5f);
 		}
 
 		if (transform.position.y > 100 && !isDestroying) {
 			isDestroying = true;
-			Invoke ("startDestroy", 2f);
+			Invoke ("startDestroy", 0.5f);
 		}
 
 		if (transform.position.x > 30 && !isDestroying) {
 			isDestroying = true;
-			Invoke ("startDestroy", 2f);
+			Invoke ("startDestroy", 0.5f);
 		}
 	}
 	void startDestroy(){

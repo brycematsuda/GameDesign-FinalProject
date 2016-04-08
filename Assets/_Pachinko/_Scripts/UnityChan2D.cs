@@ -51,6 +51,10 @@ public class UnityChan2D : MonoBehaviour
 
 	private float origSpeed;
 
+	public bool controlsEnabled = true;
+
+	public string flavor = "None";
+
 	// 初期化
 	void Start ()
 	{
@@ -73,32 +77,35 @@ public class UnityChan2D : MonoBehaviour
 
 
 	// 以下、メイン処理.リジッドボディと絡めるので、FixedUpdate内で処理を行う.
-	void Update ()
+	void FixedUpdate ()
 	{
-		float h = Input.GetAxis("Horizontal");				// 入力デバイスの水平軸をhで定義
-		float v = Input.GetAxis("Vertical");	
-		// 入力デバイスの垂直軸をvで定義
-		anim.SetFloat("Speed", Mathf.Abs(h));							// Animator側で設定している"Speed"パラメタにvを渡す
-		if (h == 0) {
-			anim.SetFloat("Speed", Mathf.Abs(v));
-		}
-		anim.SetFloat("Direction", h); 						// Animator側で設定している"Direction"パラメタにhを渡す
-		anim.speed = animSpeed;								// Animatorのモーション再生速度に animSpeedを設定する
-		currentBaseState = anim.GetCurrentAnimatorStateInfo(0);	// 参照用のステート変数にBase Layer (0)の現在のステートを設定する
-		rb.useGravity = true;//ジャンプ中に重力を切るので、それ以外は重力の影響を受けるようにする
+		if (controlsEnabled) {
+			
+			float h = Input.GetAxis ("Horizontal");				// 入力デバイスの水平軸をhで定義
+			float v = Input.GetAxis ("Vertical");	
+			// 入力デバイスの垂直軸をvで定義
+			anim.SetFloat ("Speed", Mathf.Abs (h));							// Animator側で設定している"Speed"パラメタにvを渡す
+			if (h == 0) {
+				anim.SetFloat ("Speed", Mathf.Abs (v));
+			}
+			anim.SetFloat ("Direction", h); 						// Animator側で設定している"Direction"パラメタにhを渡す
+			anim.speed = animSpeed;								// Animatorのモーション再生速度に animSpeedを設定する
+			currentBaseState = anim.GetCurrentAnimatorStateInfo (0);	// 参照用のステート変数にBase Layer (0)の現在のステートを設定する
+			rb.useGravity = true;//ジャンプ中に重力を切るので、それ以外は重力の影響を受けるようにする
 
 
-		// 以下、キャラクターの移動処理
-		velocity = new Vector3(0, 0, 0);		// 上下のキー入力からZ軸方向の移動量を取得
-		// キャラクターのローカル空間での方向に変換
-		//velocity = transform.TransformDirection(velocity);
-		//以下のvの閾値は、Mecanim側のトランジションと一緒に調整する
-		if (v > 0.1) {
-			velocity *= forwardSpeed;		// 移動速度を掛ける
-		} else if (v < -0.1) {
-			velocity *= backwardSpeed;	// 移動速度を掛ける
-		}
+			// 以下、キャラクターの移動処理
+			velocity = new Vector3 (0, 0, 0);		// 上下のキー入力からZ軸方向の移動量を取得
+			// キャラクターのローカル空間での方向に変換
+			//velocity = transform.TransformDirection(velocity);
+			//以下のvの閾値は、Mecanim側のトランジションと一緒に調整する
+			if (v > 0.1) {
+				velocity *= forwardSpeed;		// 移動速度を掛ける
+			} else if (v < -0.1) {
+				velocity *= backwardSpeed;	// 移動速度を掛ける
+			}
 
+			/**
 		if (Input.GetButtonDown("Jump")) {	// スペースキーを入力したら
 			//アニメーションのステートがLocomotionの最中のみジャンプできる
 			if (currentBaseState.nameHash == locoState){
@@ -110,137 +117,131 @@ public class UnityChan2D : MonoBehaviour
 				}
 			}
 		}
-		if(Input.GetKeyDown(KeyCode.E)){
-			anim.SetBool ("ActivateSwitch", true);
-		}
-		if (anim.IsInTransition (0) && anim.GetNextAnimatorStateInfo (0).
-			nameHash == Animator.StringToHash("Base Layer.ActivateSwitch")) {
-			anim.SetBool ("ActivateSwitch", false);
-		}
+		*/
+			if (Input.GetKeyDown (KeyCode.E)) {
+				anim.SetBool ("ActivateSwitch", true);
+			}
+			if (anim.IsInTransition (0) && anim.GetNextAnimatorStateInfo (0).
+			nameHash == Animator.StringToHash ("Base Layer.ActivateSwitch")) {
+				anim.SetBool ("ActivateSwitch", false);
+			}
 
 
-		// 上下のキー入力でキャラクターを移動させる
-		//transform.localPosition += velocity * Time.fixedDeltaTime;
+			// 上下のキー入力でキャラクターを移動させる
+			//transform.localPosition += velocity * Time.fixedDeltaTime;
 
-		// 左右のキー入力でキャラクタをY軸で旋回させる
-		//transform.Rotate(0, h * rotateSpeed, 0);
-		//8 directional movement edit
-		if (Input.GetKey (KeyCode.A)) {
-			velocity += new Vector3 (0, 0, forwardSpeed);
-			//animController.ChangeAnimation (QuerySDMecanimController.QueryChanSDAnimationType.NORMAL_RUN, true);
-			if (Input.GetKey (KeyCode.W)) {
-				transform.rotation = Quaternion.Euler (0, 225, 0);
+			// 左右のキー入力でキャラクタをY軸で旋回させる
+			//transform.Rotate(0, h * rotateSpeed, 0);
+			//8 directional movement edit
+			if (Input.GetKey (KeyCode.A)) {
+				velocity += new Vector3 (0, 0, forwardSpeed);
+				//animController.ChangeAnimation (QuerySDMecanimController.QueryChanSDAnimationType.NORMAL_RUN, true);
+				if (Input.GetKey (KeyCode.W)) {
+					transform.rotation = Quaternion.Euler (0, 225, 0);
+				} else if (Input.GetKey (KeyCode.S)) {
+					transform.rotation = Quaternion.Euler (0, 135, 0);
+				} else {
+					transform.rotation = Quaternion.Euler (0, 180, 0);
+				}
+			} else if (Input.GetKey (KeyCode.D)) {
+				velocity += new Vector3 (0, 0, forwardSpeed);
+				//animController.ChangeAnimation (QuerySDMecanimController.QueryChanSDAnimationType.NORMAL_RUN, true);
+				if (Input.GetKey (KeyCode.W)) {
+					transform.rotation = Quaternion.Euler (0, 315, 0);
+				} else if (Input.GetKey (KeyCode.S)) {
+					transform.rotation = Quaternion.Euler (0, 45, 0);
+				} else {
+					transform.rotation = Quaternion.Euler (0, 0, 0);
+				}
+			} else if (Input.GetKey (KeyCode.W)) {
+				//animController.ChangeAnimation (QuerySDMecanimController.QueryChanSDAnimationType.NORMAL_RUN, true);
+				velocity += new Vector3 (0, 0, forwardSpeed * 2);
+				transform.rotation = Quaternion.Euler (0, 270, 0);
 			} else if (Input.GetKey (KeyCode.S)) {
-				transform.rotation = Quaternion.Euler (0, 135, 0);
-			} else {
-				transform.rotation = Quaternion.Euler (0, 180, 0);
+				//animController.ChangeAnimation (QuerySDMecanimController.QueryChanSDAnimationType.NORMAL_RUN, true);
+				velocity += new Vector3 (0, 0, forwardSpeed * 2);
+				transform.rotation = Quaternion.Euler (0, 90, 0);
+			} 
+			//allow movement using side keys, rather than having to wait for slow rotation
+			if (Input.GetKey (KeyCode.D)) {
+				velocity *= forwardSpeed;
+				Vector3 velocity2 = new Vector3 (0, 0, forwardSpeed);
+				transform.localPosition += velocity2 * Time.fixedDeltaTime;
+			} else if (Input.GetKey (KeyCode.A)) {
+				velocity *= forwardSpeed;
+				Vector3 velocity2 = new Vector3 (0, 0, -forwardSpeed);
+				transform.localPosition += velocity2 * Time.fixedDeltaTime;
 			}
-		} else if (Input.GetKey (KeyCode.D)) {
-			velocity += new Vector3 (0, 0, forwardSpeed);
-			//animController.ChangeAnimation (QuerySDMecanimController.QueryChanSDAnimationType.NORMAL_RUN, true);
-			if (Input.GetKey (KeyCode.W)) {
-				transform.rotation = Quaternion.Euler (0, 315, 0);
-			} else if (Input.GetKey (KeyCode.S)) {
-				transform.rotation = Quaternion.Euler (0, 45, 0);
-			} else {
-				transform.rotation = Quaternion.Euler (0, 0, 0);
-			}
-		} else if (Input.GetKey (KeyCode.W)) {
-			//animController.ChangeAnimation (QuerySDMecanimController.QueryChanSDAnimationType.NORMAL_RUN, true);
-			velocity += new Vector3 (0, 0, forwardSpeed);
-			transform.rotation = Quaternion.Euler (0, 270, 0);
-		} else if (Input.GetKey (KeyCode.S)) {
-			//animController.ChangeAnimation (QuerySDMecanimController.QueryChanSDAnimationType.NORMAL_RUN, true);
-			velocity += new Vector3 (0, 0, forwardSpeed);
-			transform.rotation = Quaternion.Euler (0, 90, 0);
-		} 
-		//allow movement using side keys, rather than having to wait for slow rotation
-		if (Input.GetKey (KeyCode.D)) {
-			velocity *= forwardSpeed;
-			Vector3 velocity2 = new Vector3 (0, 0, forwardSpeed/3);
-			transform.localPosition += velocity2 * Time.fixedDeltaTime;
-		} else if (Input.GetKey (KeyCode.A)) {
-			velocity *= forwardSpeed;
-			Vector3 velocity2 = new Vector3 (0, 0, -forwardSpeed/3);
-			transform.localPosition += velocity2 * Time.fixedDeltaTime;
-		}
-		velocity = transform.TransformDirection (velocity);
-		transform.localPosition += velocity * Time.fixedDeltaTime;
+			velocity = transform.TransformDirection (velocity);
+			transform.localPosition += velocity * Time.fixedDeltaTime;
 
 
 
-		// 以下、Animatorの各ステート中での処理
-		// Locomotion中
-		// 現在のベースレイヤーがlocoStateの時
-		if (currentBaseState.nameHash == locoState){
-			//カーブでコライダ調整をしている時は、念のためにリセットする
-			if(useCurves){
-				resetCollider();
+			// 以下、Animatorの各ステート中での処理
+			// Locomotion中
+			// 現在のベースレイヤーがlocoStateの時
+			if (currentBaseState.nameHash == locoState) {
+				//カーブでコライダ調整をしている時は、念のためにリセットする
+				if (useCurves) {
+					resetCollider ();
+				}
 			}
-		}
 		// JUMP中の処理
 		// 現在のベースレイヤーがjumpStateの時
-		else if(currentBaseState.nameHash == jumpState)
-		{
-			//cameraObject.SendMessage("setCameraPositionJumpView");	// ジャンプ中のカメラに変更
-			// ステートがトランジション中でない場合
-			if(!anim.IsInTransition(0))
-			{
+		else if (currentBaseState.nameHash == jumpState) {
+				//cameraObject.SendMessage("setCameraPositionJumpView");	// ジャンプ中のカメラに変更
+				// ステートがトランジション中でない場合
+				if (!anim.IsInTransition (0)) {
 
-				// 以下、カーブ調整をする場合の処理
-				if(useCurves){
-					// 以下JUMP00アニメーションについているカーブJumpHeightとGravityControl
-					// JumpHeight:JUMP00でのジャンプの高さ（0〜1）
-					// GravityControl:1⇒ジャンプ中（重力無効）、0⇒重力有効
-					float jumpHeight = anim.GetFloat("JumpHeight");
-					float gravityControl = anim.GetFloat("GravityControl"); 
-					if(gravityControl > 0)
-						rb.useGravity = false;	//ジャンプ中の重力の影響を切る
+					// 以下、カーブ調整をする場合の処理
+					if (useCurves) {
+						// 以下JUMP00アニメーションについているカーブJumpHeightとGravityControl
+						// JumpHeight:JUMP00でのジャンプの高さ（0〜1）
+						// GravityControl:1⇒ジャンプ中（重力無効）、0⇒重力有効
+						float jumpHeight = anim.GetFloat ("JumpHeight");
+						float gravityControl = anim.GetFloat ("GravityControl"); 
+						if (gravityControl > 0)
+							rb.useGravity = false;	//ジャンプ中の重力の影響を切る
 
-					// レイキャストをキャラクターのセンターから落とす
-					Ray ray = new Ray(transform.position + Vector3.up, -Vector3.up);
-					RaycastHit hitInfo = new RaycastHit();
-					// 高さが useCurvesHeight 以上ある時のみ、コライダーの高さと中心をJUMP00アニメーションについているカーブで調整する
-					if (Physics.Raycast(ray, out hitInfo))
-					{
-						if (hitInfo.distance > useCurvesHeight)
-						{
-							col.height = orgColHight - jumpHeight;			// 調整されたコライダーの高さ
-							float adjCenterY = orgVectColCenter.y + jumpHeight;
-							col.center = new Vector3(0, adjCenterY, 0);	// 調整されたコライダーのセンター
-						}
-						else{
-							// 閾値よりも低い時には初期値に戻す（念のため）					
-							resetCollider();
+						// レイキャストをキャラクターのセンターから落とす
+						Ray ray = new Ray (transform.position + Vector3.up, -Vector3.up);
+						RaycastHit hitInfo = new RaycastHit ();
+						// 高さが useCurvesHeight 以上ある時のみ、コライダーの高さと中心をJUMP00アニメーションについているカーブで調整する
+						if (Physics.Raycast (ray, out hitInfo)) {
+							if (hitInfo.distance > useCurvesHeight) {
+								col.height = orgColHight - jumpHeight;			// 調整されたコライダーの高さ
+								float adjCenterY = orgVectColCenter.y + jumpHeight;
+								col.center = new Vector3 (0, adjCenterY, 0);	// 調整されたコライダーのセンター
+							} else {
+								// 閾値よりも低い時には初期値に戻す（念のため）					
+								resetCollider ();
+							}
 						}
 					}
+					// Jump bool値をリセットする（ループしないようにする）
+					anim.SetBool ("Jump", false);
 				}
-				// Jump bool値をリセットする（ループしないようにする）
-				anim.SetBool("Jump", false);
 			}
-		}
 		// IDLE中の処理
 		// 現在のベースレイヤーがidleStateの時
-		else if (currentBaseState.nameHash == idleState)
-		{
-			//カーブでコライダ調整をしている時は、念のためにリセットする
-			if(useCurves){
-				resetCollider();
+		else if (currentBaseState.nameHash == idleState) {
+				//カーブでコライダ調整をしている時は、念のためにリセットする
+				if (useCurves) {
+					resetCollider ();
+				}
+				// スペースキーを入力したらRest状態になる
+				if (Input.GetButtonDown ("Jump")) {
+					anim.SetBool ("Rest", true);
+				}
 			}
-			// スペースキーを入力したらRest状態になる
-			if (Input.GetButtonDown("Jump")) {
-				anim.SetBool("Rest", true);
-			}
-		}
 		// REST中の処理
 		// 現在のベースレイヤーがrestStateの時
-		else if (currentBaseState.nameHash == restState)
-		{
-			//cameraObject.SendMessage("setCameraPositionFrontView");		// カメラを正面に切り替える
-			// ステートが遷移中でない場合、Rest bool値をリセットする（ループしないようにする）
-			if(!anim.IsInTransition(0))
-			{
-				anim.SetBool("Rest", false);
+		else if (currentBaseState.nameHash == restState) {
+				//cameraObject.SendMessage("setCameraPositionFrontView");		// カメラを正面に切り替える
+				// ステートが遷移中でない場合、Rest bool値をリセットする（ループしないようにする）
+				if (!anim.IsInTransition (0)) {
+					anim.SetBool ("Rest", false);
+				}
 			}
 		}
 	}
@@ -265,5 +266,36 @@ public class UnityChan2D : MonoBehaviour
 		// コンポーネントのHeight、Centerの初期値を戻す
 		col.height = orgColHight;
 		col.center = orgVectColCenter;
+	}
+
+	public void electrocute(){
+		
+		anim.SetBool ("Shocked", true);
+		controlsEnabled = false;
+		StartCoroutine (electrocuteAnimation ());
+	}
+
+	IEnumerator electrocuteAnimation(){
+		for (int i = 0; i < 8; i++) {
+			transform.position = new Vector3 (transform.position.x, transform.position.y, transform.position.z - 0.08f);
+			yield return new WaitForSeconds (0.1f);
+		}
+		controlsEnabled = true;
+		anim.SetBool ("Shocked", false);
+	}
+
+	public void forcePush(){
+		anim.SetBool ("Shocked", true);
+		controlsEnabled = false;
+		StartCoroutine (pushedAnimation ());
+	}
+
+	IEnumerator pushedAnimation(){
+		for (int i = 0; i < 8; i++) {
+			transform.position = new Vector3 (transform.position.x, transform.position.y, transform.position.z + 0.08f);
+			yield return new WaitForSeconds (0.1f);
+		}
+		controlsEnabled = true;
+		anim.SetBool ("Shocked", false);
 	}
 }

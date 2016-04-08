@@ -30,22 +30,22 @@ public class DebrisHit : MonoBehaviour {
 				string bodyPart = other.transform.name;
 				switch (bodyPart) {
 				case "Head":
-					arp.spawnText ("HEAD TRAUMA, YA DINGUS: +20", 20);
+					arp.spawnText ("HEAD TRAUMA, YA DINGUS: +20", 20, other.transform);
 					break;
 				case "Leg":
-					arp.spawnText ("LEG INJURY: +10",10);
+					arp.spawnText ("LEG INJURY: +10",10, other.transform);
 					break;
 				case "Arm":
-					arp.spawnText ("ARM INJURY: +10",10);
+					arp.spawnText ("ARM INJURY: +10",10, other.transform);
 					break;
 				case "Pelvis":
-					arp.spawnText ("FAMILY JEWELS: +40",40);
+					arp.spawnText ("FAMILY JEWELS: +40",40, other.transform);
 					break;
 				case "Spine":
-					arp.spawnText ("SPINE INJURY (YOU'LL NEVER WALK AGAIN): +20", 20);
+					arp.spawnText ("SPINE INJURY (YOU'LL NEVER WALK AGAIN): +20", 20, other.transform);
 					break;
 				default:
-					arp.spawnText ("HERP", 1);
+					arp.spawnText ("HERP", 1, other.transform);
 					break;
 				}
 				onCooldown = true;
