@@ -14,7 +14,7 @@ public class MudBallsCannonController : MonoBehaviour {
 	}
 
 	void Update () {
-		if(Input.GetKeyDown (KeyCode.L)) {
+		if(Input.GetKeyDown (KeyCode.L) && GameObject.FindGameObjectsWithTag("Respawn").Length == 0) {
 			Fire();
 		}
 	}
