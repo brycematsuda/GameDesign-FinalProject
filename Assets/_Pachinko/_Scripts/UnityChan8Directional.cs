@@ -11,7 +11,7 @@ using System.Collections;
 [RequireComponent(typeof (CapsuleCollider))]
 [RequireComponent(typeof (Rigidbody))]
 
-public class UnityChan2D : MonoBehaviour
+public class UnityChan8Directional : MonoBehaviour
 {
 
 	public float animSpeed = 1.5f;				// アニメーション再生速度設定
@@ -53,11 +53,8 @@ public class UnityChan2D : MonoBehaviour
 
 	public bool controlsEnabled = true;
 	private float origZ;
-	private float origX;
 
 	public string flavor = "None";
-	private int direction = 0;
-	private const int forward = 0, backward = 1, up = 2, down = 3;
 
 	// 初期化
 	void Start ()
@@ -76,7 +73,7 @@ public class UnityChan2D : MonoBehaviour
 	}
 
 	//void Update(){
-		
+
 	//}
 
 
@@ -84,7 +81,7 @@ public class UnityChan2D : MonoBehaviour
 	void FixedUpdate ()
 	{
 		if (controlsEnabled) {
-			
+
 			float h = Input.GetAxis ("Horizontal");				// 入力デバイスの水平軸をhで定義
 			float v = Input.GetAxis ("Vertical");	
 			// 入力デバイスの垂直軸をvで定義
@@ -126,7 +123,7 @@ public class UnityChan2D : MonoBehaviour
 				anim.SetBool ("ActivateSwitch", true);
 			}
 			if (anim.IsInTransition (0) && anim.GetNextAnimatorStateInfo (0).
-			nameHash == Animator.StringToHash ("Base Layer.ActivateSwitch")) {
+				nameHash == Animator.StringToHash ("Base Layer.ActivateSwitch")) {
 				anim.SetBool ("ActivateSwitch", false);
 			}
 
@@ -139,23 +136,32 @@ public class UnityChan2D : MonoBehaviour
 			//8 directional movement edit
 			if (Input.GetKey (KeyCode.A)) {
 				velocity += new Vector3 (0, 0, forwardSpeed);
-				transform.rotation = Quaternion.Euler (0, 180, 0);
-				direction = backward;
+				//animController.ChangeAnimation (QuerySDMecanimController.QueryChanSDAnimationType.NORMAL_RUN, true);
+				if (Input.GetKey (KeyCode.W)) {
+					transform.rotation = Quaternion.Euler (0, 225, 0);
+				} else if (Input.GetKey (KeyCode.S)) {
+					transform.rotation = Quaternion.Euler (0, 135, 0);
+				} else {
+					transform.rotation = Quaternion.Euler (0, 180, 0);
+				}
 			} else if (Input.GetKey (KeyCode.D)) {
 				velocity += new Vector3 (0, 0, forwardSpeed);
 				//animController.ChangeAnimation (QuerySDMecanimController.QueryChanSDAnimationType.NORMAL_RUN, true);
-				transform.rotation = Quaternion.Euler (0, 0, 0);
-				direction = forward;
+				if (Input.GetKey (KeyCode.W)) {
+					transform.rotation = Quaternion.Euler (0, 315, 0);
+				} else if (Input.GetKey (KeyCode.S)) {
+					transform.rotation = Quaternion.Euler (0, 45, 0);
+				} else {
+					transform.rotation = Quaternion.Euler (0, 0, 0);
+				}
 			} else if (Input.GetKey (KeyCode.W)) {
 				//animController.ChangeAnimation (QuerySDMecanimController.QueryChanSDAnimationType.NORMAL_RUN, true);
 				velocity += new Vector3 (0, 0, forwardSpeed * 2);
 				transform.rotation = Quaternion.Euler (0, 270, 0);
-				direction = up;
 			} else if (Input.GetKey (KeyCode.S)) {
 				//animController.ChangeAnimation (QuerySDMecanimController.QueryChanSDAnimationType.NORMAL_RUN, true);
 				velocity += new Vector3 (0, 0, forwardSpeed * 2);
 				transform.rotation = Quaternion.Euler (0, 90, 0);
-				direction = down;
 			} 
 			//allow movement using side keys, rather than having to wait for slow rotation
 			if (Input.GetKey (KeyCode.D)) {
@@ -181,9 +187,9 @@ public class UnityChan2D : MonoBehaviour
 					resetCollider ();
 				}
 			}
-		// JUMP中の処理
-		// 現在のベースレイヤーがjumpStateの時
-		else if (currentBaseState.nameHash == jumpState) {
+			// JUMP中の処理
+			// 現在のベースレイヤーがjumpStateの時
+			else if (currentBaseState.nameHash == jumpState) {
 				//cameraObject.SendMessage("setCameraPositionJumpView");	// ジャンプ中のカメラに変更
 				// ステートがトランジション中でない場合
 				if (!anim.IsInTransition (0)) {
@@ -217,9 +223,9 @@ public class UnityChan2D : MonoBehaviour
 					anim.SetBool ("Jump", false);
 				}
 			}
-		// IDLE中の処理
-		// 現在のベースレイヤーがidleStateの時
-		else if (currentBaseState.nameHash == idleState) {
+			// IDLE中の処理
+			// 現在のベースレイヤーがidleStateの時
+			else if (currentBaseState.nameHash == idleState) {
 				//カーブでコライダ調整をしている時は、念のためにリセットする
 				if (useCurves) {
 					resetCollider ();
@@ -229,9 +235,9 @@ public class UnityChan2D : MonoBehaviour
 					anim.SetBool ("Rest", true);
 				}
 			}
-		// REST中の処理
-		// 現在のベースレイヤーがrestStateの時
-		else if (currentBaseState.nameHash == restState) {
+			// REST中の処理
+			// 現在のベースレイヤーがrestStateの時
+			else if (currentBaseState.nameHash == restState) {
 				//cameraObject.SendMessage("setCameraPositionFrontView");		// カメラを正面に切り替える
 				// ステートが遷移中でない場合、Rest bool値をリセットする（ループしないようにする）
 				if (!anim.IsInTransition (0)) {
@@ -264,40 +270,19 @@ public class UnityChan2D : MonoBehaviour
 	}
 
 	public void electrocute(){
-		
+
 		anim.SetBool ("Shocked", true);
 		origZ = transform.position.z;
-		origX = transform.position.x;
 		controlsEnabled = false;
 		StartCoroutine (electrocuteAnimation ());
 	}
 
 	IEnumerator electrocuteAnimation(){
-		float yMovement = 0, zMovement = 0;
-		bool stopper = false;
-		switch (direction) {
-		case forward://send them backward
-			zMovement = -0.2f;
-			yMovement = 0;
-			break;
-		case backward:
-			zMovement = 0.2f;
-			yMovement = 0;
-			break;
-		case up:
-			zMovement = 0f;
-			yMovement = 0.2f;
-			break;
-		case down:
-			zMovement = 0f;
-			yMovement = -0.2f;
-			break;
-		}
-		float diff = Mathf.Abs (transform.position.z) - Mathf.Abs (origZ);
-		float diff2 = Mathf.Abs (transform.position.x) - Mathf.Abs (origX);
 		for (int i = 0; i < 10; i++) {
-			if (Mathf.Abs(diff)<1.5f && Mathf.Abs(diff2)<1.5f) {
-				transform.position = new Vector3 (transform.position.x + yMovement, transform.position.y, transform.position.z + zMovement);
+			if (transform.position.z > origZ - 1.5f) {
+				transform.position = new Vector3 (transform.position.x, transform.position.y, transform.position.z - 0.2f);
+			} else {
+				Debug.Log ("Exceeded");
 			}
 			yield return new WaitForSeconds (0.1f);
 		}
@@ -307,38 +292,17 @@ public class UnityChan2D : MonoBehaviour
 
 	public void forcePush(){
 		anim.SetBool ("Shocked", true);
-		origZ = transform.position.z;
-		origX = transform.position.x;
 		controlsEnabled = false;
 		origZ = transform.position.z;
 		StartCoroutine (pushedAnimation ());
 	}
 
 	IEnumerator pushedAnimation(){
-		float yMovement = 0, zMovement = 0;
-		switch (direction) {
-		case forward://send them backward
-			zMovement = 0.2f;
-			yMovement = 0;
-			break;
-		case backward:
-			zMovement = -0.2f;
-			yMovement = 0;
-			break;
-		case up:
-			zMovement = 0f;
-			yMovement = -0.2f;
-			break;
-		case down:
-			zMovement = 0f;
-			yMovement = 0.2f;
-			break;
-		}
-		float diff = Mathf.Abs (transform.position.z) - Mathf.Abs (origZ);
-		float diff2 = Mathf.Abs (transform.position.x) - Mathf.Abs (origX);
 		for (int i = 0; i < 10; i++) {
-			if (Mathf.Abs(diff)<1.5f && Mathf.Abs(diff2)<1.5f) {
-				transform.position = new Vector3 (transform.position.x+ yMovement, transform.position.y , transform.position.z + zMovement);
+			if (transform.position.z < origZ + 1.5f) {
+				transform.position = new Vector3 (transform.position.x, transform.position.y, transform.position.z + 0.2f);
+			} else {
+				Debug.Log ("Exceeded");
 			}
 
 
@@ -347,5 +311,4 @@ public class UnityChan2D : MonoBehaviour
 		controlsEnabled = true;
 		anim.SetBool ("Shocked", false);
 	}
-		
 }

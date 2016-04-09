@@ -17,7 +17,8 @@ public class TilePuzzleCube : MonoBehaviour {
 		Wall = 2,
 		Whale = 3,
 		Orange = 4,
-		Slider = 5
+		Slider = 5,
+		Water = 6
 	}
 	void Start () {
 		thePlayer = GameObject.FindGameObjectWithTag ("Player").GetComponent<UnityChan2D> ();
@@ -33,6 +34,7 @@ public class TilePuzzleCube : MonoBehaviour {
 			switch (cubeType) {
 			case (int) CubeTypes.Electric://yellow cubes erectrocute you cuz dey asian
 				thePlayer.electrocute ();
+				GetComponent<AudioSource> ().Play ();
 				break;
 			case (int) CubeTypes.Normal://pink cubes don't do anything
 				break;
@@ -44,6 +46,11 @@ public class TilePuzzleCube : MonoBehaviour {
 				thePlayer.flavor = "Orange";
 				break;
 			case (int) CubeTypes.Slider://Purple tiles push you forward one and set your flavor to lemon. Piranhas hate lemons and will avoid you at all costs.
+				thePlayer.flavor = "Lemon";
+				thePlayer.forcePush ();
+				break;
+			case (int) CubeTypes.Water://Water tiles are filled with piranhas. Piranhas love oranges and will eat you if you taste like them.
+										//also, electricity conductoos water, so if it is next to a yellow tile, it will send you back one.
 				thePlayer.flavor = "Lemon";
 				thePlayer.forcePush ();
 				break;
