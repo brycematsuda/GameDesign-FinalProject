@@ -27,3 +27,5 @@ EditorBuildSettings:
     path: Assets/_Pachinko/_Scenes/Pachinko.unity
   - enabled: 1
     path: Assets/MudBalls/Scenes/MudBalls.unity
+  - enabled: 1
+    path: Assets/_Pachinko/_Scenes/Pachinko 2.unity

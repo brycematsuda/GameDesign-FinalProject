@@ -75,9 +75,17 @@ public class UnityChan2D : MonoBehaviour
 		origSpeed = forwardSpeed;
 	}
 
-	//void Update(){
-		
-	//}
+	void Update(){
+		if (controlsEnabled) {
+			if (Input.GetKeyDown (KeyCode.E)) {
+				anim.SetBool ("ActivateSwitch", true);
+			}
+			if (anim.IsInTransition (0) && anim.GetNextAnimatorStateInfo (0).
+			nameHash == Animator.StringToHash ("Base Layer.ActivateSwitch")) {
+				anim.SetBool ("ActivateSwitch", false);
+			}
+		}
+	}
 
 
 	// 以下、メイン処理.リジッドボディと絡めるので、FixedUpdate内で処理を行う.
@@ -293,9 +301,10 @@ public class UnityChan2D : MonoBehaviour
 			yMovement = -0.2f;
 			break;
 		}
-		float diff = Mathf.Abs (transform.position.z) - Mathf.Abs (origZ);
-		float diff2 = Mathf.Abs (transform.position.x) - Mathf.Abs (origX);
+
 		for (int i = 0; i < 10; i++) {
+			float diff = Mathf.Abs (transform.position.z) - Mathf.Abs (origZ);
+			float diff2 = Mathf.Abs (transform.position.x) - Mathf.Abs (origX);
 			if (Mathf.Abs(diff)<1.5f && Mathf.Abs(diff2)<1.5f) {
 				transform.position = new Vector3 (transform.position.x + yMovement, transform.position.y, transform.position.z + zMovement);
 			}
@@ -334,11 +343,14 @@ public class UnityChan2D : MonoBehaviour
 			yMovement = 0.2f;
 			break;
 		}
-		float diff = Mathf.Abs (transform.position.z) - Mathf.Abs (origZ);
-		float diff2 = Mathf.Abs (transform.position.x) - Mathf.Abs (origX);
-		for (int i = 0; i < 10; i++) {
-			if (Mathf.Abs(diff)<1.5f && Mathf.Abs(diff2)<1.5f) {
-				transform.position = new Vector3 (transform.position.x+ yMovement, transform.position.y , transform.position.z + zMovement);
+
+		for (int i = 0; i < 12; i++) {
+			float diff = Mathf.Abs (transform.position.z) - Mathf.Abs (origZ);
+			float diff2 = Mathf.Abs (transform.position.x) - Mathf.Abs (origX);
+			if (Mathf.Abs (diff) < 1.8f && Mathf.Abs (diff2) < 1.8f) {
+				transform.position = new Vector3 (transform.position.x + yMovement, transform.position.y, transform.position.z + zMovement);
+			} else {
+				Debug.Log ("EXCEEDED");
 			}
 
 
