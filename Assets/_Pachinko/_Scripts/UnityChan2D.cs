@@ -285,24 +285,24 @@ public class UnityChan2D : MonoBehaviour
 		bool stopper = false;
 		switch (direction) {
 		case forward://send them backward
-			zMovement = -0.2f;
+			zMovement = -0.15f;
 			yMovement = 0;
 			break;
 		case backward:
-			zMovement = 0.2f;
+			zMovement = 0.15f;
 			yMovement = 0;
 			break;
 		case up:
 			zMovement = 0f;
-			yMovement = 0.2f;
+			yMovement = 0.15f;
 			break;
 		case down:
 			zMovement = 0f;
-			yMovement = -0.2f;
+			yMovement = -0.15f;
 			break;
 		}
 
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 12; i++) {
 			float diff = Mathf.Abs (transform.position.z) - Mathf.Abs (origZ);
 			float diff2 = Mathf.Abs (transform.position.x) - Mathf.Abs (origX);
 			if (Mathf.Abs(diff)<1.5f && Mathf.Abs(diff2)<1.5f) {
@@ -327,27 +327,27 @@ public class UnityChan2D : MonoBehaviour
 		float yMovement = 0, zMovement = 0;
 		switch (direction) {
 		case forward://send them backward
-			zMovement = 0.2f;
+			zMovement = 0.3f;
 			yMovement = 0;
 			break;
 		case backward:
-			zMovement = -0.2f;
+			zMovement = -0.3f;
 			yMovement = 0;
 			break;
 		case up:
 			zMovement = 0f;
-			yMovement = -0.2f;
+			yMovement = -0.3f;
 			break;
 		case down:
 			zMovement = 0f;
-			yMovement = 0.2f;
+			yMovement = 0.3f;
 			break;
 		}
 
 		for (int i = 0; i < 12; i++) {
 			float diff = Mathf.Abs (transform.position.z) - Mathf.Abs (origZ);
 			float diff2 = Mathf.Abs (transform.position.x) - Mathf.Abs (origX);
-			if (Mathf.Abs (diff) < 1.8f && Mathf.Abs (diff2) < 1.8f) {
+			if (Mathf.Abs (diff) < 2f && Mathf.Abs (diff2) < 2f) {
 				transform.position = new Vector3 (transform.position.x + yMovement, transform.position.y, transform.position.z + zMovement);
 			} else {
 				Debug.Log ("EXCEEDED");
@@ -358,6 +358,49 @@ public class UnityChan2D : MonoBehaviour
 		}
 		controlsEnabled = true;
 		anim.SetBool ("Shocked", false);
+	}
+
+	public void getEaten(){
+
+		anim.SetBool ("Eaten", true);
+		origZ = transform.position.z;
+		origX = transform.position.x;
+		controlsEnabled = false;
+		StartCoroutine (eatenAnimation ());
+	}
+
+	IEnumerator eatenAnimation(){
+		float yMovement = 0, zMovement = 0;
+		bool stopper = false;
+		switch (direction) {
+		case forward://send them backward
+			zMovement = -0.2f;
+			yMovement = 0;
+			break;
+		case backward:
+			zMovement = 0.2f;
+			yMovement = 0;
+			break;
+		case up:
+			zMovement = 0f;
+			yMovement = 0.2f;
+			break;
+		case down:
+			zMovement = 0f;
+			yMovement = -0.2f;
+			break;
+		}
+
+		for (int i = 0; i < 18; i++) {
+			float diff = Mathf.Abs (transform.position.z) - Mathf.Abs (origZ);
+			float diff2 = Mathf.Abs (transform.position.x) - Mathf.Abs (origX);
+			if (Mathf.Abs(diff)<1.5f && Mathf.Abs(diff2)<1.5f) {
+				transform.position = new Vector3 (transform.position.x + yMovement, transform.position.y, transform.position.z + zMovement);
+			}
+			yield return new WaitForSeconds (0.1f);
+		}
+		controlsEnabled = true;
+		anim.SetBool ("Eaten", false);
 	}
 		
 }
