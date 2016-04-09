@@ -59,6 +59,8 @@ public class UnityChan2D : MonoBehaviour
 	private int direction = 0;
 	private const int forward = 0, backward = 1, up = 2, down = 3;
 
+	private bool gettingShocked = false, gettingPushed = false, gettingAte = false, knockedOut = false;
+
 	// 初期化
 	void Start ()
 	{
@@ -85,6 +87,66 @@ public class UnityChan2D : MonoBehaviour
 				anim.SetBool ("ActivateSwitch", false);
 			}
 		}
+		if (gettingPushed) {
+			//transform.position = Vector3.MoveTowards (transform.position, new Vector3 (transform.position.x, transform.position.y, transform.position.z + 1.5f), 1 * Time.deltaTime);
+			Vector3 target = Vector3.zero;
+			switch (direction) {
+			case forward:
+				target = new Vector3 (transform.position.x, transform.position.y, transform.position.z + 3f);
+				break;
+			case backward:
+				target = new Vector3 (transform.position.x, transform.position.y, transform.position.z - 3f);
+				break;
+			case up:
+				target = new Vector3 (transform.position.x - 3f, transform.position.y, transform.position.z);
+				break;
+			case down:
+				target = new Vector3 (transform.position.x + 3f, transform.position.y, transform.position.z);
+				break;
+			}
+			transform.position = Vector3.MoveTowards (transform.position, target, 2 * Time.deltaTime);
+		}
+
+		if (gettingAte) {
+			//transform.position = Vector3.MoveTowards (transform.position, new Vector3 (transform.position.x, transform.position.y, transform.position.z + 1.5f), 1 * Time.deltaTime);
+			Vector3 target = Vector3.zero;
+			switch (direction) {
+			case forward:
+				target = new Vector3 (transform.position.x, transform.position.y, transform.position.z - 1f);
+				break;
+			case backward:
+				target = new Vector3 (transform.position.x, transform.position.y, transform.position.z + 1f);
+				break;
+			case up:
+				target = new Vector3 (transform.position.x + 1f, transform.position.y, transform.position.z);
+				break;
+			case down:
+				target = new Vector3 (transform.position.x - 1f, transform.position.y, transform.position.z);
+				break;
+			}
+			transform.position = Vector3.MoveTowards (transform.position, target, 0.5f * Time.deltaTime);
+		}
+
+		if (gettingShocked || knockedOut) {
+			//transform.position = Vector3.MoveTowards (transform.position, new Vector3 (transform.position.x, transform.position.y, transform.position.z + 1.5f), 1 * Time.deltaTime);
+			Vector3 target = Vector3.zero;
+			switch (direction) {
+			case forward:
+				target = new Vector3 (transform.position.x, transform.position.y, transform.position.z - 0.5f);
+				break;
+			case backward:
+				target = new Vector3 (transform.position.x, transform.position.y, transform.position.z + 0.5f);
+				break;
+			case up:
+				target = new Vector3 (transform.position.x + 0.5f, transform.position.y, transform.position.z);
+				break;
+			case down:
+				target = new Vector3 (transform.position.x - 0.5f, transform.position.y, transform.position.z);
+				break;
+			}
+			transform.position = Vector3.MoveTowards (transform.position, target, 1 * Time.deltaTime);
+		}
+
 	}
 
 
@@ -276,126 +338,72 @@ public class UnityChan2D : MonoBehaviour
 		anim.SetBool ("Shocked", true);
 		origZ = transform.position.z;
 		origX = transform.position.x;
+		gettingShocked = true;
 		controlsEnabled = false;
 		StartCoroutine (electrocuteAnimation ());
 	}
 
 	IEnumerator electrocuteAnimation(){
-		float yMovement = 0, zMovement = 0;
-		bool stopper = false;
-		switch (direction) {
-		case forward://send them backward
-			zMovement = -0.15f;
-			yMovement = 0;
-			break;
-		case backward:
-			zMovement = 0.15f;
-			yMovement = 0;
-			break;
-		case up:
-			zMovement = 0f;
-			yMovement = 0.15f;
-			break;
-		case down:
-			zMovement = 0f;
-			yMovement = -0.15f;
-			break;
-		}
 
-		for (int i = 0; i < 12; i++) {
-			float diff = Mathf.Abs (transform.position.z) - Mathf.Abs (origZ);
-			float diff2 = Mathf.Abs (transform.position.x) - Mathf.Abs (origX);
-			if (Mathf.Abs(diff)<1.5f && Mathf.Abs(diff2)<1.5f) {
-				transform.position = new Vector3 (transform.position.x + yMovement, transform.position.y, transform.position.z + zMovement);
-			}
+		for (int i = 0; i < 10; i++) {
 			yield return new WaitForSeconds (0.1f);
 		}
 		controlsEnabled = true;
+		gettingShocked = false;
 		anim.SetBool ("Shocked", false);
 	}
 
 	public void forcePush(){
 		anim.SetBool ("Shocked", true);
-		origZ = transform.position.z;
-		origX = transform.position.x;
 		controlsEnabled = false;
 		origZ = transform.position.z;
+		gettingPushed = true;
 		StartCoroutine (pushedAnimation ());
 	}
 
 	IEnumerator pushedAnimation(){
-		float yMovement = 0, zMovement = 0;
-		switch (direction) {
-		case forward://send them backward
-			zMovement = 0.3f;
-			yMovement = 0;
-			break;
-		case backward:
-			zMovement = -0.3f;
-			yMovement = 0;
-			break;
-		case up:
-			zMovement = 0f;
-			yMovement = -0.3f;
-			break;
-		case down:
-			zMovement = 0f;
-			yMovement = 0.3f;
-			break;
-		}
-
-		for (int i = 0; i < 12; i++) {
-			float diff = Mathf.Abs (transform.position.z) - Mathf.Abs (origZ);
-			float diff2 = Mathf.Abs (transform.position.x) - Mathf.Abs (origX);
-			if (Mathf.Abs (diff) < 2f && Mathf.Abs (diff2) < 2f) {
-				transform.position = new Vector3 (transform.position.x + yMovement, transform.position.y, transform.position.z + zMovement);
-			} else {
-				Debug.Log ("EXCEEDED");
-			}
-
-
+		for (int i = 0; i < 10; i++) {
 			yield return new WaitForSeconds (0.1f);
 		}
 		controlsEnabled = true;
 		anim.SetBool ("Shocked", false);
+		gettingPushed = false;
 	}
 
 	public void getEaten(){
 
 		anim.SetBool ("Eaten", true);
-		origZ = transform.position.z;
-		origX = transform.position.x;
 		controlsEnabled = false;
+		gettingAte = true;
+		transform.position = new Vector3 (transform.position.x, transform.position.y + 0.5f, transform.position.z);
 		StartCoroutine (eatenAnimation ());
 	}
 
 	IEnumerator eatenAnimation(){
-		float yMovement = 0, zMovement = 0;
-		bool stopper = false;
-		switch (direction) {
-		case forward://send them backward
-			zMovement = -0.2f;
-			yMovement = 0;
-			break;
-		case backward:
-			zMovement = 0.2f;
-			yMovement = 0;
-			break;
-		case up:
-			zMovement = 0f;
-			yMovement = 0.2f;
-			break;
-		case down:
-			zMovement = 0f;
-			yMovement = -0.2f;
-			break;
-		}
 
-		for (int i = 0; i < 18; i++) {
-			float diff = Mathf.Abs (transform.position.z) - Mathf.Abs (origZ);
-			float diff2 = Mathf.Abs (transform.position.x) - Mathf.Abs (origX);
-			if (Mathf.Abs(diff)<1.5f && Mathf.Abs(diff2)<1.5f) {
-				transform.position = new Vector3 (transform.position.x + yMovement, transform.position.y, transform.position.z + zMovement);
+
+		for (int i = 0; i < 20; i++) {
+			if (i > 5) {
+				gettingAte = false;
+			}
+			yield return new WaitForSeconds (0.1f);
+		}
+		controlsEnabled = true;
+		anim.SetBool ("Eaten", false);
+
+	}
+
+	public void knockedTheFOut(){
+		anim.SetBool ("Eaten", true);
+		controlsEnabled = false;
+		knockedOut = true;
+		StartCoroutine (Recover ());
+	}
+
+	IEnumerator Recover(){
+		for (int i = 0; i < 20; i++) {
+			if (i > 5) {
+				knockedOut = false;
 			}
 			yield return new WaitForSeconds (0.1f);
 		}

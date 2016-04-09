@@ -6,7 +6,7 @@ public class BallController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody> ();
-		rb.AddForce (0, 0, 100);
+		rb.AddForce (0, 0, 70);
 		//transform.rotation = Quaternion.Euler (Random.Range (0, 90),Random.Range (0, 90),Random.Range (0, 90));
 	}
 	

@@ -8,7 +8,11 @@ public class TilePuzzleCube : MonoBehaviour {
 	public bool adjacentToYellow = false;//only matters for blue tiles
 	public GameObject nuxBlock; //for green tiles
 	public AudioSource[] soundFx;
+	public float life = 3f;
 	private UnityChan2D thePlayer;
+	public int numNuxBlocks = 1;
+
+	static float nuxTime = 0;
 
 	// Use this for initialization
 
@@ -29,7 +33,22 @@ public class TilePuzzleCube : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		
 	
+	}
+
+	void FixedUpdate(){
+		if (cubeType == (int) CubeTypes.Nintendoge) { 
+			if (nuxTime <= 0) {
+				nuxTime = 0;
+				nuxBlock.SetActive (false);
+			} else {
+				nuxBlock.SetActive (true);
+				nuxTime = nuxTime - (0.03f/numNuxBlocks);//fixedupdate is called 30 times per second by default, but each block is calling it lol
+			}
+		}
+
+
 	}
 
 	void OnCollisionEnter(Collision other){
@@ -41,9 +60,10 @@ public class TilePuzzleCube : MonoBehaviour {
 				break;
 			case (int) CubeTypes.Normal://pink cubes don't do anything
 				break;
-			case (int) CubeTypes.Wall://red cubes are just walls, and shouldn't allow the player to pass throug
+			case (int) CubeTypes.Wall://red cubes are just walls, and shouldn't allow the player to pass through. but still knocks em the f down optionally
+//				thePlayer.knockedTheFOut();
 				break;
-			case (int) CubeTypes.Whale://Green tiles spawn a whale that slows the player down
+			case (int) CubeTypes.Whale://Whale tiles spawn a whale that slows the player down
 				break;
 			case (int) CubeTypes.Orange://Orange tiles change player's flavor to Orange. Piranhas love oranges and will lick you if you try to cross water
 				thePlayer.flavor = "Orange";
@@ -63,23 +83,16 @@ public class TilePuzzleCube : MonoBehaviour {
 					thePlayer.getEaten ();
 				}
 				break;
-			case (int) CubeTypes.Nintendoge://causes an image of glorious leader Nuxoll-kun to block the scene
-				nuxBlock.SetActive (true);
-				if (IsInvoking ("disableImage")) { 
-					CancelInvoke ("disableImage");
-					Invoke ("disableImage", 3f);
-				} else {
-					Invoke ("disableImage", 3f);
+			case (int) CubeTypes.Nintendoge://causes an image of glorious leader Nuxoll-kun to block the scene for three seconds
+				nuxTime = nuxTime + life;
+				if (nuxTime > 10) {
+					nuxTime = 10;
 				}
-
 				break;
 			}
 
 		}
 	}
-
-	void disableImage(){
-		nuxBlock.SetActive(false);
-	}
+		
 
 }
