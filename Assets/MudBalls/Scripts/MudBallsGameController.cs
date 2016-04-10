@@ -19,6 +19,7 @@ public class MudBallsGameController : MonoBehaviour {
 
 		if (basket.GetComponent<MudBallsBasketController>().isCaught) {
 			caughtText.text = "Caught!";
+			player.transform.GetChild(0).GetComponent<UnityChan2DController>().enabled = false;
 		} else {
 			caughtText.text = "";
 		}

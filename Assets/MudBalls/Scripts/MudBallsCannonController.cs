@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class MudBallsCannonController : MonoBehaviour {
 
@@ -9,12 +10,16 @@ public class MudBallsCannonController : MonoBehaviour {
 	public float angle;
 	public int numBalls;
 	private	 AudioSource audio;
+	public Text shotText;
 
 	void Start() {
 		audio = GetComponent<AudioSource>();
+		shotText.text = "Shots Remaining: " + numBalls.ToString();
 	}
 
 	void Update () {
+		shotText.text = "Shots Remaining: " + numBalls.ToString();
+
 		if(Input.GetKeyDown (KeyCode.L) && GameObject.FindGameObjectsWithTag("Respawn").Length == 0 && numBalls > 0) {
 			Fire();
 			numBalls = numBalls - 1;
