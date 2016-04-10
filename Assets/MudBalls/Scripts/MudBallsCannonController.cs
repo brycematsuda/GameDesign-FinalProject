@@ -7,6 +7,7 @@ public class MudBallsCannonController : MonoBehaviour {
 	public GameObject fireSpot;
 	public float initSpeed;
 	public float angle;
+	public int numBalls;
 	private	 AudioSource audio;
 
 	void Start() {
@@ -14,8 +15,9 @@ public class MudBallsCannonController : MonoBehaviour {
 	}
 
 	void Update () {
-		if(Input.GetKeyDown (KeyCode.L) && GameObject.FindGameObjectsWithTag("Respawn").Length == 0) {
+		if(Input.GetKeyDown (KeyCode.L) && GameObject.FindGameObjectsWithTag("Respawn").Length == 0 && numBalls > 0) {
 			Fire();
+			numBalls = numBalls - 1;
 		}
 	}
 
