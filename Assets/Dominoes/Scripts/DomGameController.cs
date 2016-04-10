@@ -11,7 +11,10 @@ public class DomGameController : MonoBehaviour {
 	public Text scoreGui;
 	public Text winLoseGui;
 	private bool isDisabled;
-
+	private AudioSource audio;
+	private float actionCooldown = 2.0f;
+	private float timeSinceAction = 0.0f;
+ 	
 	// Use this for initialization
 	void Start () {
 		score = 99999;
@@ -23,7 +26,13 @@ public class DomGameController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+	    timeSinceAction += Time.deltaTime;
+	    
+	    if (timeSinceAction > actionCooldown)
+		{
+		    //timeSinceAction = 0;
+		    
+		
 		if (player.transform.position.y > 0) {
 			if (!isDisabled) {
 				player.GetComponent<UnityChan2DController>().enabled = false;
@@ -32,8 +41,9 @@ public class DomGameController : MonoBehaviour {
 		} else {
 			player.GetComponent<UnityChan2DController>().enabled = true;
 			isDisabled = false;
+		    timeSinceAction = 0;
 		}
-
+		}
 		if (player.transform.position.y < -1.35) {
 			if (!isDisabled) {
 				player.GetComponent<UnityChan2DController>().enabled = !player.GetComponent<UnityChan2DController>().enabled;
@@ -45,6 +55,7 @@ public class DomGameController : MonoBehaviour {
 		}
 
 		if (player.GetComponent<DomPlayerController>().touchGoal == true) {
+			player.GetComponent<UnityChan2DController>().enabled = false;
 			player.GetComponent<DomPlayerController>().canMove = false;
 			winLoseGui.text = "Winner!";
 			StartCoroutine(Wait(3));			

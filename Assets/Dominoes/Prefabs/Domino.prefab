@@ -14,7 +14,7 @@ GameObject:
   - 50: {fileID: 5052226}
   - 82: {fileID: 8250946}
   - 114: {fileID: 11469916}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Domino
   m_TagString: Domino
   m_Icon: {fileID: 0}

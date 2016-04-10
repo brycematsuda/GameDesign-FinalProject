@@ -13,6 +13,7 @@ TagManager:
   - Debris
   - PointsText
   - Barrel
+  - Music
   layers:
   - Default
   - TransparentFX
