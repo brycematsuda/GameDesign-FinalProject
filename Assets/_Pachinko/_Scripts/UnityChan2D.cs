@@ -61,6 +61,8 @@ public class UnityChan2D : MonoBehaviour
 
 	private bool gettingShocked = false, gettingPushed = false, gettingAte = false, knockedOut = false;
 
+	public Light normal, electroc;
+
 	// 初期化
 	void Start ()
 	{
@@ -340,16 +342,23 @@ public class UnityChan2D : MonoBehaviour
 		origX = transform.position.x;
 		gettingShocked = true;
 		controlsEnabled = false;
+		normal.gameObject.SetActive (false);
 		StartCoroutine (electrocuteAnimation ());
 	}
 
 	IEnumerator electrocuteAnimation(){
 
 		for (int i = 0; i < 10; i++) {
+			if (i % 2 == 0) {
+				electroc.gameObject.SetActive (true);
+			} else {
+				electroc.gameObject.SetActive (false);
+			}
 			yield return new WaitForSeconds (0.1f);
 		}
 		controlsEnabled = true;
 		gettingShocked = false;
+		normal.gameObject.SetActive (true);
 		anim.SetBool ("Shocked", false);
 	}
 
