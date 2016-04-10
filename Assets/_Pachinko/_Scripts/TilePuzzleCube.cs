@@ -85,6 +85,7 @@ public class TilePuzzleCube : MonoBehaviour {
 				break;
 			case (int) CubeTypes.Nintendoge://causes an image of glorious leader Nuxoll-kun to block the scene for three seconds
 				nuxTime = nuxTime + life;
+				soundFx [0].Play ();
 				if (nuxTime > 10) {
 					nuxTime = 10;
 				}
