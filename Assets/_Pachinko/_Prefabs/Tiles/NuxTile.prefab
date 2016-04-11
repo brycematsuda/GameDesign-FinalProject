@@ -27,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 128930}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.7699966, y: -2.38, z: -16.46}
+  m_LocalPosition: {x: 7.53, y: -2.38, z: 17.81}
   m_LocalScale: {x: 2, y: 1, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -168,7 +168,7 @@ MonoBehaviour:
   soundFx:
   - {fileID: 8279252}
   life: 3
-  numNuxBlocks: 28
+  numNuxBlocks: 29
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
