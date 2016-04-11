@@ -15,7 +15,7 @@ public class LogGameController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		score = 99999;
+		score = 0;
 		liveGui.text = "Lives: " + lives.ToString();
 		scoreGui.text = "Score: " + score.ToString();
 		winLoseGui.text = "";
@@ -39,6 +39,16 @@ public class LogGameController : MonoBehaviour {
 //			winLoseGui.text = "Winner!";
 //			StartCoroutine(Wait(3));			
 //		}
+	}
+
+	public void updateGUI() {
+		score += (int) Random.Range(-5f, 50f);
+		if(score < 0) {
+			score = 0;
+		}
+
+		liveGui.text = "Lives: " + lives.ToString();
+		scoreGui.text = "Score: " + score.ToString();
 	}
 
 	IEnumerator Wait(float duration)

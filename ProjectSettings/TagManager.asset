@@ -14,6 +14,8 @@ TagManager:
   - PointsText
   - Barrel
   - Music
+  - Log
+  - Mud
   layers:
   - Default
   - TransparentFX
