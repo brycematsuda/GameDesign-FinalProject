@@ -7,6 +7,7 @@ public class BallController : MonoBehaviour {
 	void Start () {
 		rb = GetComponent<Rigidbody> ();
 		rb.AddForce (0, 0, 70);
+		Invoke ("startingForce", 53f);
 		//transform.rotation = Quaternion.Euler (Random.Range (0, 90),Random.Range (0, 90),Random.Range (0, 90));
 	}
 	
@@ -17,5 +18,15 @@ public class BallController : MonoBehaviour {
 			rb.velocity = new Vector3 (rb.velocity.x, rb.velocity.y, 5);
 		}
 		*/
+	}
+
+	void startingForce(){
+		rb.AddForce (0, 0, 70);
+	}
+
+	public void skipIntro(){
+		CancelInvoke ("startingForce");
+		transform.position = new Vector3 (transform.position.x, transform.position.y, transform.position.z + 13);
+		rb.AddForce (0, 0, 70);
 	}
 }
