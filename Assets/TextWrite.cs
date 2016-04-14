@@ -39,6 +39,7 @@ public class TextWrite : MonoBehaviour {
 			currentLine = additionalLines.Length - 1;
 			writeNext ();
 			bc.skipIntro ();
+			DropTimes.startDrop ();
 			if (texts != null) {
 				Destroy (texts);
 			}
@@ -54,7 +55,6 @@ public class TextWrite : MonoBehaviour {
 
 	IEnumerator writeText(){
 		while (true) {
-			//Debug.Log ("WRITING");
 			if (currentPosition < Text.Length) {
 				CancelInvoke ("writeNext");
 				setReady = false;
@@ -70,11 +70,12 @@ public class TextWrite : MonoBehaviour {
 				nextLineReady = true;
 				setReady = true;
 				textSound.Stop ();
-				Debug.Log (currentLine);
 				currentLine++;
 				if (currentLine >= additionalLines.Length) {
 					pgc.playMusic ();
+					Destroy (texts);
 					Destroy (gameObject);
+					DropTimes.startDrop ();
 				}
 			}
 
@@ -84,8 +85,10 @@ public class TextWrite : MonoBehaviour {
 
 	void writeNext(){
 		if (currentLine < additionalLines.Length) {
-			WriteText (additionalLines[currentLine]);
+			WriteText (additionalLines [currentLine]);
 			numLines = 1;
+		} else {
+			Destroy (texts);
 		}
 
 		//textSound.Play ();

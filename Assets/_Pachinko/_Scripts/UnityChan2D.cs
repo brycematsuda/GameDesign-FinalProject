@@ -391,7 +391,7 @@ public class UnityChan2D : MonoBehaviour
 	IEnumerator eatenAnimation(){
 
 
-		for (int i = 0; i < 20; i++) {
+		for (int i = 0; i < 14; i++) {
 			if (i > 5) {
 				gettingAte = false;
 			}
@@ -410,7 +410,7 @@ public class UnityChan2D : MonoBehaviour
 	}
 
 	IEnumerator Recover(){
-		for (int i = 0; i < 20; i++) {
+		for (int i = 0; i < 16; i++) {
 			if (i > 5) {
 				knockedOut = false;
 			}

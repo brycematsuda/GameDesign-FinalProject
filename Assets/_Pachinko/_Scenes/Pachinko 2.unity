@@ -132,6 +132,10 @@ Prefab:
       propertyPath: m_Name
       value: NuxTile (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 11443916, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
+      propertyPath: lifetime
+      value: 45
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
   m_IsPrefabParent: 0
@@ -186,6 +190,10 @@ Prefab:
       propertyPath: m_Name
       value: NuxTile (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 11443916, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
+      propertyPath: lifetime
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
   m_IsPrefabParent: 0
@@ -226,6 +234,36 @@ Transform:
   - {fileID: 957630004}
   m_Father: {fileID: 237110189}
   m_RootOrder: 0
+--- !u!1 &48342788 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 110826, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
+  m_PrefabInternal: {fileID: 497320908}
+--- !u!114 &48342789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 48342788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 453ef7ee56e62aa49aaad6ea63f41405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &48342790
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 48342788}
+  serializedVersion: 2
+  m_Mass: 99999
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &50975967
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,6 +395,10 @@ Prefab:
       propertyPath: m_Name
       value: WaterTile (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 11496802, guid: 1df288247501d6645b6ccb5043c2c8d4, type: 2}
+      propertyPath: lifetime
+      value: 33
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1df288247501d6645b6ccb5043c2c8d4, type: 2}
   m_IsPrefabParent: 0
@@ -407,6 +449,10 @@ Prefab:
       propertyPath: nuxBlock
       value: 
       objectReference: {fileID: 370125399}
+    - target: {fileID: 11443916, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
+      propertyPath: lifetime
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
   m_IsPrefabParent: 0
@@ -457,6 +503,10 @@ Prefab:
       propertyPath: m_Name
       value: NormalTile (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 11478910, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
+      propertyPath: lifetime
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
   m_IsPrefabParent: 0
@@ -506,6 +556,10 @@ Prefab:
     - target: {fileID: 183790, guid: f7c8d9d1c7395a040b060c79db495f19, type: 2}
       propertyPath: m_Name
       value: ElectricTile (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11486236, guid: f7c8d9d1c7395a040b060c79db495f19, type: 2}
+      propertyPath: lifetime
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f7c8d9d1c7395a040b060c79db495f19, type: 2}
@@ -561,6 +615,10 @@ Prefab:
       propertyPath: m_Name
       value: NuxTile (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 11443916, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
+      propertyPath: lifetime
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
   m_IsPrefabParent: 0
@@ -610,6 +668,10 @@ Prefab:
     - target: {fileID: 183790, guid: f7c8d9d1c7395a040b060c79db495f19, type: 2}
       propertyPath: m_Name
       value: ElectricTile (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11486236, guid: f7c8d9d1c7395a040b060c79db495f19, type: 2}
+      propertyPath: lifetime
+      value: 33
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f7c8d9d1c7395a040b060c79db495f19, type: 2}
@@ -661,6 +723,10 @@ Prefab:
       propertyPath: m_Name
       value: WallTile (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 11475128, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
+      propertyPath: lifetime
+      value: 40
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
   m_IsPrefabParent: 0
@@ -710,6 +776,10 @@ Prefab:
     - target: {fileID: 129276, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
       propertyPath: m_Name
       value: NormalTile (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478910, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
+      propertyPath: lifetime
+      value: 27
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
@@ -791,9 +861,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 6541716, guid: aab462aa847c3724cac283873c5c3b27, type: 2}
-      propertyPath: m_Size.z
-      value: 0.8
+    - target: {fileID: 11456300, guid: aab462aa847c3724cac283873c5c3b27, type: 2}
+      propertyPath: lifetime
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aab462aa847c3724cac283873c5c3b27, type: 2}
@@ -845,6 +915,10 @@ Prefab:
       propertyPath: m_Name
       value: OrangeTile (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 11428394, guid: 0624ee960b48c4f45ae6d58b93ef3abc, type: 2}
+      propertyPath: lifetime
+      value: 51
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0624ee960b48c4f45ae6d58b93ef3abc, type: 2}
   m_IsPrefabParent: 0
@@ -894,6 +968,10 @@ Prefab:
     - target: {fileID: 129276, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
       propertyPath: m_Name
       value: NormalTile (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478910, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
+      propertyPath: lifetime
+      value: 37
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
@@ -945,6 +1023,10 @@ Prefab:
       propertyPath: m_Name
       value: WallTile (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 11475128, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
+      propertyPath: lifetime
+      value: 39
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
   m_IsPrefabParent: 0
@@ -995,6 +1077,10 @@ Prefab:
       propertyPath: m_Name
       value: WallTile (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 11475128, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
+      propertyPath: lifetime
+      value: 48
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
   m_IsPrefabParent: 0
@@ -1002,6 +1088,36 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 473642, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
   m_PrefabInternal: {fileID: 305107875}
+--- !u!1 &323210776 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 110826, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
+  m_PrefabInternal: {fileID: 1389008265}
+--- !u!114 &323210777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 323210776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 453ef7ee56e62aa49aaad6ea63f41405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &323210778
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 323210776}
+  serializedVersion: 2
+  m_Mass: 99999
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1001 &326747415
 Prefab:
   m_ObjectHideFlags: 0
@@ -1044,6 +1160,10 @@ Prefab:
     - target: {fileID: 149796, guid: 0624ee960b48c4f45ae6d58b93ef3abc, type: 2}
       propertyPath: m_Name
       value: OrangeTile (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11428394, guid: 0624ee960b48c4f45ae6d58b93ef3abc, type: 2}
+      propertyPath: lifetime
+      value: 21
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0624ee960b48c4f45ae6d58b93ef3abc, type: 2}
@@ -1111,6 +1231,10 @@ Prefab:
       propertyPath: m_Name
       value: WaterTile (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 11488114, guid: ac520233e59f1e74db93b824a618bb3d, type: 2}
+      propertyPath: lifetime
+      value: 54
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac520233e59f1e74db93b824a618bb3d, type: 2}
   m_IsPrefabParent: 0
@@ -1169,6 +1293,10 @@ Prefab:
     - target: {fileID: 128930, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
       propertyPath: m_Name
       value: NuxTile (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11443916, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
+      propertyPath: lifetime
+      value: 37
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
@@ -1236,6 +1364,10 @@ Prefab:
       propertyPath: m_Name
       value: WaterTile (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 11488114, guid: ac520233e59f1e74db93b824a618bb3d, type: 2}
+      propertyPath: lifetime
+      value: 54
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac520233e59f1e74db93b824a618bb3d, type: 2}
   m_IsPrefabParent: 0
@@ -1291,6 +1423,10 @@ Prefab:
       propertyPath: m_Name
       value: WaterTile (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 11496802, guid: 1df288247501d6645b6ccb5043c2c8d4, type: 2}
+      propertyPath: lifetime
+      value: 24
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1df288247501d6645b6ccb5043c2c8d4, type: 2}
   m_IsPrefabParent: 0
@@ -1344,6 +1480,10 @@ Prefab:
     - target: {fileID: 128930, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
       propertyPath: m_Name
       value: NuxTile (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11443916, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
+      propertyPath: lifetime
+      value: 46
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
@@ -1607,6 +1747,10 @@ Prefab:
       propertyPath: m_Name
       value: NuxTile (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 11443916, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
+      propertyPath: lifetime
+      value: 39
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
   m_IsPrefabParent: 0
@@ -1656,6 +1800,10 @@ Prefab:
     - target: {fileID: 110826, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
       propertyPath: m_Name
       value: WallTile (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475128, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
+      propertyPath: lifetime
+      value: 39
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
@@ -1707,6 +1855,10 @@ Prefab:
       propertyPath: m_Name
       value: WallTile (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 11475128, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
+      propertyPath: lifetime
+      value: 52
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
   m_IsPrefabParent: 0
@@ -1756,6 +1908,10 @@ Prefab:
     - target: {fileID: 129276, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
       propertyPath: m_Name
       value: NormalTile (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478910, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
+      propertyPath: lifetime
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
@@ -1839,6 +1995,10 @@ Prefab:
       propertyPath: m_Name
       value: WallTile (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 11475128, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
+      propertyPath: lifetime
+      value: 49
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
   m_IsPrefabParent: 0
@@ -1893,6 +2053,10 @@ Prefab:
       propertyPath: m_Name
       value: NuxTile (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 11443916, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
+      propertyPath: lifetime
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
   m_IsPrefabParent: 0
@@ -1943,6 +2107,10 @@ Prefab:
       propertyPath: m_Name
       value: NormalTile (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 11478910, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
+      propertyPath: lifetime
+      value: 47
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
   m_IsPrefabParent: 0
@@ -1987,11 +2155,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 479312, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
       propertyPath: m_RootOrder
-      value: 29
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 129276, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
       propertyPath: m_Name
       value: NormalTile (36)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478910, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
+      propertyPath: lifetime
+      value: 53
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
@@ -2000,6 +2172,36 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 479312, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
   m_PrefabInternal: {fileID: 538308596}
+--- !u!1 &545854050 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 110826, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
+  m_PrefabInternal: {fileID: 1462128207}
+--- !u!114 &545854051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 545854050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 453ef7ee56e62aa49aaad6ea63f41405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &545854052
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 545854050}
+  serializedVersion: 2
+  m_Mass: 99999
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1001 &554194501
 Prefab:
   m_ObjectHideFlags: 0
@@ -2042,6 +2244,10 @@ Prefab:
     - target: {fileID: 129276, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
       propertyPath: m_Name
       value: NormalTile (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478910, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
+      propertyPath: lifetime
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
@@ -2092,6 +2298,10 @@ Prefab:
     - target: {fileID: 129276, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
       propertyPath: m_Name
       value: NormalTile (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478910, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
+      propertyPath: lifetime
+      value: 37
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
@@ -2173,6 +2383,36 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 565261046}
+--- !u!1 &570222615 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 110826, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
+  m_PrefabInternal: {fileID: 1894352245}
+--- !u!114 &570222616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 570222615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 453ef7ee56e62aa49aaad6ea63f41405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &570222617
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 570222615}
+  serializedVersion: 2
+  m_Mass: 99999
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1001 &595054132
 Prefab:
   m_ObjectHideFlags: 0
@@ -2215,6 +2455,10 @@ Prefab:
     - target: {fileID: 129276, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
       propertyPath: m_Name
       value: NormalTile (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478910, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
+      propertyPath: lifetime
+      value: 47
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
@@ -2306,6 +2550,10 @@ Prefab:
       propertyPath: m_Name
       value: NuxTile (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 11443916, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
+      propertyPath: lifetime
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
   m_IsPrefabParent: 0
@@ -2313,6 +2561,36 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 436566, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
   m_PrefabInternal: {fileID: 610974851}
+--- !u!1 &617199548 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 110826, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
+  m_PrefabInternal: {fileID: 440359321}
+--- !u!114 &617199549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 617199548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 453ef7ee56e62aa49aaad6ea63f41405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &617199550
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 617199548}
+  serializedVersion: 2
+  m_Mass: 99999
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &620852844
 Prefab:
   m_ObjectHideFlags: 0
@@ -2359,6 +2637,10 @@ Prefab:
     - target: {fileID: 167870, guid: aab462aa847c3724cac283873c5c3b27, type: 2}
       propertyPath: m_Name
       value: SliderTile (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11456300, guid: aab462aa847c3724cac283873c5c3b27, type: 2}
+      propertyPath: lifetime
+      value: 27
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aab462aa847c3724cac283873c5c3b27, type: 2}
@@ -2437,6 +2719,36 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 09fa0d7d73492f542ae4cceb29ba571e, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &639070295 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 110826, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
+  m_PrefabInternal: {fileID: 1081952156}
+--- !u!114 &639070296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 639070295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 453ef7ee56e62aa49aaad6ea63f41405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &639070297
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 639070295}
+  serializedVersion: 2
+  m_Mass: 99999
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &641065766
 GameObject:
   m_ObjectHideFlags: 0
@@ -2551,6 +2863,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11496802, guid: 1df288247501d6645b6ccb5043c2c8d4, type: 2}
+      propertyPath: lifetime
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1df288247501d6645b6ccb5043c2c8d4, type: 2}
   m_IsPrefabParent: 0
@@ -2597,13 +2913,13 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6541716, guid: aab462aa847c3724cac283873c5c3b27, type: 2}
-      propertyPath: m_Size.z
-      value: 0.8
-      objectReference: {fileID: 0}
     - target: {fileID: 167870, guid: aab462aa847c3724cac283873c5c3b27, type: 2}
       propertyPath: m_Name
       value: SliderTile (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11456300, guid: aab462aa847c3724cac283873c5c3b27, type: 2}
+      propertyPath: lifetime
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aab462aa847c3724cac283873c5c3b27, type: 2}
@@ -2745,6 +3061,10 @@ Prefab:
       propertyPath: m_Name
       value: NuxTile (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 11443916, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
+      propertyPath: lifetime
+      value: 39
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
   m_IsPrefabParent: 0
@@ -2794,6 +3114,10 @@ Prefab:
     - target: {fileID: 129276, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
       propertyPath: m_Name
       value: NormalTile (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478910, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
+      propertyPath: lifetime
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
@@ -2863,6 +3187,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!1 &725973327 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 110826, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
+  m_PrefabInternal: {fileID: 1037950895}
+--- !u!114 &725973328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 725973327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 453ef7ee56e62aa49aaad6ea63f41405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &725973329
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 725973327}
+  serializedVersion: 2
+  m_Mass: 99999
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &767323846
 Prefab:
   m_ObjectHideFlags: 0
@@ -2905,6 +3259,10 @@ Prefab:
     - target: {fileID: 129276, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
       propertyPath: m_Name
       value: NormalTile (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478910, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
+      propertyPath: lifetime
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
@@ -2967,6 +3325,36 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 436566, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
   m_PrefabInternal: {fileID: 772521182}
+--- !u!1 &774546091 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 110826, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
+  m_PrefabInternal: {fileID: 1452670037}
+--- !u!114 &774546092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 774546091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 453ef7ee56e62aa49aaad6ea63f41405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &774546093
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 774546091}
+  serializedVersion: 2
+  m_Mass: 99999
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &779472438
 GameObject:
   m_ObjectHideFlags: 0
@@ -3042,6 +3430,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 949278603}
   m_RootOrder: 1
+--- !u!1 &780005329 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 110826, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
+  m_PrefabInternal: {fileID: 956055978}
+--- !u!114 &780005330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 780005329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 453ef7ee56e62aa49aaad6ea63f41405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &780005331
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 780005329}
+  serializedVersion: 2
+  m_Mass: 99999
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1001 &795863565
 Prefab:
   m_ObjectHideFlags: 0
@@ -3085,6 +3503,10 @@ Prefab:
       propertyPath: m_Name
       value: WallTile (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 11475128, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
+      propertyPath: lifetime
+      value: 53
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
   m_IsPrefabParent: 0
@@ -3092,6 +3514,36 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 473642, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
   m_PrefabInternal: {fileID: 795863565}
+--- !u!1 &825136507 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 110826, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
+  m_PrefabInternal: {fileID: 437513693}
+--- !u!114 &825136508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 825136507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 453ef7ee56e62aa49aaad6ea63f41405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &825136509
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 825136507}
+  serializedVersion: 2
+  m_Mass: 99999
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1001 &826679617
 Prefab:
   m_ObjectHideFlags: 0
@@ -3134,6 +3586,10 @@ Prefab:
     - target: {fileID: 129276, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
       propertyPath: m_Name
       value: NormalTile (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478910, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
+      propertyPath: lifetime
+      value: 51
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
@@ -3185,6 +3641,10 @@ Prefab:
       propertyPath: m_Name
       value: ElectricTile (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 11486236, guid: f7c8d9d1c7395a040b060c79db495f19, type: 2}
+      propertyPath: lifetime
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f7c8d9d1c7395a040b060c79db495f19, type: 2}
   m_IsPrefabParent: 0
@@ -3235,6 +3695,10 @@ Prefab:
       propertyPath: m_Name
       value: NormalTile (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 11478910, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
+      propertyPath: lifetime
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
   m_IsPrefabParent: 0
@@ -3284,6 +3748,10 @@ Prefab:
     - target: {fileID: 110826, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
       propertyPath: m_Name
       value: WallTile (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475128, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
+      propertyPath: lifetime
+      value: 54
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
@@ -3339,6 +3807,14 @@ Prefab:
       propertyPath: m_Name
       value: NuxTile (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 11495000, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
+      propertyPath: adjacentToYellow
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11443916, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
+      propertyPath: lifetime
+      value: 43
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
   m_IsPrefabParent: 0
@@ -3388,6 +3864,10 @@ Prefab:
     - target: {fileID: 129276, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
       propertyPath: m_Name
       value: NormalTile (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478910, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
+      propertyPath: lifetime
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
@@ -3439,6 +3919,10 @@ Prefab:
       propertyPath: m_Name
       value: OrangeTile (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 11428394, guid: 0624ee960b48c4f45ae6d58b93ef3abc, type: 2}
+      propertyPath: lifetime
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0624ee960b48c4f45ae6d58b93ef3abc, type: 2}
   m_IsPrefabParent: 0
@@ -3488,6 +3972,10 @@ Prefab:
     - target: {fileID: 129276, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
       propertyPath: m_Name
       value: NormalTile (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478910, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
+      propertyPath: lifetime
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
@@ -3579,6 +4067,14 @@ Prefab:
       propertyPath: m_Name
       value: WallTile (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 11457806, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
+      propertyPath: adjacentToYellow
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475128, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
+      propertyPath: lifetime
+      value: 43
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
   m_IsPrefabParent: 0
@@ -3628,6 +4124,10 @@ Prefab:
     - target: {fileID: 183790, guid: f7c8d9d1c7395a040b060c79db495f19, type: 2}
       propertyPath: m_Name
       value: ElectricTile (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11486236, guid: f7c8d9d1c7395a040b060c79db495f19, type: 2}
+      propertyPath: lifetime
+      value: 54
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f7c8d9d1c7395a040b060c79db495f19, type: 2}
@@ -3894,11 +4394,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 479312, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
       propertyPath: m_RootOrder
-      value: 26
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 129276, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
       propertyPath: m_Name
       value: NormalTile (33)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478910, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
+      propertyPath: lifetime
+      value: 52
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
@@ -3944,11 +4448,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 479312, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
       propertyPath: m_RootOrder
-      value: 26
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 129276, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
       propertyPath: m_Name
       value: NormalTile (31)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478910, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
+      propertyPath: lifetime
+      value: 52
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
@@ -3957,6 +4465,36 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 479312, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
   m_PrefabInternal: {fileID: 1002828473}
+--- !u!1 &1007730248 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 110826, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
+  m_PrefabInternal: {fileID: 302859616}
+--- !u!114 &1007730249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1007730248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 453ef7ee56e62aa49aaad6ea63f41405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &1007730250
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1007730248}
+  serializedVersion: 2
+  m_Mass: 99999
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1001 &1021910944
 Prefab:
   m_ObjectHideFlags: 0
@@ -4004,6 +4542,10 @@ Prefab:
       propertyPath: m_Name
       value: NuxTile (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 11443916, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
+      propertyPath: lifetime
+      value: 42
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
   m_IsPrefabParent: 0
@@ -4050,6 +4592,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11428394, guid: 0624ee960b48c4f45ae6d58b93ef3abc, type: 2}
+      propertyPath: lifetime
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0624ee960b48c4f45ae6d58b93ef3abc, type: 2}
   m_IsPrefabParent: 0
@@ -4057,6 +4603,36 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 467096, guid: 0624ee960b48c4f45ae6d58b93ef3abc, type: 2}
   m_PrefabInternal: {fileID: 1022507248}
+--- !u!1 &1022669334 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 110826, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
+  m_PrefabInternal: {fileID: 305107875}
+--- !u!114 &1022669335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1022669334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 453ef7ee56e62aa49aaad6ea63f41405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &1022669336
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1022669334}
+  serializedVersion: 2
+  m_Mass: 99999
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1037950895
 Prefab:
   m_ObjectHideFlags: 0
@@ -4099,6 +4675,10 @@ Prefab:
     - target: {fileID: 110826, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
       propertyPath: m_Name
       value: WallTile (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475128, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
+      propertyPath: lifetime
+      value: 21
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
@@ -4215,6 +4795,10 @@ Prefab:
       propertyPath: m_Name
       value: NuxTile (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 11443916, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
+      propertyPath: lifetime
+      value: 45
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
   m_IsPrefabParent: 0
@@ -4269,6 +4853,10 @@ Prefab:
       propertyPath: m_Name
       value: WallTile (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 11475128, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
+      propertyPath: lifetime
+      value: 51
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
   m_IsPrefabParent: 0
@@ -4322,6 +4910,10 @@ Prefab:
     - target: {fileID: 128930, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
       propertyPath: m_Name
       value: NuxTile (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11443916, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
+      propertyPath: lifetime
+      value: 27
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
@@ -4433,6 +5025,10 @@ Prefab:
       propertyPath: m_Name
       value: NuxTile (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 11443916, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
+      propertyPath: lifetime
+      value: 40
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
   m_IsPrefabParent: 0
@@ -4482,6 +5078,10 @@ Prefab:
     - target: {fileID: 149796, guid: 0624ee960b48c4f45ae6d58b93ef3abc, type: 2}
       propertyPath: m_Name
       value: OrangeTile (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11428394, guid: 0624ee960b48c4f45ae6d58b93ef3abc, type: 2}
+      propertyPath: lifetime
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0624ee960b48c4f45ae6d58b93ef3abc, type: 2}
@@ -4537,6 +5137,10 @@ Prefab:
       propertyPath: m_Name
       value: NuxTile (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 11443916, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
+      propertyPath: lifetime
+      value: 46
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
   m_IsPrefabParent: 0
@@ -4586,6 +5190,10 @@ Prefab:
     - target: {fileID: 110826, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
       propertyPath: m_Name
       value: WallTile (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475128, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
+      propertyPath: lifetime
+      value: 24
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
@@ -4644,6 +5252,10 @@ Prefab:
     - target: {fileID: 167870, guid: aab462aa847c3724cac283873c5c3b27, type: 2}
       propertyPath: m_Name
       value: SliderTile (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11456300, guid: aab462aa847c3724cac283873c5c3b27, type: 2}
+      propertyPath: lifetime
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aab462aa847c3724cac283873c5c3b27, type: 2}
@@ -4784,6 +5396,10 @@ Prefab:
     - target: {fileID: 132920, guid: ac520233e59f1e74db93b824a618bb3d, type: 2}
       propertyPath: m_Name
       value: WaterTile (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11488114, guid: ac520233e59f1e74db93b824a618bb3d, type: 2}
+      propertyPath: lifetime
+      value: 33
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac520233e59f1e74db93b824a618bb3d, type: 2}
@@ -5098,6 +5714,10 @@ Prefab:
       propertyPath: m_Name
       value: NormalTile (27)
       objectReference: {fileID: 0}
+    - target: {fileID: 11478910, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
+      propertyPath: lifetime
+      value: 53
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
   m_IsPrefabParent: 0
@@ -5105,6 +5725,36 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 479312, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
   m_PrefabInternal: {fileID: 1352576423}
+--- !u!1 &1356759440 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 110826, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
+  m_PrefabInternal: {fileID: 874565754}
+--- !u!114 &1356759441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1356759440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 453ef7ee56e62aa49aaad6ea63f41405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &1356759442
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1356759440}
+  serializedVersion: 2
+  m_Mass: 99999
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1377121757
 Prefab:
   m_ObjectHideFlags: 0
@@ -5147,6 +5797,10 @@ Prefab:
     - target: {fileID: 110826, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
       propertyPath: m_Name
       value: WallTile (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475128, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
+      propertyPath: lifetime
+      value: 48
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
@@ -5198,6 +5852,10 @@ Prefab:
       propertyPath: m_Name
       value: NormalTile (26)
       objectReference: {fileID: 0}
+    - target: {fileID: 11478910, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
+      propertyPath: lifetime
+      value: 52
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
   m_IsPrefabParent: 0
@@ -5247,6 +5905,10 @@ Prefab:
     - target: {fileID: 197676, guid: 1df288247501d6645b6ccb5043c2c8d4, type: 2}
       propertyPath: m_Name
       value: WaterTile (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496802, guid: 1df288247501d6645b6ccb5043c2c8d4, type: 2}
+      propertyPath: lifetime
+      value: 24
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1df288247501d6645b6ccb5043c2c8d4, type: 2}
@@ -5298,6 +5960,10 @@ Prefab:
       propertyPath: m_Name
       value: WallTile (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 11475128, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
+      propertyPath: lifetime
+      value: 42
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
   m_IsPrefabParent: 0
@@ -5305,6 +5971,36 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 473642, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
   m_PrefabInternal: {fileID: 1389008265}
+--- !u!1 &1415754154 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 110826, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
+  m_PrefabInternal: {fileID: 1587111322}
+--- !u!114 &1415754155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1415754154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 453ef7ee56e62aa49aaad6ea63f41405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &1415754156
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1415754154}
+  serializedVersion: 2
+  m_Mass: 99999
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1432199139
 Prefab:
   m_ObjectHideFlags: 0
@@ -5351,6 +6047,10 @@ Prefab:
     - target: {fileID: 128930, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
       propertyPath: m_Name
       value: NuxTile (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11443916, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
+      propertyPath: lifetime
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
@@ -5418,6 +6118,10 @@ Prefab:
       propertyPath: m_Name
       value: WaterTile (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 11488114, guid: ac520233e59f1e74db93b824a618bb3d, type: 2}
+      propertyPath: lifetime
+      value: 21
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac520233e59f1e74db93b824a618bb3d, type: 2}
   m_IsPrefabParent: 0
@@ -5472,6 +6176,10 @@ Prefab:
     - target: {fileID: 110826, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
       propertyPath: m_Name
       value: WallTile (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475128, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
+      propertyPath: lifetime
+      value: 45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
@@ -5560,7 +6268,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 499426, guid: f7c8d9d1c7395a040b060c79db495f19, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.7799988
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 499426, guid: f7c8d9d1c7395a040b060c79db495f19, type: 2}
       propertyPath: m_LocalPosition.y
@@ -5588,6 +6296,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 499426, guid: f7c8d9d1c7395a040b060c79db495f19, type: 2}
       propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11486236, guid: f7c8d9d1c7395a040b060c79db495f19, type: 2}
+      propertyPath: lifetime
       value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -5635,6 +6347,10 @@ Prefab:
     - target: {fileID: 110826, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
       propertyPath: m_Name
       value: WallTile (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475128, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
+      propertyPath: lifetime
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
@@ -5690,6 +6406,10 @@ Prefab:
       propertyPath: m_Name
       value: NuxTile (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 11443916, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
+      propertyPath: lifetime
+      value: 46
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
   m_IsPrefabParent: 0
@@ -5740,6 +6460,10 @@ Prefab:
       propertyPath: m_Name
       value: NormalTile (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 11478910, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
+      propertyPath: lifetime
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
   m_IsPrefabParent: 0
@@ -5764,7 +6488,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 753ea9ccf9eee6c42a0954ec8663b992, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -39.6
+      value: -38.82
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 753ea9ccf9eee6c42a0954ec8663b992, type: 2}
       propertyPath: m_LocalRotation.x
@@ -5879,6 +6603,10 @@ Prefab:
       propertyPath: m_Name
       value: NuxTile (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 11443916, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
+      propertyPath: lifetime
+      value: 42
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
   m_IsPrefabParent: 0
@@ -5970,6 +6698,10 @@ Prefab:
     - target: {fileID: 129276, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
       propertyPath: m_Name
       value: NormalTile (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478910, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
+      propertyPath: lifetime
+      value: 49
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
@@ -6143,6 +6875,10 @@ Prefab:
       propertyPath: m_Name
       value: NuxTile (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 11443916, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
+      propertyPath: lifetime
+      value: 42
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
   m_IsPrefabParent: 0
@@ -6192,6 +6928,10 @@ Prefab:
     - target: {fileID: 110826, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
       propertyPath: m_Name
       value: WallTile (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475128, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
+      propertyPath: lifetime
+      value: 33
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
@@ -6247,6 +6987,10 @@ Prefab:
       propertyPath: m_Name
       value: NuxTile (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 11443916, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
+      propertyPath: lifetime
+      value: 40
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
   m_IsPrefabParent: 0
@@ -6300,6 +7044,14 @@ Prefab:
     - target: {fileID: 128930, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
       propertyPath: m_Name
       value: NuxTile (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11495000, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
+      propertyPath: adjacentToYellow
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11443916, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
+      propertyPath: lifetime
+      value: 43
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
@@ -6355,6 +7107,10 @@ Prefab:
       propertyPath: m_Name
       value: NuxTile (27)
       objectReference: {fileID: 0}
+    - target: {fileID: 11443916, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
+      propertyPath: lifetime
+      value: 47
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
   m_IsPrefabParent: 0
@@ -6362,6 +7118,36 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 436566, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
   m_PrefabInternal: {fileID: 1635063336}
+--- !u!1 &1640723141 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 110826, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
+  m_PrefabInternal: {fileID: 227386384}
+--- !u!114 &1640723142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1640723141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 453ef7ee56e62aa49aaad6ea63f41405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &1640723143
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1640723141}
+  serializedVersion: 2
+  m_Mass: 99999
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1001 &1659331934
 Prefab:
   m_ObjectHideFlags: 0
@@ -6371,7 +7157,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 479312, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 3.800003
+      value: 3.95
       objectReference: {fileID: 0}
     - target: {fileID: 479312, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
       propertyPath: m_LocalPosition.y
@@ -6400,6 +7186,10 @@ Prefab:
     - target: {fileID: 479312, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
       propertyPath: m_RootOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478910, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
+      propertyPath: lifetime
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
@@ -6624,6 +7414,10 @@ Prefab:
       propertyPath: m_Name
       value: ElectricTile (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 11486236, guid: f7c8d9d1c7395a040b060c79db495f19, type: 2}
+      propertyPath: lifetime
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f7c8d9d1c7395a040b060c79db495f19, type: 2}
   m_IsPrefabParent: 0
@@ -6757,7 +7551,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 544c41503c8fcdb4eb2b82caf0cea18b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 53fe47a6f60c1f54c88dda52670d84bd, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -6822,6 +7616,36 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!1 &1753683545 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 110826, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
+  m_PrefabInternal: {fileID: 2009375844}
+--- !u!114 &1753683546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1753683545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 453ef7ee56e62aa49aaad6ea63f41405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &1753683547
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1753683545}
+  serializedVersion: 2
+  m_Mass: 99999
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1001 &1757353752
 Prefab:
   m_ObjectHideFlags: 0
@@ -6864,6 +7688,10 @@ Prefab:
     - target: {fileID: 110826, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
       propertyPath: m_Name
       value: WallTile (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475128, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
+      propertyPath: lifetime
+      value: 46
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
@@ -6915,6 +7743,10 @@ Prefab:
       propertyPath: m_Name
       value: NormalTile (30)
       objectReference: {fileID: 0}
+    - target: {fileID: 11478910, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
+      propertyPath: lifetime
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
   m_IsPrefabParent: 0
@@ -6922,6 +7754,36 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 479312, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
   m_PrefabInternal: {fileID: 1834871766}
+--- !u!1 &1845865657 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 110826, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
+  m_PrefabInternal: {fileID: 1259606486}
+--- !u!114 &1845865658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1845865657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 453ef7ee56e62aa49aaad6ea63f41405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &1845865659
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1845865657}
+  serializedVersion: 2
+  m_Mass: 99999
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1001 &1860656484
 Prefab:
   m_ObjectHideFlags: 0
@@ -6929,13 +7791,9 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1671368235}
     m_Modifications:
-    - target: {fileID: 11470606, guid: ac520233e59f1e74db93b824a618bb3d, type: 2}
-      propertyPath: soundFx.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 425616, guid: ac520233e59f1e74db93b824a618bb3d, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 7.7699966
+      value: 7.84
       objectReference: {fileID: 0}
     - target: {fileID: 425616, guid: ac520233e59f1e74db93b824a618bb3d, type: 2}
       propertyPath: m_LocalPosition.y
@@ -6965,18 +7823,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 11470606, guid: ac520233e59f1e74db93b824a618bb3d, type: 2}
-      propertyPath: adjacentToYellow
-      value: 1
+    - target: {fileID: 11488114, guid: ac520233e59f1e74db93b824a618bb3d, type: 2}
+      propertyPath: lifetime
+      value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 11470606, guid: ac520233e59f1e74db93b824a618bb3d, type: 2}
-      propertyPath: soundFx.Array.data[0]
-      value: 
-      objectReference: {fileID: 2074766372}
-    - target: {fileID: 11470606, guid: ac520233e59f1e74db93b824a618bb3d, type: 2}
-      propertyPath: soundFx.Array.data[1]
-      value: 
-      objectReference: {fileID: 2074766372}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac520233e59f1e74db93b824a618bb3d, type: 2}
   m_IsPrefabParent: 0
@@ -7026,6 +7876,10 @@ Prefab:
     - target: {fileID: 149796, guid: 0624ee960b48c4f45ae6d58b93ef3abc, type: 2}
       propertyPath: m_Name
       value: OrangeTile (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11428394, guid: 0624ee960b48c4f45ae6d58b93ef3abc, type: 2}
+      propertyPath: lifetime
+      value: 48
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0624ee960b48c4f45ae6d58b93ef3abc, type: 2}
@@ -7273,6 +8127,10 @@ Prefab:
       propertyPath: m_Name
       value: OrangeTile (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 11428394, guid: 0624ee960b48c4f45ae6d58b93ef3abc, type: 2}
+      propertyPath: lifetime
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0624ee960b48c4f45ae6d58b93ef3abc, type: 2}
   m_IsPrefabParent: 0
@@ -7323,6 +8181,10 @@ Prefab:
       propertyPath: m_Name
       value: WallTile (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 11475128, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
+      propertyPath: lifetime
+      value: 47
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
   m_IsPrefabParent: 0
@@ -7330,6 +8192,36 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 473642, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
   m_PrefabInternal: {fileID: 1894352245}
+--- !u!1 &1912908667 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 110826, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
+  m_PrefabInternal: {fileID: 795863565}
+--- !u!114 &1912908668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1912908667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 453ef7ee56e62aa49aaad6ea63f41405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &1912908669
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1912908667}
+  serializedVersion: 2
+  m_Mass: 99999
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1919857234
 GameObject:
   m_ObjectHideFlags: 0
@@ -7547,6 +8439,10 @@ Prefab:
       propertyPath: m_Name
       value: OrangeTile (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 11428394, guid: 0624ee960b48c4f45ae6d58b93ef3abc, type: 2}
+      propertyPath: lifetime
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0624ee960b48c4f45ae6d58b93ef3abc, type: 2}
   m_IsPrefabParent: 0
@@ -7600,6 +8496,10 @@ Prefab:
     - target: {fileID: 128930, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
       propertyPath: m_Name
       value: NuxTile (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11443916, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
+      propertyPath: lifetime
+      value: 45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
@@ -7655,6 +8555,10 @@ Prefab:
       propertyPath: m_Name
       value: NuxTile (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 11443916, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
+      propertyPath: lifetime
+      value: 24
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
   m_IsPrefabParent: 0
@@ -7708,6 +8612,10 @@ Prefab:
     - target: {fileID: 128930, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
       propertyPath: m_Name
       value: NuxTile (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11443916, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
+      propertyPath: lifetime
+      value: 48
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
@@ -7763,6 +8671,10 @@ Prefab:
       propertyPath: nuxBlock
       value: 
       objectReference: {fileID: 370125399}
+    - target: {fileID: 11443916, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
+      propertyPath: lifetime
+      value: 51
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
   m_IsPrefabParent: 0
@@ -7817,6 +8729,10 @@ Prefab:
       propertyPath: m_Name
       value: NuxTile (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 11443916, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
+      propertyPath: lifetime
+      value: 37
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c7b1dc947a731bf43acf1909b4556e0a, type: 2}
   m_IsPrefabParent: 0
@@ -7866,6 +8782,10 @@ Prefab:
     - target: {fileID: 129276, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
       propertyPath: m_Name
       value: NormalTile (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478910, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
+      propertyPath: lifetime
+      value: 49
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
@@ -7917,6 +8837,10 @@ Prefab:
       propertyPath: m_Name
       value: NormalTile (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 11478910, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
+      propertyPath: lifetime
+      value: 49
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
   m_IsPrefabParent: 0
@@ -7966,6 +8890,14 @@ Prefab:
     - target: {fileID: 110826, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
       propertyPath: m_Name
       value: WallTile (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11457806, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
+      propertyPath: adjacentToYellow
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475128, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
+      propertyPath: lifetime
+      value: 43
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe79f61c1cf340649a302c3bee4624eb, type: 2}
@@ -8061,11 +8993,6 @@ RectTransform:
   m_AnchoredPosition: {x: 79.8, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!82 &2074766372 stripped
-AudioSource:
-  m_PrefabParentObject: {fileID: 8290832, guid: ac520233e59f1e74db93b824a618bb3d,
-    type: 2}
-  m_PrefabInternal: {fileID: 1860656484}
 --- !u!1001 &2101400006
 Prefab:
   m_ObjectHideFlags: 0
@@ -8108,6 +9035,10 @@ Prefab:
     - target: {fileID: 129276, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
       propertyPath: m_Name
       value: NormalTile (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478910, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
+      propertyPath: lifetime
+      value: 21
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
@@ -8159,6 +9090,10 @@ Prefab:
       propertyPath: m_Name
       value: OrangeTile (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 11428394, guid: 0624ee960b48c4f45ae6d58b93ef3abc, type: 2}
+      propertyPath: lifetime
+      value: 27
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0624ee960b48c4f45ae6d58b93ef3abc, type: 2}
   m_IsPrefabParent: 0
@@ -8203,11 +9138,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 479312, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
       propertyPath: m_RootOrder
-      value: 27
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 129276, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
       propertyPath: m_Name
       value: NormalTile (34)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478910, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
+      propertyPath: lifetime
+      value: 53
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
@@ -8333,6 +9272,10 @@ Prefab:
     - target: {fileID: 129276, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
       propertyPath: m_Name
       value: NormalTile (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478910, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
+      propertyPath: lifetime
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
