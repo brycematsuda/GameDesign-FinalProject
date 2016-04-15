@@ -49,7 +49,6 @@ public class UnityChan8Directional : MonoBehaviour
 	static int jumpState = Animator.StringToHash("Base Layer.Jump");
 	static int restState = Animator.StringToHash("Base Layer.Rest");
 
-	private float origSpeed;
 
 	public bool controlsEnabled = true;
 	private float origZ;
@@ -69,7 +68,6 @@ public class UnityChan8Directional : MonoBehaviour
 		// CapsuleColliderコンポーネントのHeight、Centerの初期値を保存する
 		orgColHight = col.height;
 		orgVectColCenter = col.center;
-		origSpeed = forwardSpeed;
 	}
 
 	//void Update(){

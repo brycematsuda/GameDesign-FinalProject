@@ -41,7 +41,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 6
-  m_GIWorkflowMode: 1
+  m_GIWorkflowMode: 0
   m_LightmapsMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -3595,10 +3595,10 @@ Transform:
   m_GameObject: {fileID: 753525962}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000016292068}
   m_LocalPosition: {x: 0.78, y: -0.0009954135, z: -36.21}
-  m_LocalScale: {x: 0.0625, y: 0.033333335, z: 1}
+  m_LocalScale: {x: 0.023, y: 0.0112, z: 1}
   m_Children:
-  - {fileID: 1545454825}
   - {fileID: 1350095694}
+  - {fileID: 1545454825}
   m_Father: {fileID: 295154075}
   m_RootOrder: 6
 --- !u!65 &753525964
@@ -3639,7 +3639,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 35e024c848eb9d8408155e297e6f0fe7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 23056aa8adb26a547851a3bce72b1ade, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3795,6 +3795,10 @@ Prefab:
     - target: {fileID: 11492100, guid: dbb8b0da685d7944290c3ab2ca51a0bc, type: 2}
       propertyPath: jumpPower
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 13618650, guid: dbb8b0da685d7944290c3ab2ca51a0bc, type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dbb8b0da685d7944290c3ab2ca51a0bc, type: 2}
@@ -5133,7 +5137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6458ee0e58bb24c4b8f24850dfc89bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: CatapultScene
+  sceneName: CatapultIntro
 --- !u!1 &1248911336
 GameObject:
   m_ObjectHideFlags: 0
@@ -5864,11 +5868,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1350095693}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.06, z: 0.19}
-  m_LocalScale: {x: 10, y: 5.3, z: 0.2}
+  m_LocalPosition: {x: -0, y: -0.17857271, z: 0.18999863}
+  m_LocalScale: {x: 27.173912, y: 15.77381, z: 0.2}
   m_Children: []
   m_Father: {fileID: 753525963}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!23 &1350095695
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7158,7 +7162,7 @@ GameObject:
   - 23: {fileID: 1545454827}
   - 114: {fileID: 1545454826}
   m_Layer: 0
-  m_Name: CatapultTrigger
+  m_Name: TrailerTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7175,7 +7179,7 @@ Transform:
   m_LocalScale: {x: 10, y: 20, z: 2}
   m_Children: []
   m_Father: {fileID: 753525963}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!114 &1545454826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7187,7 +7191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6458ee0e58bb24c4b8f24850dfc89bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: CatapultScene
+  sceneName: TrailerScene
 --- !u!23 &1545454827
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8122,7 +8126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6458ee0e58bb24c4b8f24850dfc89bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Pachinko 2
+  sceneName: PachiIntro
 --- !u!23 &1732122439
 MeshRenderer:
   m_ObjectHideFlags: 0

@@ -16,8 +16,6 @@ public class CatapultRotator : MonoBehaviour {
 		Vector2 mousePos = Input.mousePosition;
 		// Get the position of the mouse pointer relative to the world
 		Vector2 mouseWorldPosition = Camera.main.ScreenToWorldPoint(mousePos);
-		// Get the direction of the mouse pointer relative to the player
-		Vector2 mouseDirection = mouseWorldPosition - (Vector2)transform.position;
 		foreach(GameObject part in cannonParts){
 			Vector3 launcherAngle = part.transform.eulerAngles;
 			launcherAngle.x = -Mathf.Atan2((mouseWorldPosition.y - transform.position.y), (mouseWorldPosition.x - transform.position.x)) * Mathf.Rad2Deg;

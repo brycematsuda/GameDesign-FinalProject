@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class Randomizer : MonoBehaviour {
 
-	int[] scenesToPlay = new int[6];
+	int[] scenesToPlay = new int[6];//if we add more games, need to change; assumes hubworld is scene 0 in build index
 	int currentScene = 0;
 	// Use this for initialization
 	void Start () {
