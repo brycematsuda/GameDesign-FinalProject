@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class PachinkoGameController : MonoBehaviour {
 
 	public AudioSource[] songList;
+	public AudioSource introSong;
 	private int gameScore = 0;
 	public Text scoreText;
 	public GameObject results;
@@ -26,6 +27,7 @@ public class PachinkoGameController : MonoBehaviour {
 	}
 
 	public void playMusic(){
+		introSong.Stop ();
 		songList [0].Play ();
 	}
 

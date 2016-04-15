@@ -29,7 +29,7 @@ public class BallController : MonoBehaviour {
 	}
 
 	void startingForce(){
-		rb.AddForce (0, 0, 41);
+		rb.AddForce (0, 0, 43);
 	}
 
 	public void skipIntro(){
