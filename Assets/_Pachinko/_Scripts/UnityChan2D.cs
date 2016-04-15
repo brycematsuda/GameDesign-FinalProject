@@ -61,7 +61,10 @@ public class UnityChan2D : MonoBehaviour
 
 	private bool gettingShocked = false, gettingPushed = false, gettingAte = false, knockedOut = false;
 
-	public Light normal, electroc;
+	public Light normal, electroc;//for electrocution
+
+	private PachinkoGameController pgc;
+	private AudienceReactionPoints arp;
 
 	// 初期化
 	void Start ()
@@ -77,10 +80,18 @@ public class UnityChan2D : MonoBehaviour
 		orgColHight = col.height;
 		orgVectColCenter = col.center;
 		origSpeed = forwardSpeed;
+		pgc = GameObject.FindGameObjectWithTag ("GameController").GetComponent<PachinkoGameController> ();
+		arp = GameObject.FindGameObjectWithTag ("PointsText").GetComponent<AudienceReactionPoints> ();
+
 	}
 
 	void Update(){
 		if (controlsEnabled) {
+			if (transform.position.y < -20) {
+				arp.spawnText ("LOL U FELL: +69", 69, transform);
+				pgc.setWin (false);
+				Destroy (gameObject);
+			}
 			if (Input.GetKeyDown (KeyCode.E)) {
 				anim.SetBool ("ActivateSwitch", true);
 			}

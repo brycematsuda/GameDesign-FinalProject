@@ -15,6 +15,9 @@ public class OneDirectionCamFollow : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
-		transform.position = new Vector3 (playerObj.position.x + 4, transform.position.y, playerObj.position.z);
+		if (playerObj != null) {
+			transform.position = new Vector3 (playerObj.position.x + 4, transform.position.y, playerObj.position.z);
+		}
+
 	}
 }

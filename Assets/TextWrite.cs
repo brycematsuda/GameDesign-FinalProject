@@ -16,15 +16,18 @@ public class TextWrite : MonoBehaviour {
 	private int numLines = 1;
 	private PachinkoGameController pgc;
 	private BallController bc;
+	private AudienceReactionPoints arp;
 	Text theText;
 	// Use this for initialization
 	void Start () {
+		arp = GameObject.FindGameObjectWithTag ("PointsText").GetComponent<AudienceReactionPoints> ();
 		theText = GetComponent<Text> ();
 		textSound = herp.GetComponent<AudioSource> ();
 		StartCoroutine (writeText ());
 		WriteText ("HEY!");
 		pgc = GameObject.FindGameObjectWithTag ("GameController").GetComponent<PachinkoGameController> ();
 		bc = GameObject.FindGameObjectWithTag ("Ball").GetComponent<BallController> ();
+
 
 	}
 	
@@ -40,6 +43,7 @@ public class TextWrite : MonoBehaviour {
 			writeNext ();
 			bc.skipIntro ();
 			DropTimes.startDrop ();
+			arp.spawnText ("WAO, R00D, YOU SKIPPED THE INSTRUCTIONS: -9000", -9000, transform);
 			if (texts != null) {
 				Destroy (texts);
 			}
@@ -71,11 +75,13 @@ public class TextWrite : MonoBehaviour {
 				setReady = true;
 				textSound.Stop ();
 				currentLine++;
+				arp.spawnText ("Good listener: +5", 5, transform);
 				if (currentLine >= additionalLines.Length) {
 					pgc.playMusic ();
 					Destroy (texts);
 					Destroy (gameObject);
 					DropTimes.startDrop ();
+					arp.spawnText ("Listened to directions, what a tryhard nerd: +20", 20, transform);
 				}
 			}
 
