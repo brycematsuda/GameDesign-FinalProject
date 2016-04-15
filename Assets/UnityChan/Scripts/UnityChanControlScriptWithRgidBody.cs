@@ -14,14 +14,14 @@ using System.Collections;
 public class UnityChanControlScriptWithRgidBody : MonoBehaviour
 {
 
-	public float animSpeed = 1.5f;				// アニメーション再生速度設定
+	public float animSpeed = 1.5f;				// アニメーション再生速度設定 //animation playback speed setting
 	public float lookSmoother = 3.0f;			// a smoothing setting for camera motion
-	public bool useCurves = true;				// Mecanimでカーブ調整を使うか設定する
+	public bool useCurves = true;				// Mecanimでカーブ調整を使うか設定する  //must be on to use curves
 												// このスイッチが入っていないとカーブは使われない
-	public float useCurvesHeight = 0.5f;		// カーブ補正の有効高さ（地面をすり抜けやすい時には大きくする）
+	public float useCurvesHeight = 0.5f;		// カーブ補正の有効高さ（地面をすり抜けやすい時には大きくする）//sets curve depth in order to keep from falling thorugh ground
 
 	// 以下キャラクターコントローラ用パラメタ
-	// 前進速度
+	// 前進速度 //character controller params
 	public float forwardSpeed = 7.0f;
 	// 後退速度
 	public float backwardSpeed = 2.0f;
@@ -44,7 +44,7 @@ public class UnityChanControlScriptWithRgidBody : MonoBehaviour
 	private GameObject cameraObject;	// メインカメラへの参照
 		
 // アニメーター各ステートへの参照
-	static int idleState = Animator.StringToHash("Base Layer.Idle");
+	static int idleState = Animator.StringToHash("Base Layer.Idle"); //shows each state for described character movement state
 	static int locoState = Animator.StringToHash("Base Layer.Locomotion");
 	static int jumpState = Animator.StringToHash("Base Layer.Jump");
 	static int restState = Animator.StringToHash("Base Layer.Rest");
