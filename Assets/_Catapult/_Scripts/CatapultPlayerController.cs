@@ -79,6 +79,9 @@ public class CatapultPlayerController : MonoBehaviour {
 					if (launchSpeed > 100) {
 						launchSpeed = 100;
 					}
+					if (launchSpeed < 50) {
+						launchSpeed = 50;
+					}
 					onCooldown = true;
 					countdown = cooldown * 10;
 					StartCoroutine (CoolDown ());

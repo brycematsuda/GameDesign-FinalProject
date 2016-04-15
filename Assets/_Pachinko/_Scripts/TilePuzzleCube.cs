@@ -11,6 +11,7 @@ public class TilePuzzleCube : MonoBehaviour {
 	public float life = 3f;
 	private UnityChan2D thePlayer;
 	public int numNuxBlocks = 1;
+	private AudienceReactionPoints arp;
 
 	static float nuxTime = 0;
 
@@ -29,6 +30,7 @@ public class TilePuzzleCube : MonoBehaviour {
 	}
 	void Start () {
 		thePlayer = GameObject.FindGameObjectWithTag ("Player").GetComponent<UnityChan2D> ();
+		arp = GameObject.FindGameObjectWithTag ("PointsText").GetComponent<AudienceReactionPoints> ();
 	}
 	
 	// Update is called once per frame
@@ -57,6 +59,7 @@ public class TilePuzzleCube : MonoBehaviour {
 			case (int) CubeTypes.Electric://yellow cubes erectrocute you cuz dey asian
 				thePlayer.electrocute ();
 				soundFx [0].Play ();
+				arp.spawnText ("ELECTROCUTED: +15", 15, transform);
 				break;
 			case (int) CubeTypes.Normal://pink cubes don't do anything
 				break;
@@ -67,11 +70,12 @@ public class TilePuzzleCube : MonoBehaviour {
 				break;
 			case (int) CubeTypes.Orange://Orange tiles change player's flavor to Orange. Piranhas love oranges and will lick you if you try to cross water
 				thePlayer.flavor = "Orange";
-				Debug.Log (thePlayer.flavor);
+				arp.spawnText ("DELICIOUS: +5", 5, transform);
 				break;
 			case (int) CubeTypes.Slider://Purple tiles push you forward one and set your flavor to lemon. Piranhas hate lemons and will avoid you at all costs.
 				thePlayer.flavor = "Lemon";
 				thePlayer.forcePush ();
+				arp.spawnText ("SLIPPED: +5", 5, transform);
 				break;
 			case (int) CubeTypes.Water://Water tiles are filled with piranhas. Piranhas love oranges and will eat you if you taste like them.
 										//also, electricity conductoos water, so if it is next to a yellow tile, it will send you back one.
@@ -79,13 +83,16 @@ public class TilePuzzleCube : MonoBehaviour {
 				if (adjacentToYellow) {
 					thePlayer.electrocute ();
 					soundFx [0].Play ();
+					arp.spawnText ("ELECTROCUTED: +15", 15, transform);
 				} else if (thePlayer.flavor == "Orange") {
 					thePlayer.getEaten ();
+					arp.spawnText ("YER B8 M8, GOT 8: +8.8/8", 8, transform);
 				}
 				break;
 			case (int) CubeTypes.Nintendoge://causes an image of glorious leader Nuxoll-kun to block the scene for three seconds
 				nuxTime = nuxTime + life;
 				soundFx [0].Play ();
+				arp.spawnText ("FAILED NUX'S EXAM: +1", 1, transform);
 				if (nuxTime > 10) {
 					nuxTime = 10;
 				}

@@ -16,6 +16,7 @@ TagManager:
   - Music
   - Log
   - Mud
+  - Ball
   layers:
   - Default
   - TransparentFX
