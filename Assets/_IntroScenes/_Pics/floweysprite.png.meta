@@ -1,0 +1,602 @@
+fileFormatVersion: 2
+guid: 15f7b3015920d4f428e132fee4aab336
+timeCreated: 1460789381
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: floweysprite_0
+    21300002: floweysprite_1
+    21300004: floweysprite_2
+    21300006: floweysprite_3
+    21300008: floweysprite_4
+    21300010: floweysprite_5
+    21300012: floweysprite_6
+    21300014: floweysprite_7
+    21300016: floweysprite_8
+    21300018: floweysprite_9
+    21300020: floweysprite_10
+    21300022: floweysprite_11
+    21300024: floweysprite_12
+    21300026: floweysprite_13
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: floweysprite_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 414
+        width: 138
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 40}
+        - {x: -40, y: 29}
+        - {x: -46, y: 4}
+        - {x: -46, y: -13}
+        - {x: -42, y: -23}
+        - {x: -32, y: -38}
+        - {x: -26, y: -43}
+        - {x: -24, y: -43}
+        - {x: -22, y: -45}
+        - {x: -28, y: -42}
+        - {x: -31, y: -41}
+        - {x: -36, y: -49}
+        - {x: -29, y: -66}
+        - {x: 20, y: -66}
+        - {x: 45, y: -38}
+        - {x: 45, y: 18}
+        - {x: 35, y: 40}
+      - - {x: 11, y: 38}
+        - {x: 9, y: 38}
+        - {x: 7, y: 37}
+        - {x: 4, y: 33}
+        - {x: 5, y: 30}
+        - {x: 8, y: 30}
+        - {x: 14, y: 34}
+        - {x: 14, y: 36}
+      - - {x: 0, y: 42}
+        - {x: -4, y: 40}
+        - {x: -4, y: 36}
+        - {x: -3, y: 32}
+        - {x: 1, y: 32}
+        - {x: 4, y: 36}
+        - {x: 4, y: 39}
+        - {x: 1, y: 42}
+    - name: floweysprite_1
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 414
+        width: 138
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 29, y: 36}
+        - {x: -33, y: 36}
+        - {x: -45, y: 30}
+        - {x: -46, y: 26}
+        - {x: -46, y: -30}
+        - {x: -38, y: -59}
+        - {x: -28, y: -66}
+        - {x: 21, y: -66}
+        - {x: 39, y: -48}
+        - {x: 45, y: -21}
+        - {x: 45, y: 30}
+      - - {x: -10, y: 39}
+        - {x: -10, y: 36}
+        - {x: -6, y: 32}
+        - {x: -3, y: 33}
+        - {x: -3, y: 39}
+        - {x: -5, y: 41}
+        - {x: -8, y: 41}
+      - - {x: 4, y: 40}
+        - {x: 1, y: 39}
+        - {x: 1, y: 34}
+        - {x: 3, y: 32}
+        - {x: 5, y: 32}
+        - {x: 11, y: 36}
+        - {x: 11, y: 38}
+        - {x: 10, y: 40}
+    - name: floweysprite_2
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 414
+        width: 138
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 40}
+        - {x: -40, y: 29}
+        - {x: -46, y: 4}
+        - {x: -46, y: -13}
+        - {x: -42, y: -23}
+        - {x: -32, y: -38}
+        - {x: -26, y: -43}
+        - {x: -24, y: -43}
+        - {x: -22, y: -45}
+        - {x: -28, y: -42}
+        - {x: -31, y: -41}
+        - {x: -36, y: -49}
+        - {x: -29, y: -66}
+        - {x: 20, y: -66}
+        - {x: 45, y: -38}
+        - {x: 45, y: 18}
+        - {x: 35, y: 40}
+      - - {x: 11, y: 38}
+        - {x: 9, y: 38}
+        - {x: 7, y: 37}
+        - {x: 4, y: 33}
+        - {x: 5, y: 30}
+        - {x: 8, y: 30}
+        - {x: 14, y: 34}
+        - {x: 14, y: 36}
+      - - {x: 0, y: 42}
+        - {x: -4, y: 40}
+        - {x: -4, y: 36}
+        - {x: -3, y: 32}
+        - {x: 1, y: 32}
+        - {x: 4, y: 36}
+        - {x: 4, y: 39}
+        - {x: 1, y: 42}
+    - name: floweysprite_3
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 414
+        width: 138
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 29, y: 36}
+        - {x: -33, y: 36}
+        - {x: -45, y: 30}
+        - {x: -46, y: 26}
+        - {x: -46, y: -30}
+        - {x: -38, y: -59}
+        - {x: -28, y: -66}
+        - {x: 21, y: -66}
+        - {x: 39, y: -48}
+        - {x: 45, y: -21}
+        - {x: 45, y: 30}
+      - - {x: -10, y: 39}
+        - {x: -10, y: 36}
+        - {x: -6, y: 32}
+        - {x: -3, y: 33}
+        - {x: -3, y: 39}
+        - {x: -5, y: 41}
+        - {x: -8, y: 41}
+      - - {x: 4, y: 40}
+        - {x: 1, y: 39}
+        - {x: 1, y: 34}
+        - {x: 3, y: 32}
+        - {x: 5, y: 32}
+        - {x: 11, y: 36}
+        - {x: 11, y: 38}
+        - {x: 10, y: 40}
+    - name: floweysprite_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 276
+        width: 138
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 29, y: 36}
+        - {x: -33, y: 36}
+        - {x: -45, y: 30}
+        - {x: -46, y: 26}
+        - {x: -46, y: -30}
+        - {x: -38, y: -59}
+        - {x: -28, y: -66}
+        - {x: 21, y: -66}
+        - {x: 39, y: -48}
+        - {x: 45, y: -21}
+        - {x: 45, y: 30}
+      - - {x: -10, y: 39}
+        - {x: -10, y: 36}
+        - {x: -6, y: 32}
+        - {x: -3, y: 33}
+        - {x: -3, y: 39}
+        - {x: -5, y: 41}
+        - {x: -8, y: 41}
+      - - {x: 4, y: 40}
+        - {x: 1, y: 39}
+        - {x: 1, y: 34}
+        - {x: 3, y: 32}
+        - {x: 5, y: 32}
+        - {x: 11, y: 36}
+        - {x: 11, y: 38}
+        - {x: 10, y: 40}
+    - name: floweysprite_5
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 276
+        width: 138
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 40}
+        - {x: -40, y: 29}
+        - {x: -46, y: 4}
+        - {x: -46, y: -13}
+        - {x: -42, y: -23}
+        - {x: -32, y: -38}
+        - {x: -26, y: -43}
+        - {x: -24, y: -43}
+        - {x: -22, y: -45}
+        - {x: -28, y: -42}
+        - {x: -31, y: -41}
+        - {x: -36, y: -49}
+        - {x: -29, y: -66}
+        - {x: 20, y: -66}
+        - {x: 45, y: -38}
+        - {x: 45, y: 18}
+        - {x: 35, y: 40}
+      - - {x: 11, y: 38}
+        - {x: 9, y: 38}
+        - {x: 7, y: 37}
+        - {x: 4, y: 33}
+        - {x: 5, y: 30}
+        - {x: 8, y: 30}
+        - {x: 14, y: 34}
+        - {x: 14, y: 36}
+      - - {x: 0, y: 42}
+        - {x: -4, y: 40}
+        - {x: -4, y: 36}
+        - {x: -3, y: 32}
+        - {x: 1, y: 32}
+        - {x: 4, y: 36}
+        - {x: 4, y: 39}
+        - {x: 1, y: 42}
+    - name: floweysprite_6
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 276
+        width: 138
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 29, y: 36}
+        - {x: -33, y: 36}
+        - {x: -45, y: 30}
+        - {x: -46, y: 26}
+        - {x: -46, y: -30}
+        - {x: -38, y: -59}
+        - {x: -28, y: -66}
+        - {x: 21, y: -66}
+        - {x: 39, y: -48}
+        - {x: 45, y: -21}
+        - {x: 45, y: 30}
+      - - {x: -10, y: 39}
+        - {x: -10, y: 36}
+        - {x: -6, y: 32}
+        - {x: -3, y: 33}
+        - {x: -3, y: 39}
+        - {x: -5, y: 41}
+        - {x: -8, y: 41}
+      - - {x: 4, y: 40}
+        - {x: 1, y: 39}
+        - {x: 1, y: 34}
+        - {x: 3, y: 32}
+        - {x: 5, y: 32}
+        - {x: 11, y: 36}
+        - {x: 11, y: 38}
+        - {x: 10, y: 40}
+    - name: floweysprite_7
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 276
+        width: 138
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 40}
+        - {x: -40, y: 29}
+        - {x: -46, y: 4}
+        - {x: -46, y: -13}
+        - {x: -42, y: -23}
+        - {x: -32, y: -38}
+        - {x: -26, y: -43}
+        - {x: -24, y: -43}
+        - {x: -22, y: -45}
+        - {x: -28, y: -42}
+        - {x: -31, y: -41}
+        - {x: -36, y: -49}
+        - {x: -29, y: -66}
+        - {x: 20, y: -66}
+        - {x: 45, y: -38}
+        - {x: 45, y: 18}
+        - {x: 35, y: 40}
+      - - {x: 11, y: 38}
+        - {x: 9, y: 38}
+        - {x: 7, y: 37}
+        - {x: 4, y: 33}
+        - {x: 5, y: 30}
+        - {x: 8, y: 30}
+        - {x: 14, y: 34}
+        - {x: 14, y: 36}
+      - - {x: 0, y: 42}
+        - {x: -4, y: 40}
+        - {x: -4, y: 36}
+        - {x: -3, y: 32}
+        - {x: 1, y: 32}
+        - {x: 4, y: 36}
+        - {x: 4, y: 39}
+        - {x: 1, y: 42}
+    - name: floweysprite_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 138
+        width: 138
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 40}
+        - {x: -40, y: 29}
+        - {x: -46, y: 4}
+        - {x: -46, y: -13}
+        - {x: -42, y: -23}
+        - {x: -32, y: -38}
+        - {x: -26, y: -43}
+        - {x: -24, y: -43}
+        - {x: -22, y: -45}
+        - {x: -28, y: -42}
+        - {x: -31, y: -41}
+        - {x: -36, y: -49}
+        - {x: -29, y: -66}
+        - {x: 20, y: -66}
+        - {x: 45, y: -38}
+        - {x: 45, y: 18}
+        - {x: 35, y: 40}
+      - - {x: 11, y: 38}
+        - {x: 9, y: 38}
+        - {x: 7, y: 37}
+        - {x: 4, y: 33}
+        - {x: 5, y: 30}
+        - {x: 8, y: 30}
+        - {x: 14, y: 34}
+        - {x: 14, y: 36}
+      - - {x: 0, y: 42}
+        - {x: -4, y: 40}
+        - {x: -4, y: 36}
+        - {x: -3, y: 32}
+        - {x: 1, y: 32}
+        - {x: 4, y: 36}
+        - {x: 4, y: 39}
+        - {x: 1, y: 42}
+    - name: floweysprite_9
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 138
+        width: 138
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 29, y: 36}
+        - {x: -33, y: 36}
+        - {x: -45, y: 30}
+        - {x: -46, y: 26}
+        - {x: -46, y: -30}
+        - {x: -38, y: -59}
+        - {x: -28, y: -66}
+        - {x: 21, y: -66}
+        - {x: 39, y: -48}
+        - {x: 45, y: -21}
+        - {x: 45, y: 30}
+      - - {x: -10, y: 39}
+        - {x: -10, y: 36}
+        - {x: -6, y: 32}
+        - {x: -3, y: 33}
+        - {x: -3, y: 39}
+        - {x: -5, y: 41}
+        - {x: -8, y: 41}
+      - - {x: 4, y: 40}
+        - {x: 1, y: 39}
+        - {x: 1, y: 34}
+        - {x: 3, y: 32}
+        - {x: 5, y: 32}
+        - {x: 11, y: 36}
+        - {x: 11, y: 38}
+        - {x: 10, y: 40}
+    - name: floweysprite_10
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 138
+        width: 138
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 40}
+        - {x: -40, y: 29}
+        - {x: -46, y: 4}
+        - {x: -46, y: -13}
+        - {x: -42, y: -23}
+        - {x: -32, y: -38}
+        - {x: -26, y: -43}
+        - {x: -24, y: -43}
+        - {x: -22, y: -45}
+        - {x: -28, y: -42}
+        - {x: -31, y: -41}
+        - {x: -36, y: -49}
+        - {x: -29, y: -66}
+        - {x: 20, y: -66}
+        - {x: 45, y: -38}
+        - {x: 45, y: 18}
+        - {x: 35, y: 40}
+      - - {x: 11, y: 38}
+        - {x: 9, y: 38}
+        - {x: 7, y: 37}
+        - {x: 4, y: 33}
+        - {x: 5, y: 30}
+        - {x: 8, y: 30}
+        - {x: 14, y: 34}
+        - {x: 14, y: 36}
+      - - {x: 0, y: 42}
+        - {x: -4, y: 40}
+        - {x: -4, y: 36}
+        - {x: -3, y: 32}
+        - {x: 1, y: 32}
+        - {x: 4, y: 36}
+        - {x: 4, y: 39}
+        - {x: 1, y: 42}
+    - name: floweysprite_11
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 138
+        width: 138
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 29, y: 36}
+        - {x: -33, y: 36}
+        - {x: -45, y: 30}
+        - {x: -46, y: 26}
+        - {x: -46, y: -30}
+        - {x: -38, y: -59}
+        - {x: -28, y: -66}
+        - {x: 21, y: -66}
+        - {x: 39, y: -48}
+        - {x: 45, y: -21}
+        - {x: 45, y: 30}
+      - - {x: -10, y: 39}
+        - {x: -10, y: 36}
+        - {x: -6, y: 32}
+        - {x: -3, y: 33}
+        - {x: -3, y: 39}
+        - {x: -5, y: 41}
+        - {x: -8, y: 41}
+      - - {x: 4, y: 40}
+        - {x: 1, y: 39}
+        - {x: 1, y: 34}
+        - {x: 3, y: 32}
+        - {x: 5, y: 32}
+        - {x: 11, y: 36}
+        - {x: 11, y: 38}
+        - {x: 10, y: 40}
+    - name: floweysprite_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 138
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 28, y: 15}
+        - {x: -23, y: 15}
+        - {x: -46, y: 7}
+        - {x: -46, y: -34}
+        - {x: -28, y: -66}
+        - {x: 17, y: -66}
+        - {x: 41, y: -41}
+        - {x: 45, y: -30}
+        - {x: 45, y: -11}
+    - name: floweysprite_13
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 0
+        width: 138
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -46, y: 36}
+        - {x: -46, y: -29}
+        - {x: -32, y: -38}
+        - {x: -26, y: -43}
+        - {x: -24, y: -43}
+        - {x: -22, y: -45}
+        - {x: -28, y: -42}
+        - {x: -31, y: -41}
+        - {x: -36, y: -49}
+        - {x: -29, y: -66}
+        - {x: 18, y: -66}
+        - {x: 45, y: -24}
+        - {x: 45, y: 28}
+        - {x: 29, y: 36}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
