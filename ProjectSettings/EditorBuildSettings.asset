@@ -20,18 +20,26 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_IntroScenes/_Scenes/CatapultIntro.unity
   - enabled: 1
-    path: Assets/Dominoes/Scenes/Dominoes.unity
+    path: Assets/_IntroScenes/_Scenes/DominosIntro.unity
   - enabled: 1
-    path: Assets/_Doors/_Scenes/DoorDiveGame.unity
-  - enabled: 1
-    path: Assets/Logs/Scenes/Log_Level.unity
+    path: Assets/_IntroScenes/_Scenes/DoorsIntro.unity
   - enabled: 0
     path: Assets/_Pachinko/_Scenes/Pachinko.unity
   - enabled: 1
-    path: Assets/MudBalls/Scenes/MudBalls.unity
+    path: Assets/_IntroScenes/_Scenes/LogsIntro.unity
+  - enabled: 1
+    path: Assets/_IntroScenes/_Scenes/MudballsIntro.unity
   - enabled: 1
     path: Assets/_IntroScenes/_Scenes/PachiIntro.unity
+  - enabled: 1
+    path: Assets/MudBalls/Scenes/MudBalls.unity
   - enabled: 1
     path: Assets/_Pachinko/_Scenes/Pachinko 2.unity
   - enabled: 1
     path: Assets/_Catapult/_Scenes/CatapultScene.unity
+  - enabled: 1
+    path: Assets/Dominoes/Scenes/Dominoes.unity
+  - enabled: 1
+    path: Assets/Logs/Scenes/Log_Level.unity
+  - enabled: 1
+    path: Assets/_Doors/_Scenes/DoorDiveGame.unity

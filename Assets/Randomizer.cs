@@ -4,12 +4,12 @@ using UnityEngine.SceneManagement;
 
 public class Randomizer : MonoBehaviour {
 
-	int[] scenesToPlay = new int[6];//if we add more games, need to change; assumes hubworld is scene 0 in build index
+	int[] scenesToPlay = new int[6];//if we add more games, need to change; assumes hubworld is scene 0 in build index, trailerscene is 1
 	int currentScene = 0;
 	// Use this for initialization
 	void Start () {
 		for (int i = 0; i < scenesToPlay.Length; i++) {
-			scenesToPlay [i] = i + 1;
+			scenesToPlay [i] = i + 2;
 		}
 		reshuffle (scenesToPlay);
 		for (int i = 0; i < scenesToPlay.Length; i++) {

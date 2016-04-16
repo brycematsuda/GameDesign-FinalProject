@@ -9,6 +9,7 @@ public class TextWrite : MonoBehaviour {
 	public string[] additionalLines;
 	public GameObject herp;// textSound;
 	public GameObject texts;
+	public GameObject theCube;
 	private AudioSource textSound;
 	private bool nextLineReady = false;
 	private bool setReady = false;
@@ -39,11 +40,13 @@ public class TextWrite : MonoBehaviour {
 
 		//skip dialogue button
 		if (Input.GetKeyDown (KeyCode.E)) {
+			Destroy (theCube);
 			currentLine = additionalLines.Length - 1;
 			writeNext ();
 			bc.skipIntro ();
 			DropTimes.startDrop ();
 			arp.spawnText ("WAO, R00D, YOU SKIPPED THE INSTRUCTIONS: -9000", -9000, transform);
+
 			if (texts != null) {
 				Destroy (texts);
 			}
@@ -78,6 +81,7 @@ public class TextWrite : MonoBehaviour {
 				arp.spawnText ("Good listener: +5", 5, transform);
 				if (currentLine >= additionalLines.Length) {
 					pgc.playMusic ();
+					Destroy (theCube);
 					Destroy (texts);
 					Destroy (gameObject);
 					DropTimes.startDrop ();
