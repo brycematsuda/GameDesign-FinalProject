@@ -10,6 +10,8 @@ public class PachinkoGameController : MonoBehaviour {
 	public Text scoreText;
 	public GameObject results;
 	private Text result;
+	NextLevelPlays nlp;
+	private bool win;
 	// Use this for initialization
 	void Start () {
 		//int songToPlay = Random.Range (0, songList.Length);
@@ -17,7 +19,7 @@ public class PachinkoGameController : MonoBehaviour {
 		scoreText.text = "SCORE: " + gameScore;
 		result = results.GetComponent<Text> ();
 		results.SetActive (false);
-
+		nlp = GameObject.FindGameObjectWithTag ("NextLevel").GetComponent<NextLevelPlays> ();
 
 	}
 
@@ -37,13 +39,22 @@ public class PachinkoGameController : MonoBehaviour {
 	}
 
 	public void setWin(bool didWin){
+		win = didWin;
 		results.SetActive (true);
 		if (didWin) {
 			result.color = Color.green;
 			result.text = "YOU ACTUALLY SOLVED THE TILE PUZZLE?!?!?!?!?!?!?!?!?!?!";
+			Invoke ("moveToNext", 3f);
 		} else {
 			result.color = Color.red;
 			result.text = "HAHAHAHA HOW'D YOU LOSE, THIS PUZZLE IS SO EASY";
+			Invoke ("moveToNext", 3f);
 		}
 	}
+
+	void moveToNext(){
+		nlp.moveToNextScene (win);
+	}
+
+
 }

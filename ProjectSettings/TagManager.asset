@@ -18,6 +18,7 @@ TagManager:
   - Mud
   - Ball
   - Randomizer
+  - NextLevel
   layers:
   - Default
   - TransparentFX

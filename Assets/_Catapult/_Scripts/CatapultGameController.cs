@@ -16,6 +16,9 @@ public class CatapultGameController : MonoBehaviour {
 	public bool gameOver = false;
 	public GameObject winOrLose;//gameobject containing the text that will display whether you're a whiner or a loser
 
+	private NextLevelPlays nlp;//object that controls when you go to the next scene
+	private bool win;
+
 	private Text resultText;
 	// Use this for initialization
 	void Start () {
@@ -24,6 +27,7 @@ public class CatapultGameController : MonoBehaviour {
 		chosen.Play ();
 		resultText = winOrLose.GetComponent<Text> ();
 		arp = GameObject.FindGameObjectWithTag ("PointsText").GetComponent<AudienceReactionPoints> ();
+		nlp = GameObject.FindGameObjectWithTag ("NextLevel").GetComponent<NextLevelPlays> ();
 	
 	}
 
@@ -42,10 +46,15 @@ public class CatapultGameController : MonoBehaviour {
 			resultText.text = "YOU'RE WINNER!";
 			resultText.color = Color.green;
 			arp.spawnText ("AT LEAST ONE SURVIVED-ER, I MEAN...F*** IT, THE REST ARE ALL DEAD, +100", 100, null);
+			win = true;
+			Invoke ("moveToNext", 5f);
 		} else {
 			resultText.text = "LOSER! YOU'RE A LOSER! ARE YOU FEELIN' SORRY FOR YOURSELF? WELL YOU SHOULD BE!";
 			resultText.color = Color.red;
 			loser.Play ();
+			win = false;
+			Invoke ("moveToNext", 11f);
+
 		}
 		resultText.gameObject.SetActive (true);
 	}
@@ -77,5 +86,9 @@ public class CatapultGameController : MonoBehaviour {
 	public void addScore(int scoreToAdd){
 		score += scoreToAdd;
 		scoreText.text = "SCORE: " + score;
+	}
+
+	void moveToNext(){
+		nlp.moveToNextScene (win);
 	}
 }

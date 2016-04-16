@@ -514,6 +514,48 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 479312, guid: ebe58cffb6ff9bb4f8233a600025234b, type: 2}
   m_PrefabInternal: {fileID: 98925285}
+--- !u!1001 &100235377
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 489484, guid: c90556f9db50e284984ab3e7dc586af9, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 7.699992
+      objectReference: {fileID: 0}
+    - target: {fileID: 489484, guid: c90556f9db50e284984ab3e7dc586af9, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 7.03964
+      objectReference: {fileID: 0}
+    - target: {fileID: 489484, guid: c90556f9db50e284984ab3e7dc586af9, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -24.580002
+      objectReference: {fileID: 0}
+    - target: {fileID: 489484, guid: c90556f9db50e284984ab3e7dc586af9, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 489484, guid: c90556f9db50e284984ab3e7dc586af9, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 489484, guid: c90556f9db50e284984ab3e7dc586af9, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 489484, guid: c90556f9db50e284984ab3e7dc586af9, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 489484, guid: c90556f9db50e284984ab3e7dc586af9, type: 2}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: c90556f9db50e284984ab3e7dc586af9, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &134497768
 Prefab:
   m_ObjectHideFlags: 0
@@ -5533,17 +5575,6 @@ AudioSource:
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 753ea9ccf9eee6c42a0954ec8663b992, type: 2}
   m_PrefabInternal: {fileID: 1501629368}
---- !u!75 &1324167935
-ConstantForce:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1324167934}
-  m_Enabled: 0
-  m_Force: {x: 0, y: 0, z: 50}
-  m_RelativeForce: {x: 0, y: 0, z: 0}
-  m_Torque: {x: 0, y: 0, z: 0}
-  m_RelativeTorque: {x: 0, y: 0, z: 0}
 --- !u!114 &1324167936
 MonoBehaviour:
   m_ObjectHideFlags: 0
