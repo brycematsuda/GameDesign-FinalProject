@@ -14,9 +14,11 @@ public class DomGameController : MonoBehaviour {
 	private AudioSource audio;
 	private float actionCooldown = 2.0f;
 	private float timeSinceAction = 0.0f;
- 	
+ 	private bool updateScore;
+
 	// Use this for initialization
 	void Start () {
+		updateScore = true;
 		score = Random.Range(0, 99999);
 		// liveGui.text = "Lives: " + lives.ToString();
 		scoreGui.text = "Score: " + score.ToString();
@@ -40,7 +42,11 @@ public class DomGameController : MonoBehaviour {
 			}			
 		} else {
 			player.GetComponent<UnityChan2DController>().enabled = true;
-            score = Random.Range(0, 99999);
+      if (updateScore) {
+      	score = Random.Range(0, 99999);
+      	} else {
+      		score = score;
+      	}
       scoreGui.text = "Score: " + score.ToString();
 			isDisabled = false;
 		  timeSinceAction = 0;
@@ -53,6 +59,8 @@ public class DomGameController : MonoBehaviour {
 			}
 			
 			winLoseGui.text = "Eliminated!";
+			score = -score;
+			updateScore = false;
 			StartCoroutine(Wait(3));
 		}
 
@@ -60,6 +68,7 @@ public class DomGameController : MonoBehaviour {
 			player.GetComponent<UnityChan2DController>().enabled = false;
 			player.GetComponent<DomPlayerController>().canMove = false;
 			winLoseGui.text = "Winner!";
+			updateScore = false;
 			//StartCoroutine(Wait(3));			
 		}
 	}
