@@ -18,4 +18,8 @@ public class HubMovie : MonoBehaviour {
 	void Update () {
 	
 	}
+
+	public void stopMov(){
+		movie.Stop ();
+	}
 }

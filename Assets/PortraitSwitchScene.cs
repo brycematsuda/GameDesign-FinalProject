@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 public class PortraitSwitchScene : MonoBehaviour {
 
 	public string sceneName; //the scene to switch to
+	HubMovie movCube;
 	// Use this for initialization
 	void Start () {
+		movCube = GameObject.FindGameObjectWithTag ("Fire").GetComponent<HubMovie> ();
 	
 	}
 	
@@ -17,6 +19,7 @@ public class PortraitSwitchScene : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other){
 		if (other.tag == "Player") {
+			movCube.stopMov ();
 			SceneManager.LoadScene (sceneName);
 		}
 	}

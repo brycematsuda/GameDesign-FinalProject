@@ -5,6 +5,7 @@
 //
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 // 必要なコンポーネントの列記
 [RequireComponent(typeof (Animator))]
@@ -42,6 +43,10 @@ public class UnityChanControlScriptWithRgidBody : MonoBehaviour
 	private AnimatorStateInfo currentBaseState;			// base layerで使われる、アニメーターの現在の状態の参照
 
 	private GameObject cameraObject;	// メインカメラへの参照
+
+	public float idleLimit;
+	private float idleTime;
+	private HubMovie movCube;
 		
 // アニメーター各ステートへの参照
 	static int idleState = Animator.StringToHash("Base Layer.Idle"); //shows each state for described character movement state
@@ -62,6 +67,7 @@ public class UnityChanControlScriptWithRgidBody : MonoBehaviour
 		// CapsuleColliderコンポーネントのHeight、Centerの初期値を保存する
 		orgColHight = col.height;
 		orgVectColCenter = col.center;
+		movCube = GameObject.FindGameObjectWithTag ("Fire").GetComponent<HubMovie> ();
 }
 	
 	
@@ -69,7 +75,11 @@ public class UnityChanControlScriptWithRgidBody : MonoBehaviour
 	void Update ()
 	{
 		
-		
+		idleLimit -= Time.deltaTime;
+		if (idleLimit < 0) {
+			movCube.stopMov ();
+			SceneManager.LoadScene ("TrailerScene");//go to trailer if idle
+		}
 		if (Input.GetButtonDown("Jump")) {	// スペースキーを入力したら
 			//アニメーションのステートがLocomotionの最中のみジャンプできる
 			if (currentBaseState.nameHash == locoState){
@@ -195,9 +205,11 @@ public class UnityChanControlScriptWithRgidBody : MonoBehaviour
 		velocity = transform.TransformDirection(velocity);
 		//以下のvの閾値は、Mecanim側のトランジションと一緒に調整する
 		if (v > 0.1) {
-			velocity *= forwardSpeed;		// 移動速度を掛ける
+			velocity *= forwardSpeed;
+			idleLimit = 10f;// 移動速度を掛ける
 		} else if (v < -0.1) {
-			velocity *= backwardSpeed;	// 移動速度を掛ける
+			velocity *= backwardSpeed;
+			idleLimit = 10f;// 移動速度を掛ける
 		}
 		//Debug.Log (velocity);
 		// 上下のキー入力でキャラクターを移動させる
