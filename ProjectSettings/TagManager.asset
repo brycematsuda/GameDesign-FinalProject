@@ -22,6 +22,12 @@ TagManager:
   - Lemon
   - Orange
   - POVCam
+  - Flowey1
+  - Flowey2
+  - Flowey3
+  - Flowey4
+  - Flowey5
+  - Flowey6
   layers:
   - Default
   - TransparentFX

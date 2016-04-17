@@ -50,9 +50,17 @@ public class Randomizer : MonoBehaviour {
 			SceneManager.LoadScene ("ResultsScreen");
 			return;
 		}
+		if (scenesToPlay [currentScene] == firstScene) {
+			currentScene++;
+			loadNextScene ();
+			return;
+		}
 		SceneManager.LoadScene (scenesToPlay [currentScene]);
-		firstScene = scenesToPlay [currentScene];
+		if (firstScene == -1) {
+			firstScene = scenesToPlay [currentScene];
+		}
 		currentScene++;
+
 	}
 
 	public void addWin(){
@@ -77,6 +85,28 @@ public class Randomizer : MonoBehaviour {
 
 	public void addScore(int toAdd){
 		score += toAdd;
+	}
+
+	public void setFloweys(){
+		numPlayed++;
+		GameObject flow1 = GameObject.FindGameObjectWithTag ("Flowey1");
+		GameObject flow2 = GameObject.FindGameObjectWithTag ("Flowey2");
+		GameObject flow3 = GameObject.FindGameObjectWithTag ("Flowey3");
+		GameObject flow4 = GameObject.FindGameObjectWithTag ("Flowey4");
+		GameObject flow5 = GameObject.FindGameObjectWithTag ("Flowey5");
+		GameObject flow6 = GameObject.FindGameObjectWithTag ("Flowey6");
+		GameObject[] flows = {flow1, flow2, flow3, flow4, flow5, flow6 };
+
+		foreach (GameObject x in flows) {
+			x.SetActive (false);
+		}
+		for (int i = 0; i < numPlayed; i++) {
+			flows [i].SetActive (true);
+		}
+		flows [numPlayed-1].GetComponent<AudioSource> ().Play ();
+		if (numPlayed == 6) {
+			numPlayed = 0;//reset after finished
+		}
 	}
 
 }
