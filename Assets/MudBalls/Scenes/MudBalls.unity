@@ -1335,6 +1335,7 @@ MonoBehaviour:
   player: {fileID: 918707713}
   caughtText: {fileID: 1553610963}
   basket: {fileID: 1355647276}
+  cannon: {fileID: 133734962}
 --- !u!1 &1850314567
 GameObject:
   m_ObjectHideFlags: 0

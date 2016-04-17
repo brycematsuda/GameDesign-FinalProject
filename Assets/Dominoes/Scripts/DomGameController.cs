@@ -7,7 +7,7 @@ public class DomGameController : MonoBehaviour {
 	public GameObject player;
 	public int lives;
 	private int score;
-	public Text liveGui;
+	// public Text liveGui;
 	public Text scoreGui;
 	public Text winLoseGui;
 	private bool isDisabled;
@@ -17,8 +17,8 @@ public class DomGameController : MonoBehaviour {
  	
 	// Use this for initialization
 	void Start () {
-		score = 99999;
-		liveGui.text = "Lives: " + lives.ToString();
+		score = Random.Range(0, 99999);
+		// liveGui.text = "Lives: " + lives.ToString();
 		scoreGui.text = "Score: " + score.ToString();
 		winLoseGui.text = "";
 		isDisabled = false;
@@ -40,8 +40,10 @@ public class DomGameController : MonoBehaviour {
 			}			
 		} else {
 			player.GetComponent<UnityChan2DController>().enabled = true;
+            score = Random.Range(0, 99999);
+      scoreGui.text = "Score: " + score.ToString();
 			isDisabled = false;
-		    timeSinceAction = 0;
+		  timeSinceAction = 0;
 		}
 		}
 		if (player.transform.position.y < -1.35) {
@@ -58,7 +60,7 @@ public class DomGameController : MonoBehaviour {
 			player.GetComponent<UnityChan2DController>().enabled = false;
 			player.GetComponent<DomPlayerController>().canMove = false;
 			winLoseGui.text = "Winner!";
-			StartCoroutine(Wait(3));			
+			//StartCoroutine(Wait(3));			
 		}
 	}
 
@@ -66,7 +68,7 @@ public class DomGameController : MonoBehaviour {
     {
         //This is a coroutine
          yield return new WaitForSeconds(duration);   //Wait
-			lives -= 1;
+
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
