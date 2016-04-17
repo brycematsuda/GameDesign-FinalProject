@@ -43,3 +43,7 @@ EditorBuildSettings:
     path: Assets/Logs/Scenes/Log_Level.unity
   - enabled: 1
     path: Assets/_Doors/_Scenes/DoorDiveGame.unity
+  - enabled: 1
+    path: Assets/_Hub/_Scenes/CreditsScene.unity
+  - enabled: 1
+    path: Assets/_Hub/_Scenes/ResultsScreen.unity

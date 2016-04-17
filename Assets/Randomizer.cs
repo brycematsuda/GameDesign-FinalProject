@@ -9,6 +9,9 @@ public class Randomizer : MonoBehaviour {
 	public bool noScenesLeft = false;
 	int wins = 0;
 	int losses = 0;
+	int numPlayed = 0;
+	int firstScene = -1;
+	int score = 0;
 	// Use this for initialization
 	void Start () {
 		for (int i = 0; i < scenesToPlay.Length; i++) {
@@ -44,9 +47,11 @@ public class Randomizer : MonoBehaviour {
 	public void loadNextScene(){
 		if (currentScene >= scenesToPlay.Length) {
 			noScenesLeft = true;
+			SceneManager.LoadScene ("ResultsScreen");
 			return;
 		}
 		SceneManager.LoadScene (scenesToPlay [currentScene]);
+		firstScene = scenesToPlay [currentScene];
 		currentScene++;
 	}
 
@@ -56,6 +61,22 @@ public class Randomizer : MonoBehaviour {
 
 	public void addLoss(){
 		losses++;
+	}
+
+	public int getWins(){
+		return wins;
+	}
+
+	public int getLosses(){
+		return losses;
+	}
+
+	public int getScore(){
+		return score;
+	}
+
+	public void addScore(int toAdd){
+		score += toAdd;
 	}
 
 }

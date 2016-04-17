@@ -19,6 +19,9 @@ TagManager:
   - Ball
   - Randomizer
   - NextLevel
+  - Lemon
+  - Orange
+  - POVCam
   layers:
   - Default
   - TransparentFX

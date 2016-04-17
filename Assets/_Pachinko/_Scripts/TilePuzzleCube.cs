@@ -13,6 +13,9 @@ public class TilePuzzleCube : MonoBehaviour {
 	public int numNuxBlocks = 1;
 	private AudienceReactionPoints arp;
 
+	private GameObject orange, lemon, firstOne;
+	private AudioSource dingSound;
+
 	static float nuxTime = 0;
 
 	// Use this for initialization
@@ -31,6 +34,12 @@ public class TilePuzzleCube : MonoBehaviour {
 	void Start () {
 		thePlayer = GameObject.FindGameObjectWithTag ("Player").GetComponent<UnityChan2D> ();
 		arp = GameObject.FindGameObjectWithTag ("PointsText").GetComponent<AudienceReactionPoints> ();
+		orange = GameObject.FindGameObjectWithTag ("Orange");
+		lemon = GameObject.FindGameObjectWithTag ("Lemon");
+		firstOne = GameObject.FindGameObjectWithTag ("Waters");
+		dingSound = GameObject.FindGameObjectWithTag ("Debris").GetComponent<AudioSource> ();
+		//orange.SetActive (false);
+		//lemon.SetActive (false);
 	}
 	
 	// Update is called once per frame
@@ -71,11 +80,19 @@ public class TilePuzzleCube : MonoBehaviour {
 			case (int) CubeTypes.Orange://Orange tiles change player's flavor to Orange. Piranhas love oranges and will lick you if you try to cross water
 				thePlayer.flavor = "Orange";
 				arp.spawnText ("DELICIOUS: +5", 5, transform);
+				lemon.SetActive (false);
+				firstOne.SetActive (false);
+				orange.SetActive (true);
+				dingSound.Play ();
 				break;
 			case (int) CubeTypes.Slider://Purple tiles push you forward one and set your flavor to lemon. Piranhas hate lemons and will avoid you at all costs.
 				thePlayer.flavor = "Lemon";
 				thePlayer.forcePush ();
 				arp.spawnText ("SLIPPED: +5", 5, transform);
+				orange.SetActive (false);
+				firstOne.SetActive (false);
+				lemon.SetActive (true);
+				dingSound.Play ();
 				break;
 			case (int) CubeTypes.Water://Water tiles are filled with piranhas. Piranhas love oranges and will eat you if you taste like them.
 										//also, electricity conductoos water, so if it is next to a yellow tile, it will send you back one.
@@ -87,6 +104,7 @@ public class TilePuzzleCube : MonoBehaviour {
 				} else if (thePlayer.flavor == "Orange") {
 					thePlayer.getEaten ();
 					arp.spawnText ("YER B8 M8, GOT 8: +8.8/8", 8, transform);
+					dingSound.Play ();
 				}
 				break;
 			case (int) CubeTypes.Nintendoge://causes an image of glorious leader Nuxoll-kun to block the scene for three seconds
