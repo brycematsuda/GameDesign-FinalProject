@@ -3,10 +3,10 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class LevelComplete : MonoBehaviour {
-
+	DoorsGameController x;
 	// Use this for initialization
 	void Start () {
-	
+		x = GameObject.FindGameObjectWithTag ("GameController").GetComponent<DoorsGameController> ();
 	}
 	
 	// Update is called once per frame
@@ -14,14 +14,13 @@ public class LevelComplete : MonoBehaviour {
 	
 	}
 
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision other)
     {
-        if (other.tag == "Player")
+        if (other.gameObject.tag == "Orange")
         {
             //messageText.text = message;
 
-            StartCoroutine(Waiter());
-            SceneManager.LoadScene(0);
+			x.winner ();
         }
     }
     IEnumerator Waiter()

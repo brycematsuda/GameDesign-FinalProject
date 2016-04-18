@@ -2,10 +2,12 @@
 using System.Collections;
 
 public class DestroyOnContact : MonoBehaviour {
-
+	public DoorsCamControl cameras;
+	private UnityChanDoors ucd;
     // Use this for initialization
     void Start () {
-	
+		ucd = GameObject.FindGameObjectWithTag ("Orange").GetComponent<UnityChanDoors> ();
+
 	}
 	
 	// Update is called once per frame
@@ -13,10 +15,12 @@ public class DestroyOnContact : MonoBehaviour {
 	
 	}
 
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision other)
     {
-        if(other.tag == "Player")
+		if(other.gameObject.tag == "Orange")
         {
+			cameras.moveToNext ();
+			ucd.moveToNext ();
             Destroy(this.gameObject);
         }
     }

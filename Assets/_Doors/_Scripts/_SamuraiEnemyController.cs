@@ -20,7 +20,6 @@ public class _SamuraiEnemyController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        rb.GetComponent<Rigidbody>();
 	}
 	
 	// Update is called once per frame
