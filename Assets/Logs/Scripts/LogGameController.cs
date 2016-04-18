@@ -12,6 +12,7 @@ public class LogGameController : MonoBehaviour {
 	public Text scoreGui;
 	public Text winLoseGui;
 	private bool isDisabled;
+	private bool hasWon = false;
 
 	// Use this for initialization
 	void Start () {
@@ -24,25 +25,17 @@ public class LogGameController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-//		if (player.transform.position.y < -1.35) {
-//			if (!isDisabled) {
-//				player.GetComponent<PlayerController>().enabled = !player.GetComponent<UnityChan2DController>().enabled;
-//				isDisabled = true;
-//			}
-//
-//			winLoseGui.text = "Eliminated!";
-//			StartCoroutine(Wait(3));
-//		}
-//
-//		if (player.GetComponent<PlayerController>().touchGoal == true) {
-//			player.GetComponent<PlayerController>().canMove = false;
-//			winLoseGui.text = "Winner!";
-//			StartCoroutine(Wait(3));			
-//		}
+		updateGUI();
+		if (player.transform.position.x > 12 && player.transform.position.x < 15) {
+			winLoseGui.text = "Winner!";
+			hasWon = true;
+		}
 	}
 
 	public void updateGUI() {
-		score += (int) Random.Range(-5f, 50f);
+		if (!hasWon) {
+			score += (int)Random.Range (-5f, 6f);
+		}
 		if(score < 0) {
 			score = 0;
 		}

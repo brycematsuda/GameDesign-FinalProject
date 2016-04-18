@@ -83,82 +83,99 @@ public class PlayerController : MonoBehaviour
 
 	void Update ()
 	{
-		if (gameObject.transform.position.y <= -.01000017) {
+		if (gameObject.transform.position.y <= -0.010000172) {
 			LogGameController script = (LogGameController) gameController.GetComponent("LogGameController");
 			script.lives -= 1;
 			script.updateGUI ();
 			gameObject.transform.position = startPos;
 		}
 
-		if (controlsEnabled) {
-			if (Input.GetKeyDown (KeyCode.E)) {
-				anim.SetBool ("ActivateSwitch", true);
+		if (Input.GetButtonDown("Jump") && gameObject.transform.position.y < 2) {	// スペースキーを入力したら
+			//アニメーションのステートがLocomotionの最中のみジャンプできる
+			if (currentBaseState.nameHash == locoState){
+				//ステート遷移中でなかったらジャンプできる
+				if(!anim.IsInTransition(0))
+				{
+					rb.AddForce(Vector3.up * jumpPower, ForceMode.VelocityChange);
+					anim.SetBool("Jump", true);		// Animatorにジャンプに切り替えるフラグを送る
+				}
 			}
-			if (anim.IsInTransition (0) && anim.GetNextAnimatorStateInfo (0).
-				nameHash == Animator.StringToHash ("Base Layer.ActivateSwitch")) {
-				anim.SetBool ("ActivateSwitch", false);
-			}
-		}
-		if (gettingPushed) {
-			//transform.position = Vector3.MoveTowards (transform.position, new Vector3 (transform.position.x, transform.position.y, transform.position.z + 1.5f), 1 * Time.deltaTime);
-			Vector3 target = Vector3.zero;
-			switch (direction) {
-			case forward:
-				target = new Vector3 (transform.position.x, transform.position.y, transform.position.z + 3f);
-				break;
-			case backward:
-				target = new Vector3 (transform.position.x, transform.position.y, transform.position.z - 3f);
-				break;
-			case up:
-				target = new Vector3 (transform.position.x - 3f, transform.position.y, transform.position.z);
-				break;
-			case down:
-				target = new Vector3 (transform.position.x + 3f, transform.position.y, transform.position.z);
-				break;
-			}
-			transform.position = Vector3.MoveTowards (transform.position, target, 2 * Time.deltaTime);
 		}
 
-		if (gettingAte) {
-			//transform.position = Vector3.MoveTowards (transform.position, new Vector3 (transform.position.x, transform.position.y, transform.position.z + 1.5f), 1 * Time.deltaTime);
-			Vector3 target = Vector3.zero;
-			switch (direction) {
-			case forward:
-				target = new Vector3 (transform.position.x, transform.position.y, transform.position.z - 1f);
-				break;
-			case backward:
-				target = new Vector3 (transform.position.x, transform.position.y, transform.position.z + 1f);
-				break;
-			case up:
-				target = new Vector3 (transform.position.x + 1f, transform.position.y, transform.position.z);
-				break;
-			case down:
-				target = new Vector3 (transform.position.x - 1f, transform.position.y, transform.position.z);
-				break;
+		// 以下、Animatorの各ステート中での処理
+		// Locomotion中
+		// 現在のベースレイヤーがlocoStateの時
+		if (currentBaseState.nameHash == locoState){
+			//カーブでコライダ調整をしている時は、念のためにリセットする
+			if(useCurves){
+				resetCollider();
 			}
-			transform.position = Vector3.MoveTowards (transform.position, target, 0.5f * Time.deltaTime);
 		}
+		// JUMP中の処理
+		// 現在のベースレイヤーがjumpStateの時
+		else if(currentBaseState.nameHash == jumpState)
+		{
+			//cameraObject.SendMessage("setCameraPositionJumpView");	// ジャンプ中のカメラに変更
+			// ステートがトランジション中でない場合
+			if(!anim.IsInTransition(0))
+			{
 
-		if (gettingShocked || knockedOut) {
-			//transform.position = Vector3.MoveTowards (transform.position, new Vector3 (transform.position.x, transform.position.y, transform.position.z + 1.5f), 1 * Time.deltaTime);
-			Vector3 target = Vector3.zero;
-			switch (direction) {
-			case forward:
-				target = new Vector3 (transform.position.x, transform.position.y, transform.position.z - 0.5f);
-				break;
-			case backward:
-				target = new Vector3 (transform.position.x, transform.position.y, transform.position.z + 0.5f);
-				break;
-			case up:
-				target = new Vector3 (transform.position.x + 0.5f, transform.position.y, transform.position.z);
-				break;
-			case down:
-				target = new Vector3 (transform.position.x - 0.5f, transform.position.y, transform.position.z);
-				break;
+				// 以下、カーブ調整をする場合の処理
+				if(useCurves){
+					// 以下JUMP00アニメーションについているカーブJumpHeightとGravityControl
+					// JumpHeight:JUMP00でのジャンプの高さ（0〜1）
+					// GravityControl:1⇒ジャンプ中（重力無効）、0⇒重力有効
+					float jumpHeight = anim.GetFloat("JumpHeight");
+					float gravityControl = anim.GetFloat("GravityControl"); 
+					if(gravityControl > 0)
+						rb.useGravity = false;	//ジャンプ中の重力の影響を切る
+
+					// レイキャストをキャラクターのセンターから落とす
+					Ray ray = new Ray(transform.position + Vector3.up, -Vector3.up);
+					RaycastHit hitInfo = new RaycastHit();
+					// 高さが useCurvesHeight 以上ある時のみ、コライダーの高さと中心をJUMP00アニメーションについているカーブで調整する
+					if (Physics.Raycast(ray, out hitInfo))
+					{
+						if (hitInfo.distance > useCurvesHeight)
+						{
+							col.height = orgColHight - jumpHeight;			// 調整されたコライダーの高さ
+							float adjCenterY = orgVectColCenter.y + jumpHeight;
+							col.center = new Vector3(0, adjCenterY, 0);	// 調整されたコライダーのセンター
+						}
+						else{
+							// 閾値よりも低い時には初期値に戻す（念のため）					
+							resetCollider();
+						}
+					}
+				}
+				// Jump bool値をリセットする（ループしないようにする）				
+				anim.SetBool("Jump", false);
 			}
-			transform.position = Vector3.MoveTowards (transform.position, target, 1 * Time.deltaTime);
 		}
-
+		// IDLE中の処理
+		// 現在のベースレイヤーがidleStateの時
+		else if (currentBaseState.nameHash == idleState)
+		{
+			//カーブでコライダ調整をしている時は、念のためにリセットする
+			if(useCurves){
+				resetCollider();
+			}
+			// スペースキーを入力したらRest状態になる
+			if (Input.GetButtonDown("Jump")) {
+				anim.SetBool("Rest", true);
+			}
+		}
+		// REST中の処理
+		// 現在のベースレイヤーがrestStateの時
+		else if (currentBaseState.nameHash == restState)
+		{
+			//cameraObject.SendMessage("setCameraPositionFrontView");		// カメラを正面に切り替える
+			// ステートが遷移中でない場合、Rest bool値をリセットする（ループしないようにする）
+			if(!anim.IsInTransition(0))
+			{
+				anim.SetBool("Rest", false);
+			}
+		}
 	}
 
 
@@ -189,21 +206,6 @@ public class PlayerController : MonoBehaviour
 				velocity *= forwardSpeed;		// 移動速度を掛ける
 			} else if (v < -0.1) {
 				velocity *= backwardSpeed;	// 移動速度を掛ける
-			}
-
-			if (Input.GetButtonDown ("Jump")) {	// スペースキーを入力したら
-				//アニメーションのステートがLocomotionの最中のみジャンプできる
-				if (currentBaseState.nameHash == locoState) {
-					//ステート遷移中でなかったらジャンプできる
-					if (!anim.IsInTransition (0)) {
-						rb.AddForce (Vector3.up * jumpPower, ForceMode.VelocityChange);
-						anim.SetBool ("Jump", true);		// Animatorにジャンプに切り替えるフラグを送る
-					}
-				}
-			}
-			if (anim.IsInTransition (0) && anim.GetNextAnimatorStateInfo (0).
-				nameHash == Animator.StringToHash ("Base Layer.ActivateSwitch")) {
-				anim.SetBool ("ActivateSwitch", false);
 			}
 
 
@@ -306,19 +308,6 @@ public class PlayerController : MonoBehaviour
 			}
 		}
 	}
-
-	/**
-	void OnGUI()
-	{
-		GUI.Box(new Rect(Screen.width -260, 10 ,250 ,150), "Interaction");
-		GUI.Label(new Rect(Screen.width -245,30,250,30),"Up/Down Arrow : Go Forwald/Go Back");
-		GUI.Label(new Rect(Screen.width -245,50,250,30),"Left/Right Arrow : Turn Left/Turn Right");
-		GUI.Label(new Rect(Screen.width -245,70,250,30),"Hit Space key while Running : Jump");
-		GUI.Label(new Rect(Screen.width -245,90,250,30),"Hit Spase key while Stopping : Rest");
-		GUI.Label(new Rect(Screen.width -245,110,250,30),"Left Control : Front Camera");
-		GUI.Label(new Rect(Screen.width -245,130,250,30),"Alt : LookAt Camera");
-	}
-	*/
 
 
 	void OnTriggerEnter(Collider col) {
