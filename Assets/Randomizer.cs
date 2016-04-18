@@ -25,9 +25,7 @@ public class Randomizer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (SceneManager.GetActiveScene ().name == "HubScene") {
-			currentScene = 0;
-			noScenesLeft = false;
-			reshuffle (scenesToPlay);//keep shuffling while we're on the hubscene
+			
 			//this is in case you switch back to hubscene in middle of game
 		}
 	}
@@ -61,6 +59,14 @@ public class Randomizer : MonoBehaviour {
 		}
 		currentScene++;
 
+	}
+
+	public void reset(){
+		currentScene = 0;
+		noScenesLeft = false;
+		reshuffle (scenesToPlay);
+		firstScene = -1;
+		numPlayed = 0;
 	}
 
 	public void addWin(){
