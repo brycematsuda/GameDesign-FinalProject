@@ -9,11 +9,12 @@ public class MudBallsGameController : MonoBehaviour {
   public Text caughtText;
   public GameObject basket;
   public GameObject cannon;
-
+	Randomizer x;
 	// Use this for initialization
 	void Start () {
 		isDisabled = false;
     caughtText.text = "";
+		x = GameObject.FindGameObjectWithTag ("Randomizer").GetComponent<Randomizer> ();
 	}
 	
 	// Update is called once per frame
@@ -22,9 +23,20 @@ public class MudBallsGameController : MonoBehaviour {
 		if (basket.GetComponent<MudBallsBasketController>().isCaught) {
 			caughtText.text = "Caught!";
 			player.transform.GetChild(0).GetComponent<UnityChan2DController>().enabled = false;
+
+			if (!IsInvoking ("delayedLoad")) {
+				x.addWin ();
+				Invoke ("delayedLoad", 3f);
+			}
+
 		} else if (cannon.GetComponent<MudBallsCannonController>().numBalls == 0 && GameObject.FindGameObjectsWithTag("Respawn").Length == 0) {
         caughtText.text = "Geemu Obah :( \n try gain wit R?";
         player.transform.GetChild(0).GetComponent<UnityChan2DController>().enabled = false;
+
+			if (!IsInvoking ("delayedLoad")) {
+				x.addLoss ();
+				Invoke ("delayedLoad", 3f);
+			}
 
         if (Input.GetKeyDown (KeyCode.R)) {
               SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -42,5 +54,9 @@ public class MudBallsGameController : MonoBehaviour {
 			player.transform.GetChild(0).GetComponent<UnityChan2DController>().enabled = true;
 			isDisabled = false;
 		}
+	}
+
+	void delayedLoad(){
+		x.loadNextScene ();
 	}
 }

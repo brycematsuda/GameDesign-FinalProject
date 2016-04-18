@@ -81,6 +81,8 @@ public class UnityChan2D : MonoBehaviour
 		orgColHight = col.height;
 		orgVectColCenter = col.center;
 		origSpeed = forwardSpeed;
+		arp = GameObject.FindGameObjectWithTag ("PointsText").GetComponent<AudienceReactionPoints> ();
+		pgc = GameObject.FindGameObjectWithTag ("GameController").GetComponent<PachinkoGameController> ();
 
 	}
 

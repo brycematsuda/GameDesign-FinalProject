@@ -48,7 +48,9 @@ public class DoorsGameController : MonoBehaviour {
 
 			gameOverText.gameObject.SetActive (true);
 			gameOverText.text = "YOU'RE A LOSER";
-			Invoke ("delayedLoadNext", 3f);
+			if (!IsInvoking ("delayedLoadNext")) {
+				Invoke ("delayedLoadNext", 3f);
+			}
 		}
 	}
 
@@ -57,7 +59,10 @@ public class DoorsGameController : MonoBehaviour {
 	}
 
 	public void winner(){
+		x.addWin ();
 		winText.gameObject.SetActive (true);
-		Invoke ("delayedLoadNext", 3f);
+		if (!IsInvoking ("delayedLoadNext")) {
+			Invoke ("delayedLoadNext", 3f);
+		}
 	}
 }

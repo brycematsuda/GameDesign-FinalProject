@@ -552,7 +552,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 258410838}
   lives: 12
-  liveGui: {fileID: 0}
   scoreGui: {fileID: 379852775}
   winLoseGui: {fileID: 1853272763}
 --- !u!4 &424069757
@@ -788,7 +787,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: fbac8055de9894887817653dbf56ebba, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -871,9 +870,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 802766284}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46dbf22bb16d44a4b862e5678db9cf88, type: 3}
+  m_Script: {fileID: 11500000, guid: 9377bb12f134b514dad3fc10d43d615a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tag: Music
 --- !u!1001 &825442806
 Prefab:
   m_ObjectHideFlags: 0

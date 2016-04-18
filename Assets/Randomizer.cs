@@ -67,6 +67,8 @@ public class Randomizer : MonoBehaviour {
 		reshuffle (scenesToPlay);
 		firstScene = -1;
 		numPlayed = 0;
+		wins = 0;
+		losses = 0;
 	}
 
 	public void addWin(){

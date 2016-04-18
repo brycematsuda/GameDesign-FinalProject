@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class DomGameController : MonoBehaviour {
 	public GameObject player;
-	public int lives;
+	static int lives = 4;
 	private int score;
 	// public Text liveGui;
 	public Text scoreGui;
@@ -16,6 +16,8 @@ public class DomGameController : MonoBehaviour {
 	private float timeSinceAction = 0.0f;
  	private bool updateScore;
 
+	Randomizer x;
+
 	// Use this for initialization
 	void Start () {
 		updateScore = true;
@@ -24,6 +26,7 @@ public class DomGameController : MonoBehaviour {
 		scoreGui.text = "Score: " + score.ToString();
 		winLoseGui.text = "";
 		isDisabled = false;
+		x = GameObject.FindGameObjectWithTag ("Randomizer").GetComponent<Randomizer> ();
 	}
 	
 	// Update is called once per frame
@@ -56,6 +59,14 @@ public class DomGameController : MonoBehaviour {
 			if (!isDisabled) {
 				player.GetComponent<UnityChan2DController>().enabled = !player.GetComponent<UnityChan2DController>().enabled;
 				isDisabled = true;
+				lives--;
+				if (lives <= 0) {
+					x.addLoss ();
+					if (!IsInvoking ("delayedLoad")) {
+						Invoke ("delayedLoad", 3f);
+					}
+
+				}
 			}
 			
 			winLoseGui.text = "Eliminated!";
@@ -68,6 +79,10 @@ public class DomGameController : MonoBehaviour {
 			player.GetComponent<UnityChan2DController>().enabled = false;
 			player.GetComponent<DomPlayerController>().canMove = false;
 			winLoseGui.text = "Winner!";
+			x.addWin ();
+			if (!IsInvoking ("delayedLoad")) {
+				Invoke ("delayedLoad", 3f);
+			}
 			updateScore = false;
 			//StartCoroutine(Wait(3));			
 		}
@@ -80,4 +95,8 @@ public class DomGameController : MonoBehaviour {
 
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+	void delayedLoad(){
+		x.loadNextScene ();
+	}
 }

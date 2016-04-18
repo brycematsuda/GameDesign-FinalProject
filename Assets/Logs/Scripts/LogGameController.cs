@@ -13,6 +13,7 @@ public class LogGameController : MonoBehaviour {
 	public Text winLoseGui;
 	private bool isDisabled;
 	private bool hasWon = false;
+	Randomizer x;
 
 	// Use this for initialization
 	void Start () {
@@ -21,6 +22,7 @@ public class LogGameController : MonoBehaviour {
 		scoreGui.text = "Score: " + score.ToString();
 		winLoseGui.text = "";
 		isDisabled = false;
+		x = GameObject.FindGameObjectWithTag ("Randomizer").GetComponent<Randomizer> ();
 	}
 
 	// Update is called once per frame
@@ -29,6 +31,17 @@ public class LogGameController : MonoBehaviour {
 		if (player.transform.position.x > 12 && player.transform.position.x < 15) {
 			winLoseGui.text = "Winner!";
 			hasWon = true;
+			x.addWin ();
+			if (!IsInvoking ("delayedLoad")) {
+				Invoke ("delayedLoad", 3f);
+			}
+		}
+		if (lives == 0) {
+			x.addLoss ();
+			winLoseGui.text = "LOSER";
+			if (!IsInvoking ("delayedLoad")) {
+				Invoke ("delayedLoad", 3f);
+			}
 		}
 	}
 
@@ -50,5 +63,9 @@ public class LogGameController : MonoBehaviour {
 		yield return new WaitForSeconds(duration);   //Wait
 		lives -= 1;
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+	}
+
+	void delayedLoad(){
+		x.loadNextScene ();
 	}
 }

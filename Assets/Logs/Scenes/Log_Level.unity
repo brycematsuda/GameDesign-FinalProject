@@ -1901,7 +1901,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1114490561}
-  lives: 10
+  lives: 3
   liveGui: {fileID: 307636442}
   scoreGui: {fileID: 1839837146}
   winLoseGui: {fileID: 610238627}
@@ -3458,6 +3458,7 @@ Canvas:
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
