@@ -47,3 +47,5 @@ EditorBuildSettings:
     path: Assets/_Hub/_Scenes/CreditsScene.unity
   - enabled: 1
     path: Assets/_Hub/_Scenes/ResultsScreen.unity
+  - enabled: 1
+    path: Assets/_FinalBoss/_Scenes/FinalBoss.unity

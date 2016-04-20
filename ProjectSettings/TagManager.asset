@@ -28,6 +28,8 @@ TagManager:
   - Flowey4
   - Flowey5
   - Flowey6
+  - Dijkstra
+  - Correct
   layers:
   - Default
   - TransparentFX

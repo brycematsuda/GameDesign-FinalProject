@@ -10,7 +10,7 @@ public class PlayMovie : MonoBehaviour {
 		movie = (MovieTexture)r.material.mainTexture;
 		//movie.Stop ();
 		movie.Play();
-
+		movie.loop = true;
 	}
 	void Update () {
 		if (Input.GetButtonDown ("Jump")) {

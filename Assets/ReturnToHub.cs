@@ -17,5 +17,8 @@ public class ReturnToHub : MonoBehaviour {
 				x.reset ();
 			}
 		}
+		if(Input.GetKeyDown(KeyCode.Equals)){
+			SceneManager.LoadScene ("FinalBoss");
+		}
 	}
 }
