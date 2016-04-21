@@ -30,17 +30,13 @@ public class MudBallsGameController : MonoBehaviour {
 			}
 
 		} else if (cannon.GetComponent<MudBallsCannonController>().numBalls == 0 && GameObject.FindGameObjectsWithTag("Respawn").Length == 0) {
-        caughtText.text = "Geemu Obah :( \n try gain wit R?";
+        caughtText.text = "Geemu Obah :(";
         player.transform.GetChild(0).GetComponent<UnityChan2DController>().enabled = false;
 
 			if (!IsInvoking ("delayedLoad")) {
 				x.addLoss ();
 				Invoke ("delayedLoad", 3f);
 			}
-
-        if (Input.GetKeyDown (KeyCode.R)) {
-              SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
     } else {
 			caughtText.text = "";
 		}
