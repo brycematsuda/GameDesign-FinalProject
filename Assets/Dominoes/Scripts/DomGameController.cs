@@ -10,16 +10,22 @@ public class DomGameController : MonoBehaviour {
 	// public Text liveGui;
 	public Text scoreGui;
 	public Text winLoseGui;
+	public Text nuxText;
+	public bool nuxMode;
 	private bool isDisabled;
 	private AudioSource audio;
 	private float actionCooldown = 2.0f;
 	private float timeSinceAction = 0.0f;
  	private bool updateScore;
+ 	private LayerMask orig;
 
 	Randomizer x;
 
 	// Use this for initialization
 	void Start () {
+		orig = player.GetComponent<UnityChan2DController>().whatIsGround;
+		nuxMode = false;
+		nuxText.enabled = false;
 		updateScore = true;
 		score = Random.Range(0, 99999);
 		// liveGui.text = "Lives: " + lives.ToString();
@@ -31,14 +37,25 @@ public class DomGameController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (Input.GetKeyDown (KeyCode.N)) {
+			nuxMode = !nuxMode;
+		}
+
+		if (!nuxMode) {
+			player.GetComponent<UnityChan2DController>().whatIsGround = orig;
+			nuxText.enabled = false;
+		} else {
+			player.GetComponent<UnityChan2DController>().whatIsGround = LayerMask.NameToLayer("Everything");
+			nuxText.enabled = true;
+		}
 	    timeSinceAction += Time.deltaTime;
 	    
-	    if (timeSinceAction > actionCooldown)
+	    if (timeSinceAction > actionCooldown && !nuxMode)
 		{
 		    //timeSinceAction = 0;
 		    
 		
-		if (player.transform.position.y > 0) {
+		if (player.transform.position.y > 0 && !nuxMode) {
 			if (!isDisabled) {
 				player.GetComponent<UnityChan2DController>().enabled = false;
 				isDisabled = true;
