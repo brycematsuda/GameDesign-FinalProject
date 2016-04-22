@@ -22,7 +22,10 @@ public class PortraitSwitchScene : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other){
 		if (other.tag == "Player") {
-			movCube.stopMov ();
+			if(movCube != null){
+				movCube.stopMov ();
+			}
+
 			x.medley = false;
 			//Debug.Log (x.medley);
 			SceneManager.LoadScene (sceneName);

@@ -34,6 +34,7 @@ public class DoorsGameController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (SceneManager.GetActiveScene ().name != currScene) {
+			lives = 3;
 			Destroy (gameObject);
 		}
 	}
