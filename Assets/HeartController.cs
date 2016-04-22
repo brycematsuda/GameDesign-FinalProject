@@ -43,8 +43,8 @@ public class HeartController : MonoBehaviour {
 //		transform.position = Vector3.Lerp (transform.position, mousePosition, moveSpeed);
 			float distance = transform.position.z - Camera.main.transform.position.z;
 		targetPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, distance);
-		if (Input.mousePosition.y > 500) {
-			targetPos = new Vector3(Input.mousePosition.x, 500, distance);
+		if (Input.mousePosition.y > (Screen.height * 0.65f)) {
+			targetPos = new Vector3(Input.mousePosition.x, Screen.height * 0.65f, distance);
 		}
 			
 			targetPos = Camera.main.ScreenToWorldPoint(targetPos);

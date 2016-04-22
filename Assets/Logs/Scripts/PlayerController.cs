@@ -83,11 +83,11 @@ public class PlayerController : MonoBehaviour
 
 	void Update ()
 	{
+//		if (transform.position.y > 10) {
+//			transform.position = new Vector3 (transform.position.x, 10, transform.position.z);
+//		}
 		if (gameObject.transform.position.y <= -0.010000172) {
-			LogGameController script = (LogGameController) gameController.GetComponent("LogGameController");
-			script.lives -= 1;
-			script.updateGUI ();
-			gameObject.transform.position = startPos;
+			
 		}
 
 		if (Input.GetButtonDown("Jump") && gameObject.transform.position.y < 2) {	// スペースキーを入力したら
@@ -314,14 +314,20 @@ public class PlayerController : MonoBehaviour
 		if (col.gameObject.tag.Equals("Mud")) {
 			print ("yay");
 		}
-		print(col.gameObject.tag);
 	}
 
 	void OnCollisionEnter(Collision col) {
 		if (col.gameObject.tag.Equals("Mud")) {
 			print ("boo");
+			LogGameController script = (LogGameController) gameController.GetComponent("LogGameController");
+			script.lives -= 1;
+			script.updateGUI ();
+			gameObject.transform.position = startPos;
 		}
-		print(col.gameObject.tag);
+		if (col.gameObject.tag == "Log") {
+			Debug.Log ("HERP");
+			rb.AddForce (Vector3.up* 4000);
+		}
 	}
 
 	// キャラクターのコライダーサイズのリセット関数
@@ -332,96 +338,5 @@ public class PlayerController : MonoBehaviour
 		col.center = orgVectColCenter;
 	}
 
-	public void electrocute ()
-	{
 
-		anim.SetBool ("Shocked", true);
-		origZ = transform.position.z;
-		origX = transform.position.x;
-		gettingShocked = true;
-		controlsEnabled = false;
-		normal.gameObject.SetActive (false);
-		StartCoroutine (electrocuteAnimation ());
-	}
-
-	IEnumerator electrocuteAnimation ()
-	{
-
-		for (int i = 0; i < 10; i++) {
-			if (i % 2 == 0) {
-				electroc.gameObject.SetActive (true);
-			} else {
-				electroc.gameObject.SetActive (false);
-			}
-			yield return new WaitForSeconds (0.1f);
-		}
-		controlsEnabled = true;
-		gettingShocked = false;
-		normal.gameObject.SetActive (true);
-		anim.SetBool ("Shocked", false);
-	}
-
-	public void forcePush ()
-	{
-		anim.SetBool ("Shocked", true);
-		controlsEnabled = false;
-		origZ = transform.position.z;
-		gettingPushed = true;
-		StartCoroutine (pushedAnimation ());
-	}
-
-	IEnumerator pushedAnimation ()
-	{
-		for (int i = 0; i < 10; i++) {
-			yield return new WaitForSeconds (0.1f);
-		}
-		controlsEnabled = true;
-		anim.SetBool ("Shocked", false);
-		gettingPushed = false;
-	}
-
-	public void getEaten ()
-	{
-
-		anim.SetBool ("Eaten", true);
-		controlsEnabled = false;
-		gettingAte = true;
-		transform.position = new Vector3 (transform.position.x, transform.position.y + 0.5f, transform.position.z);
-		StartCoroutine (eatenAnimation ());
-	}
-
-	IEnumerator eatenAnimation ()
-	{
-
-
-		for (int i = 0; i < 20; i++) {
-			if (i > 5) {
-				gettingAte = false;
-			}
-			yield return new WaitForSeconds (0.1f);
-		}
-		controlsEnabled = true;
-		anim.SetBool ("Eaten", false);
-
-	}
-
-	public void knockedTheFOut ()
-	{
-		anim.SetBool ("Eaten", true);
-		controlsEnabled = false;
-		knockedOut = true;
-		StartCoroutine (Recover ());
-	}
-
-	IEnumerator Recover ()
-	{
-		for (int i = 0; i < 20; i++) {
-			if (i > 5) {
-				knockedOut = false;
-			}
-			yield return new WaitForSeconds (0.1f);
-		}
-		controlsEnabled = true;
-		anim.SetBool ("Eaten", false);
-	}
 }
