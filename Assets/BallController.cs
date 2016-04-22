@@ -26,6 +26,9 @@ public class BallController : MonoBehaviour {
 			pgc.setWin (false);
 			Destroy (gameObject);
 		}
+		if (Input.GetKeyDown (KeyCode.Return)) {
+			rb.AddForce (0, 0, 10);
+		}
 	}
 
 	void startingForce(){

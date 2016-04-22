@@ -9,6 +9,8 @@ public class PachinkoGameController : MonoBehaviour {
 	private int gameScore = 0;
 	public Text scoreText;
 	public GameObject results;
+	public GameObject nuxPath;
+	private bool nuxMode = false;
 	private Text result;
 	NextLevelPlays nlp;
 	private bool win;
@@ -25,6 +27,14 @@ public class PachinkoGameController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		if (nuxMode) {
+			nuxPath.SetActive (true);
+		} else {
+			nuxPath.SetActive (false);
+		}
+		if (Input.GetKeyDown (KeyCode.N)) {
+			nuxMode = !nuxMode;
+		}
 
 	}
 

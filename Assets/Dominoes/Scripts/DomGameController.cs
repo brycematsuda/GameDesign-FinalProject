@@ -121,6 +121,7 @@ public class DomGameController : MonoBehaviour {
     }
 
 	void delayedLoad(){
+		lives = 3;
 		x.loadNextScene ();
 	}
 }

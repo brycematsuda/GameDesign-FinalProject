@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour
 
 	private GameObject cameraObject;
 	public GameObject gameController;
+	private LogGameController lgc;
 	// メインカメラへの参照
 
 	// アニメーター各ステートへの参照
@@ -53,13 +54,9 @@ public class PlayerController : MonoBehaviour
 	private float origZ;
 	private float origX;
 
-	public string flavor = "None";
-	private int direction = 0;
-	private const int forward = 0, backward = 1, up = 2, down = 3;
 
 	private bool gettingShocked = false, gettingPushed = false, gettingAte = false, knockedOut = false;
 
-	public Light normal, electroc;
 
 	private Vector3 startPos;
 
@@ -77,7 +74,7 @@ public class PlayerController : MonoBehaviour
 		orgColHight = col.height;
 		orgVectColCenter = col.center;
 		origSpeed = forwardSpeed;
-
+		lgc = GameObject.FindGameObjectWithTag ("GameController").GetComponent<LogGameController> ();
 		startPos = gameObject.transform.position;
 	}
 
@@ -86,9 +83,7 @@ public class PlayerController : MonoBehaviour
 //		if (transform.position.y > 10) {
 //			transform.position = new Vector3 (transform.position.x, 10, transform.position.z);
 //		}
-		if (gameObject.transform.position.y <= -0.010000172) {
-			
-		}
+
 
 		if (Input.GetButtonDown("Jump") && gameObject.transform.position.y < 2) {	// スペースキーを入力したら
 			//アニメーションのステートがLocomotionの最中のみジャンプできる
@@ -218,22 +213,21 @@ public class PlayerController : MonoBehaviour
 			if (Input.GetKey (KeyCode.S)) {
 				velocity += new Vector3 (0, 0, forwardSpeed);
 				transform.rotation = Quaternion.Euler (0, 180, 0);
-				direction = backward;
+
 			} else if (Input.GetKey (KeyCode.W)) {
 				velocity += new Vector3 (0, 0, forwardSpeed);
 				//animController.ChangeAnimation (QuerySDMecanimController.QueryChanSDAnimationType.NORMAL_RUN, true);
 				transform.rotation = Quaternion.Euler (0, 0, 0);
-				direction = forward;
+
 			} else if (Input.GetKey (KeyCode.A)) {
 				//animController.ChangeAnimation (QuerySDMecanimController.QueryChanSDAnimationType.NORMAL_RUN, true);
 				velocity += new Vector3 (0, 0, forwardSpeed * 2);
 				transform.rotation = Quaternion.Euler (0, 270, 0);
-				direction = up;
+
 			} else if (Input.GetKey (KeyCode.D)) {
 				//animController.ChangeAnimation (QuerySDMecanimController.QueryChanSDAnimationType.NORMAL_RUN, true);
 				velocity += new Vector3 (0, 0, forwardSpeed * 2);
 				transform.rotation = Quaternion.Euler (0, 90, 0);
-				direction = down;
 			} 
 			velocity = transform.TransformDirection (velocity);
 			transform.localPosition += velocity * Time.fixedDeltaTime;
@@ -318,15 +312,16 @@ public class PlayerController : MonoBehaviour
 
 	void OnCollisionEnter(Collision col) {
 		if (col.gameObject.tag.Equals("Mud")) {
-			print ("boo");
 			LogGameController script = (LogGameController) gameController.GetComponent("LogGameController");
 			script.lives -= 1;
 			script.updateGUI ();
 			gameObject.transform.position = startPos;
 		}
 		if (col.gameObject.tag == "Log") {
-			Debug.Log ("HERP");
 			rb.AddForce (Vector3.up* 4000);
+		}
+		if (col.gameObject.tag == "Goal") {
+			lgc.doWin ();
 		}
 	}
 

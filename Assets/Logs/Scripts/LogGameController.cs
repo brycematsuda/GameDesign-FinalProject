@@ -29,17 +29,13 @@ public class LogGameController : MonoBehaviour {
 	void Update () {
 		updateGUI();
 		if (player.transform.position.x > 12 && player.transform.position.x < 15) {
-			winLoseGui.text = "Winner!";
-			hasWon = true;
-			x.addWin ();
-			if (!IsInvoking ("delayedLoad")) {
-				Invoke ("delayedLoad", 3f);
-			}
+			
 		}
-		if (lives == 0) {
+		if (lives <= 0) {
 			x.addLoss ();
 			winLoseGui.text = "LOSER";
 			if (!IsInvoking ("delayedLoad")) {
+				x.addLoss ();
 				Invoke ("delayedLoad", 3f);
 			}
 		}
@@ -67,5 +63,16 @@ public class LogGameController : MonoBehaviour {
 
 	void delayedLoad(){
 		x.loadNextScene ();
+	}
+
+	public void doWin(){
+		winLoseGui.text = "Winner!";
+		hasWon = true;
+
+		if (!IsInvoking ("delayedLoad")) {
+			Debug.Log ("WIN");
+			x.addWin ();
+			Invoke ("delayedLoad", 3f);
+		}
 	}
 }
