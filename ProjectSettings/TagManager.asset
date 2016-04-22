@@ -30,6 +30,8 @@ TagManager:
   - Flowey6
   - Dijkstra
   - Correct
+  - Dijkstra2
+  - HeartSpawn
   layers:
   - Default
   - TransparentFX

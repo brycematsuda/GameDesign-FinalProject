@@ -29,14 +29,16 @@ public class LolValues : MonoBehaviour {
 			Invoke ("fireLazer", 1f);
 
 			float targetY = Random.Range (-5, 5);
-			for (int i = 0; i < 100; i++) {
+			for (int i = 0; i < 40; i++) {
 				target = player.transform.position;
 				//Debug.Log (target);
-				target.y = 0;
-				target.z = 0;
+				//target.y = 0;
+				//target.z = 0;
 				Quaternion targets = Quaternion.LookRotation (target - transform.position);
-				Debug.Log (targets);
-				transform.rotation = Quaternion.Slerp (transform.rotation, targets, 20 * Time.deltaTime);
+				targets.x += 0.021f;
+				//Debug.Log (targets);
+
+				transform.rotation = Quaternion.Slerp (transform.rotation, targets, 30 * Time.deltaTime);
 				transform.position = Vector3.MoveTowards (transform.position, new Vector3 (transform.position.x, targetY, transform.position.z), 30 * Time.deltaTime);
 				yield return new WaitForSeconds (0.01f);
 			}
@@ -49,7 +51,7 @@ public class LolValues : MonoBehaviour {
 		fireSprite.SetActive (true);
 		idleSprite.GetComponent<SpriteRenderer> ().enabled = false;
 
-		Instantiate (blast, shotSpawn.transform.position,shotSpawn.transform.rotation);
+		Instantiate (blast, new Vector3(shotSpawn.transform.position.x, shotSpawn.transform.position.y, 0),shotSpawn.transform.rotation);
 		Invoke ("revert", 1f);
 	}
 

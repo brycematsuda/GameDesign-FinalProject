@@ -23,6 +23,7 @@ public class NextLevelPlays : MonoBehaviour {
 		} else {
 			x.addLoss ();
 		}
+		Debug.Log (x.medley);
 		x.loadNextScene ();
 	}
 

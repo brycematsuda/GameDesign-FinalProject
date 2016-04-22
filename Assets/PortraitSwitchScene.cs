@@ -6,9 +6,12 @@ public class PortraitSwitchScene : MonoBehaviour {
 
 	public string sceneName; //the scene to switch to
 	HubMovie movCube;
+	public bool isMedley = false;
+	Randomizer x;
 	// Use this for initialization
 	void Start () {
 		movCube = GameObject.FindGameObjectWithTag ("Fire").GetComponent<HubMovie> ();
+		x = GameObject.FindGameObjectWithTag ("Randomizer").GetComponent<Randomizer> ();
 	
 	}
 	
@@ -20,6 +23,8 @@ public class PortraitSwitchScene : MonoBehaviour {
 	void OnTriggerEnter(Collider other){
 		if (other.tag == "Player") {
 			movCube.stopMov ();
+			x.medley = false;
+			//Debug.Log (x.medley);
 			SceneManager.LoadScene (sceneName);
 		}
 	}

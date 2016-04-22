@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class DomGameController : MonoBehaviour {
 	public GameObject player;
-	static int lives = 4;
+	static int lives = 3;
 	private int score;
 	// public Text liveGui;
 	public Text scoreGui;
@@ -32,6 +32,10 @@ public class DomGameController : MonoBehaviour {
 		scoreGui.text = "Score: " + score.ToString();
 		winLoseGui.text = "";
 		isDisabled = false;
+		lives--;
+		if (lives <= 0) {
+			Invoke ("delayedLoad", 3f);
+		}
 		x = GameObject.FindGameObjectWithTag ("Randomizer").GetComponent<Randomizer> ();
 	}
 	
@@ -76,14 +80,16 @@ public class DomGameController : MonoBehaviour {
 			if (!isDisabled) {
 				player.GetComponent<UnityChan2DController>().enabled = !player.GetComponent<UnityChan2DController>().enabled;
 				isDisabled = true;
-				lives--;
-				if (lives <= 0) {
-					x.addLoss ();
-					if (!IsInvoking ("delayedLoad")) {
-						Invoke ("delayedLoad", 3f);
-					}
-
-				}
+				//lives--;
+				Debug.Log (lives);
+//				if (lives <= 0) {
+//					
+//					if (!IsInvoking ("delayedLoad")) {
+//						Invoke ("delayedLoad", 1f);
+//						x.addLoss ();
+//					}
+//
+//				}
 			}
 			
 			winLoseGui.text = "Eliminated!";
@@ -96,9 +102,10 @@ public class DomGameController : MonoBehaviour {
 			player.GetComponent<UnityChan2DController>().enabled = false;
 			player.GetComponent<DomPlayerController>().canMove = false;
 			winLoseGui.text = "Winner!";
-			x.addWin ();
+
 			if (!IsInvoking ("delayedLoad")) {
-				Invoke ("delayedLoad", 3f);
+				Invoke ("delayedLoad", 1f);
+				x.addWin ();
 			}
 			updateScore = false;
 			//StartCoroutine(Wait(3));			

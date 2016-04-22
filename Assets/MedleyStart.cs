@@ -17,6 +17,7 @@ public class MedleyStart : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other){
 		if (other.tag == "Player") {
+			x.medley = true;
 			movCube.stopMov ();
 			x.loadNextScene ();
 		}

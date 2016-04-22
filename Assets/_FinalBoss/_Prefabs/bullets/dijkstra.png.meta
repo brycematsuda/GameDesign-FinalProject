@@ -1,0 +1,137 @@
+fileFormatVersion: 2
+guid: 1e79a5d3d527bf349b0e17804774a68e
+timeCreated: 1461264046
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: dijkstra_0
+    21300002: dijkstra_1
+    21300004: dijkstra_2
+    21300006: dijkstra_3
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: dijkstra_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 50
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25, y: 34}
+        - {x: -25, y: -21}
+        - {x: -20, y: -34}
+        - {x: 24, y: -34}
+        - {x: 25, y: -28}
+        - {x: 25, y: 32}
+        - {x: 23, y: 34}
+    - name: dijkstra_1
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 0
+        width: 49
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24.5, y: 34}
+        - {x: -24.5, y: -17}
+        - {x: -22.5, y: -34}
+        - {x: 11.5, y: -34}
+        - {x: 24.5, y: -12}
+        - {x: 24.5, y: 33}
+        - {x: 22.5, y: 34}
+    - name: dijkstra_2
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 0
+        width: 60
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 23, y: 34}
+        - {x: -19, y: 34}
+        - {x: -30, y: 28}
+        - {x: -30, y: -7}
+        - {x: -19, y: -34}
+        - {x: 16, y: -34}
+        - {x: 20, y: -32}
+        - {x: 30, y: -19}
+        - {x: 30, y: 17}
+    - name: dijkstra_3
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 0
+        width: 52
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22, y: 34}
+        - {x: -26, y: 33}
+        - {x: -26, y: -9}
+        - {x: -22, y: -25}
+        - {x: -18, y: -34}
+        - {x: 16, y: -34}
+        - {x: 26, y: -7}
+        - {x: 26, y: 31}
+        - {x: 23, y: 34}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

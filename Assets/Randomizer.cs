@@ -12,6 +12,8 @@ public class Randomizer : MonoBehaviour {
 	int numPlayed = 0;
 	int firstScene = -1;
 	int score = 0;
+	public int examScore = 0;
+	public bool medley = false;
 	// Use this for initialization
 	void Start () {
 		for (int i = 0; i < scenesToPlay.Length; i++) {
@@ -43,11 +45,23 @@ public class Randomizer : MonoBehaviour {
 	}
 
 	public void loadNextScene(){
-		if (currentScene >= scenesToPlay.Length) {
+		Debug.Log (medley);
+		if (!medley) {
+			reset ();
+			SceneManager.LoadScene ("HubScene");
+			return;
+		}
+		if (SceneManager.GetActiveScene().name == "FinalBoss") {
 			noScenesLeft = true;
 			SceneManager.LoadScene ("ResultsScreen");
 			return;
 		}
+		if (currentScene >= scenesToPlay.Length) {
+			noScenesLeft = true;
+			SceneManager.LoadScene ("FinaleIntro");
+			return;
+		}
+
 		if (scenesToPlay [currentScene] == firstScene) {
 			currentScene++;
 			loadNextScene ();

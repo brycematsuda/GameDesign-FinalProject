@@ -6,7 +6,7 @@ public class BreadthFirst : MonoBehaviour {
 	public GameObject bfs;
 	// Use this for initialization
 	void Start () {
-		Invoke("doSpawn", Random.Range(1,3f));
+		
 	}
 	
 	// Update is called once per frame
@@ -20,5 +20,9 @@ public class BreadthFirst : MonoBehaviour {
 			transform.position = new Vector3 (Random.Range (-6, 6), transform.position.y, transform.position.z);
 			Instantiate (bfs, transform.position, transform.rotation);
 		}
+	}
+
+	public void startSpawning(){
+		Invoke("doSpawn", Random.Range(1,3f));
 	}
 }

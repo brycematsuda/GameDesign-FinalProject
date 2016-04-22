@@ -4,14 +4,18 @@ using UnityEngine.UI;
 
 public class BossGameController : MonoBehaviour {
 	public int examScore = 0, willpower = 100;
-	public Text scoreText, willText, buttText;
+	public Text scoreText, willText, buttText, resultText;
 	public int min, max;
 	public AudioSource hit;
 	public GameObject secondGaster, thirdGaster, fourthGaster;
+	public GameObject bfs;
+	private BreadthFirst bf;
 	private GameObject butt, boss;
 	private string[] answers;
+	private Randomizer rand;
+	private bool gg = false;
 
-
+	private bool started = false;
 	// Use this for initialization
 	void Start () {
 		scoreText.text = "Exam Score: " + examScore;
@@ -19,6 +23,8 @@ public class BossGameController : MonoBehaviour {
 		butt = GameObject.FindGameObjectWithTag ("Correct");
 		boss = GameObject.FindGameObjectWithTag ("Orange");
 		answers = new string[] { "2^n", "NP-COMPLETE", "P = NP", "L-VALUES", "BUBBLE SORT", "SUBSET-SUM", "OVERRIDING", "OVERLOADING", "SWITCH STATEMENT" };
+		bf = bfs.GetComponent<BreadthFirst> ();
+		rand = GameObject.FindGameObjectWithTag ("Randomizer").GetComponent<Randomizer> ();
 	}
 	
 	// Update is called once per frame
@@ -28,16 +34,19 @@ public class BossGameController : MonoBehaviour {
 
 	public void addScore(int change){
 		examScore += change;
-		if (examScore > 10) {
+		if (examScore >= 10) {
 			secondGaster.GetComponent<SpawnGaster> ().doIt = true;
 		}
-		if (examScore > 30) {
-			//bfs
+		if (examScore >= 30 && !started) {
+			bf.startSpawning ();
+			boss.GetComponent<BossController> ().setActiv ();
+			started = true;
 		}
-		if (examScore > 40) {
+		if (examScore >= 40) {
 			boss.GetComponent<BossController> ().startPatrol ();
+			boss.GetComponent<BossController> ().setHearts ();
 		}
-		if (examScore > 60) {
+		if (examScore >= 60) {
 			thirdGaster.GetComponent<SpawnGaster> ().doIt = true;
 			fourthGaster.GetComponent<SpawnGaster> ().doIt = true;
 		}
@@ -47,11 +56,35 @@ public class BossGameController : MonoBehaviour {
 		butt.transform.position = new Vector3 (xPos, yPos);
 		buttText.text = answers [idx];
 		scoreText.text = "Exam Score: " + examScore;
+		butt.SetActive (false);
+		Invoke ("buttReappear", 4f);
 	}
 
 	public void addWillpower(int change){
-		hit.Play ();
-		willpower += change;
-		willText.text = "Willpower: " + willpower;
+		if (willpower > 0) {
+			hit.Play ();
+			willpower += change;
+			willText.text = "Willpower: " + willpower;
+		} else {
+			willpower = 0;
+			willText.text = "Willpower: " + willpower;
+			resultText.text = "EXAM FINISHED";
+			resultText.gameObject.SetActive (true);
+			butt.SetActive (false);
+			gg = true;
+			Invoke ("calculateScore", 3f);
+		}
+	}
+
+	void calculateScore(){
+		rand.examScore = examScore;
+		rand.loadNextScene ();
+	}
+
+	void buttReappear(){
+		if (!gg) {
+			butt.SetActive (true);
+		}
+
 	}
 }
