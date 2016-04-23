@@ -3,6 +3,7 @@ using System.Collections;
 
 public class MoveZZ : MonoBehaviour {
 	public Vector3[] targets;
+	public Transform[] targett;
 	public float speed;
 	private Vector3 currTarget;
 	int count = 0;
@@ -18,7 +19,7 @@ public class MoveZZ : MonoBehaviour {
 
 	IEnumerator moveIt(){
 		while (true) {
-			currTarget = targets [count % 2];
+			currTarget = targett [count % 2].position;
 			count++;
 			for (int i = 0; i < 200; i++) {
 				transform.position = Vector3.MoveTowards (transform.position, currTarget, speed * Time.deltaTime);
