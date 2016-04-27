@@ -11,7 +11,7 @@ public class FinaleSong : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (SceneManager.GetActiveScene ().name == "ResultsScreen") {
+		if (SceneManager.GetActiveScene ().name == "ResultsScreen" || SceneManager.GetActiveScene().name == "HubScene") {
 			Destroy (gameObject);
 		}
 	}

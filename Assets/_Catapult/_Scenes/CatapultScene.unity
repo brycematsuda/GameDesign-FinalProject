@@ -361,7 +361,7 @@ MonoBehaviour:
   barrelReference: {fileID: 362544638}
   launcherSpawn: {fileID: 309675540}
   statusText: {fileID: 1626653859}
-  cooldown: 0
+  cooldown: 0.5
 --- !u!54 &112063256
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4293,8 +4293,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1289055523}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.699992, y: -31.477629, z: -55.243206}
+  m_LocalRotation: {x: -0.27800465, y: 0.33796927, z: 0.10521699, w: 0.89298356}
+  m_LocalPosition: {x: -8.930894, y: -24.58815, z: 7.674308}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

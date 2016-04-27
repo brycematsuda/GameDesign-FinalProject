@@ -6,7 +6,7 @@ public class BossGameController : MonoBehaviour {
 	public int examScore = 0, willpower = 100;
 	public Text scoreText, willText, buttText, resultText;
 	public int min, max;
-	public AudioSource hit;
+	public AudioSource hit, click;
 	public GameObject secondGaster, thirdGaster, fourthGaster;
 	public GameObject bfs;
 	private BreadthFirst bf;
@@ -33,6 +33,7 @@ public class BossGameController : MonoBehaviour {
 	}
 
 	public void addScore(int change){
+		click.Play ();
 		examScore += change;
 		if (examScore >= 10) {
 			secondGaster.GetComponent<SpawnGaster> ().doIt = true;
